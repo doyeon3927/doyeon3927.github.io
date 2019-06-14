@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+    maximum-scale=1.0", user-scaleble="no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-eq="cache-Contol" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="title" content="경찰청 모바일 웹앱">
+    <meta name="keyword" content="경찰청, 웹앱, 관공서, 모바일">
+    <meta name="auther" content="LEE DO YEON">
+    <meta name="description" content="경찰청의 다양한 이야기를 전해드립니다">
+    <title>경찰청 모바일 웹 사이트</title>
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="apple-thouch-icon" href="./imf/favicon.png">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script></script>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="normal.css">
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="common.css">
+    <style>
+    .wrap{width: 100%; height: 100%;}
+    .hd{width: 100%; height: 45%;
+        background: #bdf3fd; /* Old browsers */
+background: -moz-linear-gradient(-45deg, #bdf3fd 0%, #4ab7f7 29%, #4095d6 56%, #006dc6 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, #bdf3fd 0%,#4ab7f7 29%,#4095d6 56%,#006dc6 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, #bdf3fd 0%,#4ab7f7 29%,#4095d6 56%,#006dc6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bdf3fd', endColorstr='#006dc6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */}
+.logo{display: block; width: 156px; height: 25px; float: left; margin-left: 10px; margin-top: 10px;
+        background-image: url("./img/logo.png");
+        background-repeat: no-repeat; 
+        background-size: auto 100%; 
+        background-position: center center;} 
+
+.top_btn{float: right; margin-top: 10px; margin-right: 10px;} 
+.top_btn li{float: left;}
+.top_btn li label{display: block; width: 25px; height: 25px;
+ background-repeat: no-repeat; background-position: center; text-indent: -9999px;}
+.top_btn li.search label{background-image: url("./img/search.png");width: 30px;height: 30px;}
+.top_btn li.menu label{background-image: url("./img/list.png"); width: 30px; height: 30px;}
+.close{display: block; width: 28px; height: 28px; background-image: url("./img/close.png");
+ background-size: cover;}
+.ck_item{/*처리 보면서 */display: none;}
+#find_nav{position:fixed; left: -110%; top: 0; z-index: 99;
+width: 100%; height: 100vh; background-color: #fff; transition: 0.5s;}
+#ck1:checked ~ #find_nav{left: 0;}
+#gnb{position: fixed; right: -110%; top: 0; z-index: 99;  padding-top: 20px; width: 100%; height: 100vh; background-color: #ffffff;
+transition: 0.5s;}
+#ck2:checked ~ #gnb{right: 0;}
+
+.frm1{clear: both; padding-top: 1.6em; width: 250px; margin: 0 auto;}
+.frm1 input{display: block; float: left;}
+.in_data{width: 200px; line-height: 32px; border-radius: 20px; border: 1px solid rgb(66, 66, 66); text-indent: 1em;}
+.frm_btn{width: 32px; height: 32px; background-color: #000;
+     background-image: url("./img/search.png");
+     background-repeat: no-repeat; margin-left: 10px;
+     background-position: center center;
+     text-indent: -9999px;
+     border-radius: 20px;}
+
+.hash_title{clear: both; text-align: center; line-height: 4;}
+.hash{clear: both;padding: 20px;}
+.hash li{line-height: 2.4; padding-left: 20px;}
+.hash li a{color: #333333;}
+#find_nav .close {float: right; margin-top: 20px; margin-left: 20px;}
+
+#gnb li{clear: both; line-height: 2; padding-left: 25px;}
+#gnb li a{display: block; color: #333333; position: relative;}
+.sub{width: 100%; height: 0; overflow: hidden; transition: 0.5s;}
+.sub.on{height: 125px;}
+#gnb li a.dp1:after{content:"▼"; position: absolute; right: 50px; top: 5px;}
+#gnb li a.dp1.on:after{content: "▲";}
+#gnb:before {content: "MENU"; display: block; clear: both;
+ width: 100%; line-height: 80px; font-size: 2em;
+text-align: center; border-bottom: 1px solid #333;}
+#gnb .close{position: absolute; right: 20px; top: 20px;}
+
+.ft{clear: both; width: 100%; height: 140px; background: #333; color:#fff;
+font-size: 0.8em; text-align: center; line-height: 1.6; padding-bottom: 15px;
+font-weight: 200; position: absolute; bottom: 0; left: 0;}
+.ft_wrap{width: 280px; margin: 0 auto;}
+</style>
+    
+    <script>
+    $(document).ready(function(){
+        $("gnb a.dp1").click(function(){
+            $(".sub").removeClass("on");
+            $(this).next(".sub").addClass("on");
+            $("#gnb a.ap1").removeClass("on");
+            $(this).addClass("on");
+        });
+    });
+
+    var wd = parseInt ($(".vs").width());
+    $(".btn_box li").click(function(){
+        var idx = $(this).index();
+            $(".img_box").not(":animated").animate({"margin-left":wd*idx*-1+"px"},600);
+            $(".btn_box li").removeClass("on");
+            $(this).addClass("on");
+        });
+    });
+    </script>
+    <style>
+    body,html{width: 100%; height: 100%; overflow: hidden;}
+    .vs{position: absolute; width: 80%; top: 50px; left: 10%; max-height: 55%; overflow:hidden; z-index: 1;}
+    .img_box{width: 500%; height: auto;}
+    .img_box li{width: 20%; height: auto; float: left;}
+    .img_box li a{display: block; width: 100%;}
+    .img_box li img{display: block; width: 100%; height: auto;}
+
+    .btn_box{position: absolute; bottom: 7px; width: 100px; left: calc(50% - 50px);}
+    .btn_box li {width: 20px; height: 20px; float: left;}
+    .btn_box li button{display: block; width: 10px; height: 10px; border-radius: 6px;
+     background: #333333;}
+     .btn_box li.on button{background: rgb(46, 81, 255);}
+
+     .shortcut{width: 200px; margin: 50px auto; margin-top: 5em;border-right: 1px solid #ccc; border-bottom: 1px solid #ccc;height: 117px;}
+     .shortcut li{float: left; width: 65px; border-left: 1px solid rgb(155, 155, 155);border-top: 1px solid rgb(155, 155, 155);} 
+     .shortcut li a{display: block; }
+     .shortcut li span{display: block;}
+     .shortcut li span[class*=ico] {background-repeat: no-repeat; background-image: url("./img/split1.png");
+    width: 65px; height: 42px;}
+    .shortcut li span.ico1 {background-position: -100px -48px;}
+    .shortcut li span.ico2 {background-position: 8px 0;}
+    .shortcut li span.ico3 {background-position:  -100px -98px}
+    .shortcut li span.ico4 {background-position: -154px 0px;}
+    .shortcut li span.ico5 {background-position: -100px 0px;}
+    .shortcut li span.ico6 {background-position:  -48px -98px;}
+    .shortcut li span.txt {color: #333; font-size: 0.85em; text-align: center;}
+
+    </style>
+
+</head>
+<body>
+
+
+    <!-- div.wrap>header.hd+figure.vs+nav.shortcut>footer.ft -->
+    <div class="wrap">
+        <header class="hd">
+            <!-- a.logo+(input[type=checkbox].ck_item#ck$*2)+(nav.top_btn>ul>li.search*2>label) -->
+            <a href="inde.html" class="logo"></a>
+            <input type="checkbox" class="ck_item" id="ck1">
+            <input type="checkbox" class="ck_item" id="ck2">
+            <nav class="top_btn">
+                <ul>
+                    <li class="search">
+                        <label for="ck1">검색</label>
+                    </li>
+                    <li class="menu">
+                        <label for="ck2">메뉴</label>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- nav#find_nav>form.frm1>input[type=text]#keyword.in_date+input[type=submit]#keyword_a -->
+
+            <nav id="find_nav">
+                    <form action="" class="frm1">
+                        <input type="text" id="keyword" class="in_data" placeholder="검색어를 입력하세요.">
+                        <input type="submit" value="검색" class="frm_btn"></form>
+                <!-- ul.hash>li*5>a  p.hash_title-->
+                <p class="hash_title">아래의 자주 사용하는 링크를 이용하세요</p>
+                <ul class="hash">
+                    <li class="item1"><a href="">채용공고</a></li>
+                    <li class="item2"><a href="">순찰지역신청</a></li>
+                    <li class="item3"><a href="">헤시메뉴3</a></li>
+                    <li class="item4"><a href="">헤시메뉴4</a></li>
+                    <li class="item5"><a href="">헤시메뉴5</a></li>
+                </ul>
+                <label for="ck1" class="close"></label>
+            </nav>
+            <nav id="gnb">
+                <ul class="nav">
+                    <li class="item1">
+                        <a class="dp1">뉴스/알림</a>
+                        <ul class="sub">
+                            <li class="it1"><a href="">소식</a></li>
+                            <li class="it2"><a href="">뉴스룸</a></li>
+                            <li class="it3"><a href="">정책홍보실</a></li>
+                        </ul>
+                    </li>
+                    <li class="item2">
+                        <a  class="dp1">소통/공감</a>
+                        <ul class="sub">
+                            <li class="it1"><a href="">생활정보</a></li>
+                            <li class="it2"><a href="">소통게시판</a></li>
+                            <li class="it3"><a href="">대국민서비스</a></li>
+                            <li class="it4"><a href="">치안정보</a></li>
+                            <li class="it5"><a href="">추모관</a></li>
+                        </ul>
+                    </li>
+                    <li class="item3">
+                        <a  class="dp1">정보공개</a>
+                        <ul class="sub">
+                            <li class="it1"><a href="">정보공개제도</a></li>
+                            <li class="it2"><a href="">재정현황</a></li>
+                            <li class="it3"><a href="">사전정보공표</a></li>
+                            <li class="it4"><a href="">공공데이터</a></li>
+                        </ul>
+                    </li>
+                    <li class="item4">
+                        <a  class="dp1">법령/정책</a>
+                        <ul class="sub">
+                            <li class="it1"><a href="">법령정보</a></li>
+                            <li class="it2"><a href="">국회정보공개</a></li>
+                            <li class="it3"><a href="">규제개혁</a></li>
+                        </ul>
+                    </li>
+                    <li class="item5">
+                        <a  class="dp1">기관소개</a>
+                        <ul class="sub">
+                            <li class="it1"><a href="">열린청장실</a></li>
+                            <li class="it2"><a href="">조직안내</a></li>
+                            <li class="it3"><a href="">경찰의이해</a></li>
+                            <li class="it4"><a href="">경찰역사</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <label for="ck2" class="close"></label>
+            </nav>
+        </header>
+
+        <figure class="vs">
+         <ul class="img_box">
+             <li class="item1">
+                 <a href="">
+                     <img src="./img/banner1.jpg" alt="호국 보훈의 달">
+                     <h2 class="vs_tit"></h2>
+                    </a>
+                </li>
+             <li class="item2">
+                 <a href="">
+                     <img src="./img/banner2.jpg" alt="독립운동가">
+                     <h2 class="vs_tit"></h2>
+                    </a>
+                </li>
+             <li class="item3">
+                 <a href="">
+                     <img src="./img/banner3.jpg" alt="디지털 성범죄 피해 방지">
+                     <h2 class="vs_tit"></h2>
+                    </a>
+                </li>
+             <li class="item4">
+                 <a href="">
+                     <img src="./img/banner4.jpg" alt="사이버 도박 특별 단속">
+                     <h2 class="vs_tit"></h2>
+                    </a>
+                </li>
+             <li class="item5">
+                 <a href="">
+                     <img src="./img/banner5.png" alt="지문 사전 등록">
+                     <h2 class="vs_tit"></h2>
+                    </a>
+                </li>
+         </ul>
+
+         <ul class="btn_box">
+             <li class="item1 on"><button></button></li>
+             <li class="item2"><button></button></li>
+             <li class="item3"><button></button></li>
+             <li class="item4"><button></button></li>
+             <li class="item5"><button></button></li>
+         </ul>
+        </figure>    
+        </nav>
+        
+            <nav class="shortcut">
+            <ul>
+                <li class="item1">
+                    <a href="list.html" rel="external">
+                        <span class="ico1"></span>
+                        <span class="txt">목록보기</span>
+                    </a>
+                </li>
+                <li class="item2">
+                    <a href="recruit.html">
+                        <span class="ico2"></span>
+                        <span class="txt">채용공고</span>
+                    </a>
+                </li>
+                
+                <li class="item4">
+                    <a href="tel:112">
+                        <span class="ico3"></span>
+                        <span class="txt">전화연결</span>
+                        </a>
+                    </li>
+                <li class="item5">
+                    <a href="news.html">
+                        <span class="ico4"></span>
+                        <span class="txt">뉴스</span>
+                        </a>
+                </li>
+                <li class="item6">
+                    <a href="communicate.html">
+                        <span class="ico5"></span>
+                        <span class="txt">소통게시판</span>
+                        </a>
+                    </li>
+                <li class="item7">
+                    <a href="search.html">
+                        <span class="ico6"></span>
+                        <span class="txt">검색</span>
+                        </a>
+                </li>
+            </ul>
+
+        <footer class="ft">
+            <div class="ft_wrap">
+                <p class="copyright">
+                    (우) 03739 서울특별시 서대문구 통일로 97 / 민원대표전화 : 182 / 찾아오시는 길<br>
+                    본 홈페이지에 게시판 이메일 주소가 자동 수집되는 것을 거부하며, 이를 위반시 정보통신망범에 의해 처벌됨을 유념하시기 바랍니다.<br>
+                </p><br>
+                <address class="copy">copyright ⓒ 2018 national police agency</address>
+
+            </div>
+        </footer>
+             
+        
+       
+    </div>
+    
+</body>
+</html>
