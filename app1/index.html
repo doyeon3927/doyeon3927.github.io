@@ -85,25 +85,7 @@ font-weight: 200; position: absolute; bottom: 0; left: 0;}
 .ft_wrap{width: 280px; margin: 0 auto;}
 </style>
     
-    <script>
-    $(document).ready(function(){
-        $("gnb a.dp1").click(function(){
-            $(".sub").removeClass("on");
-            $(this).next(".sub").addClass("on");
-            $("#gnb a.ap1").removeClass("on");
-            $(this).addClass("on");
-        });
-    });
 
-    var wd = parseInt ($(".vs").width());
-    $(".btn_box li").click(function(){
-        var idx = $(this).index();
-            $(".img_box").not(":animated").animate({"margin-left":wd*idx*-1+"px"},600);
-            $(".btn_box li").removeClass("on");
-            $(this).addClass("on");
-        });
-    });
-    </script>
     <style>
     body,html{width: 100%; height: 100%; overflow: hidden;}
     .vs{position: absolute; width: 80%; top: 50px; left: 10%; max-height: 55%; overflow:hidden; z-index: 1;}
@@ -133,6 +115,7 @@ font-weight: 200; position: absolute; bottom: 0; left: 0;}
     .shortcut li span.txt {color: #333; font-size: 0.85em; text-align: center;}
 
     </style>
+    <script src="main.js"></script>
 
 </head>
 <body>
@@ -163,7 +146,7 @@ font-weight: 200; position: absolute; bottom: 0; left: 0;}
                         <input type="text" id="keyword" class="in_data" placeholder="검색어를 입력하세요.">
                         <input type="submit" value="검색" class="frm_btn"></form>
                 <!-- ul.hash>li*5>a  p.hash_title-->
-                <p class="hash_title">아래의 자주 사용하는 링크를 이용하세요</p>
+                <p class="hash_title">자주 사용하는 메뉴는 아래의 링크를 이용하세요!</p>
                 <ul class="hash">
                     <li class="item1"><a href="">채용공고</a></li>
                     <li class="item2"><a href="">순찰지역신청</a></li>
