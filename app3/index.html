@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="야나두, 영어, 영어회화, 토익, 토플, 토셀, 스피치">
+    <meta name="keywords" content="야나두, 영어, 영어회화, 토익, 토플, 토셀, 스피치">
+    <title>야나두</title> 
+    <!-- 메타정보 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto&display=swap" rel="stylesheet">
+    
+
+    <script src="./jquery.min.js"></script>
+
+    <style>
+    @charset "UTF-8";
+/*전체 스타일*/
+    *{margin: 0; padding: 0;}
+    body,html{width: 100%; height: 100%; margin: 0 auto; font-family:'Noto Sans KR','Roboto', sans-serif;}
+    /* body{overflow-x: hidden;} */
+    ul{list-style: none;}
+    a{text-decoration: none;}
+    button,label,input{background-image: none; border:0; outline: 0; background-color: transparent;}
+
+ /* 메뉴박스- 왼쪽 */
+ .rdo{display: none;}
+ .hd{width: 100%;height: 100%; position: fixed; z-index: 50;right: -80%; transition: 0.5s;}
+ 
+ .tb_btn_box{ width: 20%; height: 100vh;float: left; }
+ .tb_btn_box li{width: 100%; height: 11%; border-bottom: 0.5px solid #000; background: rgb(255, 211, 66);text-align: center; }
+ .tb_btn_box li .xi-bars{text-align: center; line-height: 2em; width: 100%; height: 100%;
+ box-sizing: border-box; background: #d0e69c; color: #470404; z-index: 100;}
+ .tb_btn_box li .xi-user{ background: #f5b38c; color: #470404; width:100%; height: 100%; padding-top: 20px; box-sizing: border-box;}
+ .tb_btn_box li label{width: 100%; height: 100%;display: block; margin: 0 auto;}
+ .tb_btn_box li #tb_btn3{background: rgb(255, 117, 117);width: 100%; height: 100%; display: block;}
+ .tb_btn_box li #tb_btn3, #tb_btn6, #tb_btn7, #tb_btn8, #tb_btn9{padding-top:22px;box-sizing: border-box; font-size: 14px; text-align: center;}
+ .tb_btn_box li #tb_btn4, #tb_btn5{padding-top: 15px; box-sizing: border-box; font-size: 14px;} 
+ 
+
+  /* 메뉴박스-오른쪽 */
+
+  .tb_con_box{ width: 80%; height: 667px;background: rgb(255, 255, 255);float: right;position: relative;top: 0;right: 0; }
+
+
+/*1.로그인 박스*/
+  .tb_con{width: 100%;height: 100%;position: absolute;top: 0;right: 0;}
+  .tb_con .tit{text-align: center; border-bottom: 1px solid #000;}
+  #tb_con1{display: none;}
+  #tb_con1 .tit{text-align: center; padding-top: 70px; padding-bottom: 16px; box-sizing: border-box;}
+  .frm1{width: 100%; height: 80%; text-align: center; margin-top: 50px;}
+  .frm1 .log_frm, .frm1 .pw_frm{border: 1px solid #000; text-indent:1em; margin-bottom: 10px; height: 35px;}
+  .frm_btn_frm{width: 100%;height: 50%; border: none; margin-top: 30px;}
+  .frm_btn_frm .btn_frm{display: block; width: 30%;height: 30px; border: 1px solid #000; margin: 0 auto; margin-top: 8px;}
+
+/*2.수강신청 박스*/
+ #tb_con2{display:none;width: 100%;height: 667px; background: rgb(255, 255, 255);}
+.tit{text-align: center; padding-top: 70px; padding-bottom: 16px; box-sizing: border-box; border-bottom: 1px solid #000;}
+.tb_con_box .menu{margin-top: 40px;}
+.tb_con_box .menu li{width: 100%; height: 50px; text-align:center; line-height: 2.5em;}
+.tb_con_box .menu li a{color: #000000;} 
+
+/* 이하 박스 */
+#tb_con3,  #tb_con4, #tb_con5, #tb_con6, #tb_con7, #tb_con8{display:none; width: 100%; height: 667px; background: #ffffff;}
+#ra1:checked ~ .tb_con_box #tb_con1{display: block;}
+#ra2:checked ~ .tb_con_box #tb_con2{display: block;}
+#ra3:checked ~ .tb_con_box #tb_con3{display: block;}
+#ra4:checked ~ .tb_con_box #tb_con4{display: block;}
+#ra5:checked ~ .tb_con_box #tb_con5{display: block;}
+#ra6:checked ~ .tb_con_box #tb_con6{display: block;}
+#ra7:checked ~ .tb_con_box #tb_con7{display: block;}
+#ra8:checked ~ .tb_con_box #tb_con8{display: block;}
+
+.lst_btn{position: relative; }
+.lst_btn .xi-bars{width: 40px; height: 40px; position: fixed; z-index: 30; top: 18px; right: 20px; color: #000000;
+background: #d0e69c; border-radius: 50px; text-align: center; padding-top: 3px; box-sizing: border-box;}
+
+
+
+
+</style>
+
+<script>
+
+$(document).ready(function(){
+    var ht = parseInt($(window).height());
+    $(window).scroll(function(){
+        var sc = parseInt($(window).scrollTop());
+        if(sc>=ht){
+            $(".hd").css("right","-120%");
+        }else{
+            $(".hd").css("right", "-80%");
+        }
+    });
+    
+    var sw1 = true;
+    $(".xi-bars, .lst_btn").click(function(){
+        if(sw1){
+            $(".hd").stop().animate({"right":"0px"},300);
+        }else {
+            $(".hd").stop().animate({"right":"-80%"},300);   
+        }
+        sw1=!sw1
+    });
+        $(".tb_btn").click(function(){
+            $(".hd").stop().animate({"right":"0px"},300);
+        });
+    
+    });
+    
+
+</script>
+<script>
+    $(document).ready(function(){
+        var wd = parseInt($(".pos_box").width());
+    $(".cbox li").click(function(){
+        var idx = $(this).index();
+        $(".poster").not(":animated").animate({"margin-left":wd*idx*-1+"px"},600);
+        $(".cbox li").removeClass("on");
+        $(this).addClass("on");
+    });
+});
+</script>
+
+<style>
+/* 메인 1시작 */
+body,html{width: 100%; height: 100%;}
+.wrap{width: 100%; height: 100%; clear: both; position: relative;}
+.logo_box{width: 30%; height: 29px;  }
+.logo_box .logo{width: 100%; height: 29px; position: relative; z-index: 10;}
+
+.logo_box .logo img{position: absolute; display: block; left: 6px; top: 6px;}
+
+
+
+
+
+.pos_box{width: 100vw; height: 100vh;z-index: 1; overflow-x: hidden; margin-top: -8%;}
+.pos_box .poster{width: 400%; height: auto;}
+.pos_box .poster li{ width: 25%;height: auto;float: left;}
+.pos_box .poster li a{display: block;width: 100%;}
+.pos_box .poster li img{display: block;width: 100%;}
+
+
+.item1 img{display: block; width: 100%;height:100%; margin-top: 46%; margin-left: -8%;}
+.item2{width: 100%; height: 100%;}
+.item2 img{display: block; background: #ffc800;width: 50%; height: 100%;}
+.item3 {width: 80%; height: 100%;background: #f5f5f5;}
+.item3 img{display: block; width: 50%;height: 50%; margin-top: 180px;}
+.item4 {width: 100%; height: 100%;background: #f5f5f5;}
+.item4 img{width: 300px; height: auto;margin-top: 180px;}
+
+.cbox{position: absolute;bottom: 10px;width: 100px;left:calc(50% - 50px);}
+.cbox li{width: 20px; height: 20px; float: left;padding-top: 20px;}
+.cbox li button{display: block; width: 10px; height: 10px; border-radius: 6px;background: #333333;}
+.cbox li.on button{background: rgb(99, 12, 12);}
+
+.sol_box{clear: both; width: 100%; height: auto;}
+.sol_box ul{width: 100%; height: auto; }
+.sol_box .ite1{width: 100%; height: 60%; background: #f5f5f5;}
+.sol_box .ite1 img{display: block; width: 100%; height: auto; padding-top: 50px;box-sizing: border-box;}
+.sol_box .ite2{width: 100%; height: 60%; background: #f5f5f5;}
+.sol_box .ite2 img{display: block; width: 100%; height: auto;padding: 8px; box-sizing: border-box;}
+.sol_box .ite3{width: 100%; height: 60%;background: #f5f5f5;}
+
+.sol_box .ite3 img{width: 100%;height: auto; display: block; padding: 8px; box-sizing: border-box;}
+.sol_box .ite4{width: 100%; height: 658px;background: #f5f5f5;}
+.sol_box .pre{width: 100%; height: auto; margin-top: 20px;}
+.sol_box .pre li{width: 50%; height: 40px; display: block; text-align: center;
+ background: rgb(255, 124, 48); margin: 0 auto; padding-top: 5px; box-sizing: border-box; }
+.sol_box .pre li a{color: #ffffff;  }
+.sol_box .ite4 img{width: 100%; height: auto; display: block;}
+.sol_box .ite5{width: 100%; height: auto;}
+.sol_box .ite5 img{display: block; width: 100%; height: auto;}
+
+.hot_box{width: 100%; height: 130%; position: relative;}
+
+.hot_box .htit{line-height: 0.4em; text-align: center; padding-top: 6%; box-sizing: border-box;}
+.hot_box h2{color: rgb(255, 116, 52); font-weight: bold;}
+.hot_box h3{color: rgb(49, 49, 49);}
+.hot_box .ranking{display: block; width: 100%; height: 100%; margin-top: 6%; margin-left: 1%;position: relative;}
+.hot_box .ranking li{  width: 100%; height: 22%;}
+.hot_box .ranking li a{display: block; width: 100%; height: 100%;}
+.hot_box .ranking li span{display: block; width: 30px; height: 30px; background: #333; color: #ffffff; text-align: center;
+ margin-top: 0; margin-left: 0;position: absolute;}
+ 
+ .hot_box .ranking li h4{font-size: 17px; font-weight: bold; color: #333333; 
+ padding-top: 3%;  padding-left: 58%;  box-sizing: border-box;}
+ .hot_box .ranking li h5{color: #5b5b5b; padding-top: 2%;  padding-left: 58%;  box-sizing: border-box;}
+ .hot_box .ranking li img{display: block; position: absolute; padding-left: 10%; box-sizing: border-box;}
+
+
+
+/* 푸터영역 */
+.ft{clear: both;width: 100%; height: 200px;  position: relative; background: rgb(160, 160, 160); }
+.flogo_box{width: 5px; height: 16px; position: absolute; margin-left: 10px; margin-top: 20px;}
+.ft_nav{ width: 100%; height: 48px;}
+.ft_nav ul{position: absolute; margin-left: 88px; margin-top: 12px;}
+.ft_nav ul li{float: left; padding-top:2px; padding-right: 5px;  font-size: 12px; }
+.ft_nav ul li a{color: #000;}
+.ft_nav ul li::after{content: "|"; padding-left: 5px;}
+.pra_box{position: absolute;margin-top: 10px;  margin-left: 12px; }
+.pra_box .address{font-size: 10px;}
+.pra_box .copyright{font-size: 10px;}
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+    <!-- 메뉴화면 전체 -->
+    <nav class="hd">
+            <input type="radio" name="rdo" class="rdo" id="ra1" checked>
+            <input type="radio" name="rdo" class="rdo" id="ra2">
+            <input type="radio" name="rdo" class="rdo" id="ra3" >
+            <input type="radio" name="rdo" class="rdo" id="ra4">
+            <input type="radio" name="rdo" class="rdo" id="ra5">
+            <input type="radio" name="rdo" class="rdo" id="ra6">
+            <input type="radio" name="rdo" class="rdo" id="ra7">
+            <input type="radio" name="rdo" class="rdo" id="ra8">
+            <input type="radio" name="rdo" class="rdo" id="ra9">
+              <ul class="main_menu">
+                    
+
+                <div class="tb_btn_box">
+                    <li><i class="xi-bars xi-2x"></i></li>
+                    <li><label for="ra1" class="tb_btn" id="tb_btn2">
+                        <i class="xi-user xi-2x"></i></label></li>
+                    <li><label for="ra2" class="tb_btn" id="tb_btn3">수강신청</label></li>
+                    <li><label for="ra3" class="tb_btn" id="tb_btn4">레벨<br>테스트</label></li>
+                    <li><label for="ra4" class="tb_btn" id="tb_btn5">야나두<br>특징</label></li>
+                    <li><label for="ra5" class="tb_btn" id="tb_btn6">강의소개</label></li>
+                    <li><label for="ra6" class="tb_btn" id="tb_btn7">수강후기</label></li>
+                    <li><label for="ra7" class="tb_btn" id="tb_btn8">무료특강</label></li>
+                    <li><label for="ra8" class="tb_btn" id="tb_btn9">이벤트</label></li>
+                </div>
+              </ul>
+
+            <div class="tb_con_box" >
+                    <div class="tb_con" id="tb_con1">
+                            <h3 class="tit">로그인</h3>
+
+                            <form action="" class="frm1">
+                                <input type="text" id="m_id" placeholder="아이디를 입력하세요" class="log_frm"><br>
+                                <input type="password" id="m_pw" placeholder="비밀번호를 입력하세요" class="pw_frm">
+
+                                <fieldset class="frm_btn_frm">
+                                    <input type="submit" class="btn_frm" value="로그인">
+                                    <input type="submit" class="btn_frm" value="취소">
+                                </fieldset>
+                            </form>
+                    </div>
+
+                <div class="tb_con" id="tb_con2">
+                    <h3 class="tit">수강신청</h3>
+                    <ul class="menu">
+                        <li class="item1"><a href="">평생수강</a></li>
+                        <li class="item2"><a href="">베이직 패키지</a></li>
+                        <li class="item3"><a href="">왕초보 마스터</a></li>
+                        <li class="item4"><a href="">리얼 시리즈</a></li>
+                        <li class="item5"><a href="">평생수강 프리미엄</a></li>
+                        <li class="item6"><a href="">군인 패키지</a></li>
+                        <li class="item7"><a href="">탭탭탭 패키지</a></li>
+                        <li class="item8"><a href="">전체 강좌 보기</a></li>
+                    </ul>
+                </div>
+
+                <div class="tb_con" id="tb_con3">
+                        <h3 class="tit">레벨테스트</h3>
+                        <ul class="menu">
+                            <li class="item1"><a href="">무료레벨테스트</a></li>
+                      </ul>
+                </div>
+
+                <div class="tb_con" id="tb_con4">
+                            <h3 class="tit">야나두특징</h3>
+                            <ul class="menu">
+                                <li class="item1"><a href="">장학금 시스템</a></li>
+                                <li class="item2"><a href="">1대1 보이스케어</a></li>
+                                <li class="item3"><a href="">10분 강의 시스템</a></li>
+                                <li class="item4"><a href="">회사소개</a></li>
+                            </ul>
+                </div>
+
+                <div class="tb_con" id="tb_con5">
+                        <h3 class="tit">강의소개</h3>
+                        <ul class="menu">
+                            <li class="item1"><a href="">전체 커리큘럼</a></li>
+                            <li class="item2"><a href="">왕기초이론</a></li>
+                            <li class="item3"><a href="">어순감각</a></li>
+                            <li class="item4"><a href="">느낌전달</a></li>
+                            <li class="item5"><a href="">문장확장</a></li>
+                            <li class="item6"><a href="">리얼 스피킹</a></li>
+                            <li class="item7"><a href="">리얼 영발음</a></li>
+                            <li class="item8"><a href="">리얼 영단어</a></li>
+                            <li class="item9"><a href="">리얼 영작문</a></li>
+                        </ul>
+                </div>
+
+                <div class="tb_con" id="tb_con6">
+                        <h3 class="tit">수강후기</h3>
+                        <ul class="menu">
+                            <li class="item1"><a href="">야나두 활용노하우</a></li>
+                            <li class="item2"><a href="">실시간 수강후기</a></li>
+                            <li class="item3"><a href="">어순감각</a></li>
+                            <li class="item4"><a href="">비포&애프터 후기</a></li>
+                            <li class="item5"><a href="">베스트 성공후기</a></li>
+                        </ul>
+                </div>
+
+                <div class="tb_con" id="tb_con7">
+                        <h3 class="tit">무료특강</h3>
+                        <ul class="menu">
+                            <li class="item1"><a href="">영어5일 완성반</a></li>
+                            <li class="item2"><a href="">스타특강쇼</a></li>
+                            <li class="item3"><a href="">독학 노하우</a></li>
+                            <li class="item4"><a href="">느낌전달</a></li>
+                            <li class="item5"><a href="">문장확장</a></li>
+                            <li class="item6"><a href="">리얼 스피킹</a></li>
+                            <li class="item7"><a href="">리얼 영발음</a></li>
+                            <li class="item8"><a href="">리얼 영단어</a></li>
+                            <li class="item9"><a href="">리얼 영작문</a></li>
+                        </ul>
+                </div>
+
+                <div class="tb_con" id="tb_con8">
+                        <h3 class="tit">이벤트</h3>
+                        <ul class="menu">
+                            <li class="item1"><a href="">이벤트</a></li>
+                            <li class="item2"><a href="">당첨자 발표</a></li>
+                </div>
+
+            </div>
+        </nav>
+    <!-- 메인 -->
+
+
+    <div class="lst_btn">
+        <i class="xi-bars xi-2x"></i>
+    </div>
+
+    <div class="wrap"> 
+        <div class="logo_box">
+        <a href="" class="logo">
+            <img src="./img/logo_eng_small.png" alt=""></a>
+        </div>
+        
+            <div class="pos_box">
+                <ul class="poster">
+                    <li class="item1"><a href=""><img src="./img/ban11.jpg" alt="조정석"></a></li>
+                    <li class="item2"><a href=""><img src="./img/kakao.png" alt="카카오 플친"></a></li>
+                    <li class="item3"><a href=""><img src="./img/product_04.png" alt="돈"></a></li>
+                    <li class="item4"><a href=""><img src="./img/product_05.png" alt="책"></a></li>
+                </ul>
+
+                 <ul class="cbox">
+                    <li class="it1 on"><button></button></li>
+                    <li class="it2"><button></button></li>
+                    <li class="it3"><button></button></li>
+                    <li class="it4"><button></button></li>
+                </ul>
+            </div>
+
+                
+            
+            <div class="sol_box">
+                <ul class="solution">
+                    <li class="ite1"><a href=""><img src="./img/sol1.png" alt="10분 공부법"></a></li>
+                    <li class="ite2"><a href=""><img src="./img/sol3.png" alt="보이스케어시스템"></a></li>
+                    <li class="ite3"><a href=""><img src="./img/sol2.png" alt="장학금 시스템"></a></li>
+                    <li class="ite4"><a href=""><img src="./img/sol4.png" alt="강사소개"></a>
+                    <ul class="pre">
+                        <li class="preli"><a href="">바로가기</a></li>
+                    </ul></li>
+                    <li class="ite5"><a href=""><img src="./img/good.jpg" alt="만족도"></a></li>
+                </ul>
+            </div>
+
+            <div class="hot_box">
+                <div class="t_box">
+                    <h3 class="htit">야나두</h3>
+                    <h2 class="htit">HOT RANKING</h3>
+                </div>
+                <ul class="ranking">
+                    <li class="hot1">
+                        <a href="">
+                            <span>1</span>
+                            <img src="./img/hot1.jpg" alt="반값특가">
+                            <h4 class="ptit">니포우포9 패키지</h4>
+                            <h5 class="ptit">5가지 특별한 혜택!<br> 마감 임박!</h5>
+                            
+                        </a>
+                        </li>
+                    <li class="hot2">
+                        <a href="">
+                            <span>2</span>
+                            <img src="./img/hot2.jpg" alt="베이직">
+                            <h4 class="ptit">베이직 패키지</h4>
+                            <h5 class="ptit">단언컨대, 야나두는 <br> 영어 진짜로 됩니다!</h5>
+                            
+                        </a>
+                    </li>
+                    <li class="hot3">
+                        <a href="">
+                            <span>3</span>
+                            <img src="./img/hot3.jpg" alt="군인우대">
+                            <h4 class="ptit">군인 우대 패키지</h4>
+                            <h5 class="ptit">대한민국 군인 특별가!</h5>
+                            
+                        </a>
+                    </li>
+                    <li class="hot4">
+                        <a href="">
+                            <span>4</span>
+                            <img src="./img/hot4.jpg" alt="">
+                            <h4 class="ptit">왕초보 마스터 패키지</h4>
+                            <h5 class="ptit">기초부터 실전까지 <br> 완벽 마스터!</h5>
+                            
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <footer class="ft">
+                    <div class="flogo_box">
+                            <a href="index.html" class="ft_logo">
+                                <img src="./img/flogo.png" alt="푸터로고">
+                            </a>
+                    </div>
+            
+                    <div class="ft_nav">
+                        <ul>
+                            <li class="fitem1"><a href="">회사소개</a></li>
+                            <li class="fitem2"><a href="">개인정보처리방침</a></li>
+                            <li class="fitem3"><a href="">이용약관</a></li>
+                            <li class="fitem4"><a href="">제휴문의</a></li>
+                            <li class="fitem5"><a href="">이메일 수집 거부</a></li>
+                            <li class="fitem6"><a href="">공고사항</a></li>
+                        </ul>
+                    </div>
+            
+                    
+                    <div class="pra_box">
+                        <p class="address">대표: 김민철<br> 주소: 서울특별시 서초구 강남대로 327 (서초동 1337-20, 대륭서초타워 19층)<br>
+                                TEL : 1600-0563  <br>Fax : 02-6455-7450<br>
+                                사업자 등록 번호 : 264-81-33050통신판매업 <br>신고번호 : 제2013-서울강남-01786호<br>
+                                원격 평생교육 시설신고 : 서울특별시 강남 서초교육지원청(제 원-516호)</p>
+            
+                        <p class="copyright">CopyrightCOPYRIGHT© 야나두. ALL RIGHTS RESERVED.</p>
+                    </div>
+            
+                </footer>
+
+    </div>
+
+
+
+    
+ 
+
+
+</body>
+</html>
