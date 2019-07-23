@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 우선 모든 페이지 틀과 헤더 부분을 잡고 만드세요 -->
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="swarovski, jewerly, watch, earing, 스와로브스키, 쥬얼리, 시계, 목걸이, 귀걸이, 악세사리, 선물">
+        <meta name="keyword" content="swarovski, jewerly, watch, earing, 스와로브스키, 쥬얼리, 시계, 목걸이, 귀걸이, 악세사리, 선물">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Questrial&display=swap" rel="stylesheet">
+        <title>스와로브스키</title>
+    <style>
+ @charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+body,html{width: 100%; margin: 0 auto;font-family: 'Noto Sans KR', sans-serif;font-family: 'Questrial', sans-serif;
+-ms-overflow-style: none;}
+::-webkit-scrollbar{display: none;}
+a{text-decoration: none;}
+ul{list-style: none;}
+label, button, input{background-image: none; background-color: transparent; border: 0; outline: 0;}
+
+    .hd{width: 100%; height: 80px; position: fixed; background: rgba(225, 225, 225,0.4); top: 0;left: 0; z-index: 99;}
+    .page{clear: both; width: 100%; height: 100vh;position: relative; overflow: hidden;}
+    .logo{display: block; width: 150px; height: 49px; float: left; margin-left: 20px; margin-top: 10px;}
+    #gnb{float: right; margin-right: 90px; margin-top: 30px}
+    #gnb li{float: left; padding-left: 2em;}
+    #gnb li a{color: #333333;}
+    #gnb .style{margin-top: 3px;}
+    .lst_btn{position: absolute; right: 0; display: block; width: 38px; height: 38px; margin-right: 1em;
+        font-size: 22px; border: 1px solid #000; margin-top: 1em;}
+    /* box-sizing:border-box; 를 써주면 안전하게 할 수 있음. .page에*/
+        
+/*lst_box 시작        */
+    .lst_box{display: none;width: 100%; height: 100vh; background: #000843;position: fixed; z-index: 999;}
+    .lst_box .lst_logo{display: block; margin-left: 20px; margin-top: 22px}
+    .lst_box .close{display: block; width: 36px; height: 36px;position: absolute; right: 0; top: 35px; margin-right: 1.6em;border: 1px solid #fff; }
+    .lst_box .close i{color: #fff; font-size: 25px;  }
+        .lst_menu{width: 60%; height: 50%; margin: 0 auto; margin-top: 8%; background: #fff;}
+        .lst_menu .litem{float: left; }
+        
+        
+/*    메인 1p 시작*/
+    .vs{width: 100%; height: 100vh;position: relative; clear: both;}
+    .vs .img_box{width: 400%; height: 100vh;}
+    .img_box li{width: 25%; height: 100vh; float: left; background-size: cover; background-repeat: no-repeat; background-position: center center; position: relative;}
+    .img_box li.item1{background-image: url("./img/SS19-ALWAYSON-DIGITAL-FEST03-OF-GL-CS-L-LD.jpg");}
+    .img_box li.item2{background-image: url("./img/SS19-WEDDING-VISUAL-BRIDE-DAY-1-OF-GL-CS-L-LD.jpg");}
+    .img_box li.item3{background-image: url("./img/main1.jpg");}
+    .img_box li.item4{background-image: url("./img/main3.jpg");}
+
+    .img_box li .vs_tit{padding-left: 40px; padding-top: 8em;transition: 0.6s; transition-delay:0.6s; opacity: 0; color: #9b0925; font-size: 50px;}
+    .img_box li .vs_com{padding-left: 40px; outline: 15em;transition: 0.6s; transition-delay:0.6s;opacity: 0; word-break: break-all; margin-top: 14px;}
+    .img_box li .vs_more{display: block;  width: 80px; margin-left: 40px; margin-top: 16px;transition: 0.6s; opacity: 0; border-radius: 20px; padding: 5px; text-align: center; transition:0.6s; transition-delay:0.6s; }
+/*   li.item1*/
+    .img_box li.item1 .vs_tit{ color: #9b0925; }
+    .img_box li.item1 .vs_com{color: #3b000b; }
+    .img_box li.item1 .vs_more{border: 1px solid #3b000b; color: #3b000b;}
+/*  li.item2*/
+    .img_box li.item2 .vs_tit{ color: #797507; }
+    .img_box li.item2 .vs_com{color: #212002; }
+    .img_box li.item2 .vs_more{border: 1px solid #212002; color: #212002;}
+/*   li.item3*/
+    .img_box li.item3 .vs_tit{ color: #072a6c; }
+    .img_box li.item3 .vs_com{color: #071b52; }
+    .img_box li.item3 .vs_more{border: 1px solid #071b52; color: #071b52;}
+/*  li.item4*/
+    .img_box li.item4 .vs_tit{ color: #196880; }
+    .img_box li.item4 .vs_com{color: #024053; }
+    .img_box li.item4 .vs_more{border: 1px solid #024053; color: #024053;}
+        
+        
+        
+
+    .img_box li.on .vs_tit{padding-left: 4rem; opacity: 1;} 
+    .img_box li.on .vs_com{padding-left: 4rem; opacity: 1;} 
+    .img_box li.on .vs_more{opacity: 1;margin-left: 4rem;}
+
+    .btn_box{width: 100px; height: 30px; position: absolute; top: 38%; left: calc(5.6% - 40px);}
+    .btn_box li{float: left; width: 22px; height: 30px;}
+
+    .btn_box li button{width: 12px; height: 12px; margin: 0 auto;  background: transparent;}
+    .btn_box li button i{color: #ffffff; font-size: 15px;}
+    .btn_box li.on button i{color: #00003c;}
+
+    #page1{background: rgb(192, 102, 102); }
+    #page2{background: rgb(102, 123, 192);}
+    #page3{background: rgb(163, 140, 11);}
+    #page4{background: rgb(122, 7, 61);}
+    .ft{clear: both; width: 100%; height: 120px; background: rgb(214, 133, 2);}
+    </style>
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $(document).ready(function(){
+                // 1) 한 페이지의 높이를 계산
+                var wh = $(window).height();
+                // 2) 페이지 마다의 top(꼭대기)로 부터의 해당 페이지 위치를 계산해서 지정
+                $(".page").each(function(index){
+                    $(this).attr("data-val", index*wh);
+                });
+                // 3) 해당 페이지 에서 마우스를 휠을 굴 때 - 위로 스크롤 할 때/ 아래로 스크롤 할 때
+                $(".page").on("mousewheel DOMMouseScroll", function(e){
+                    // 현재 페이지의 위치값을 불러오기
+                    var secPos = parseInt($(this).attr("data-val"));
+                    // wheelDelta:마우스 휠의 동작 값을 저장
+                    if(e.originalEvent.wheelDelta >= 0){
+                        $("html, body").stop().animate({scrollTop:secPos - wh});
+                        return false;
+                        // 위로 스크롤
+                    } else if(e.originalEvent.wheelDelta < 0){
+                        $("html, body").stop().animate({scrollTop:secPos + wh});
+                        return false;
+                        // 아래로 스크롤
+                    }
+                });
+                 var wd = parseInt($(".vs").width());
+                $(".btn_box li").click(function(){
+                    var idx = $(this).index();
+                    $(".img_box").not(":animated").animate({"margin-left":wd*idx*-1+"px"},600);
+                    $(".img_box li").removeClass("on");
+                    $(".img_box li").eq(idx).addClass("on");
+                    $(".btn_box li").removeClass("on");
+                    $(this).addClass("on");
+                 });
+            });
+    
+        
+        </script>
+</head>
+<body>
+<!--    헤더-->
+     <header class="hd">
+         <a href="" class="logo">
+             <img src="./img/logo.png" alt="로고">
+        </a>
+         <nav id="gnb">
+             <ul>
+                 <li><a href="">컬렉션</a></li>
+                 <li class="style"><a href="" >STYLE EDIT</a></li>
+                 <li><a href="">주얼리</a></li>
+                 <li><a href="">워치</a></li>
+                 <li><a href="">액세서리</a></li>
+             </ul>
+         </nav>
+     </header>
+     
+<!--     lst_box 시작-->
+    <div class="lst_box">
+           <a href="index8change.html" class="lst_logo">
+            <img src="./img/wlogo.png" alt="리스트박스 로고">
+           </a>
+           <button class="close"><i class="xi-close-thin"></i></button>
+           
+           <ul class="lst_menu">
+               <li class="litem"><a href="" class="dp1">컬렉션</a>
+                   <ul class="sub">
+                       <li class="subtem1"><a href="">SUMMER 컬렉션</a></li>
+                       <li class="subtem2"><a href="">아이코닉 컬렉션</a></li>
+                       <li class="subtem3"><a href="">ATELER SWAROVSKI</a></li>
+                   </ul>
+               </li>
+               <li class="litem"><a href="" class="dp1">STYLE EDIT</a>
+                   <ul class="sub">
+                       <li class="subtem1"><a href="">스토리</a></li>
+                       <li class="subtem2"><a href="">#FOLLOW THE LIGHT</a></li>
+                   </ul>
+               </li>
+               <li class="litem"><a href="" class="dp1">주얼리</a>
+                   <ul class="sub">
+                       <li class="subtem1"><a href="">이어링</a></li>
+                       <li class="subtem2"><a href="">네크리스</a></li>
+                       <li class="subtem3"><a href="">브레이슬릿</a></li>
+                   </ul>
+               </li>
+               
+               <li class="litem"><a href="" class="dp1">액세서리</a>
+                   <ul class="sub">
+                       <li class="subtem1"><a href="">크리스털 펜</a></li>
+                       <li class="subtem2"><a href="">키폴더</a></li>
+                       <li class="subtem3"><a href="">스마트폰 케이스</a></li>
+                   </ul>                
+               </li>
+               <li class="litem"><a href="" class="dp1">워치</a>
+                    <ul class="sub">
+                       <li class="subtem1"><a href="">전체보기</a></li>
+                       <li class="subtem2"><a href="">메탈 브레이슬릿</a></li>
+                       <li class="subtem3"><a href="">레더 스트랩</a></li>
+                       <li class="subtem4"><a href="">페브릭 및 크리스털 스트랩</a></li>
+                   </ul>               
+               </li>
+           </ul>
+    </div>
+
+     
+<!--     메인 1p시작-->
+     <div class="page" id="page1">
+         <!-- figure.vs>ul.img_box>li.item$*4>h2.vs_tit+p.vs_com+a.vs_more -->
+         <figure class="vs">
+             <ul class="img_box">
+                 <li class="item1 on">
+                     <h2 class="vs_tit">LET THE MUSIC PLAY</h2>
+                     <p class="vs_com">빛나는 Only 컬렉션의 주얼리로 당신이 여름 축제의 주인공이 되어보세요.</p>
+                     <a href="" class="vs_more">more</a>
+                 </li>
+                 <li class="item2">
+                     <h2 class="vs_tit">HERE COMES THE BRIDE</h2>
+                     <p class="vs_com">빛나는 주인공인 신부.<br>낮에는 품위있는 분위기로 우아함을 저녁엔 화려한 쥬얼리로 황홀함에 빠져보세요.</p>
+                     <a href="" class="vs_more">more</a>
+                 </li>
+                 <li class="item3">
+                     <h2 class="vs_tit">SUMMER COLLECTION</h2>
+                     <p class="vs_com">비비드한 썸머 아이템.<br>생동감 넘치는 디자인의 유쾌한 컬렉션으로 햇빛 가득한 시즌을 즐겨보세요.</p>
+                     <a href="" class="vs_more">more</a>
+                 </li>
+                 <li class="item4">
+                     <h2 class="vs_tit">TURE BLIU SWAN</h2>
+                     <p class="vs_com">스와로브스키 크리스털을 화이트와 블루 컬러 그라데이션의 파베 세팅으로 <br>섬세하게 디자인되어 새롭게 선보입니다.</p>
+                     <a href="" class="vs_more">more</a>
+                 </li>
+             </ul>
+             <!-- ul.btn_box>li.it$*4>button.btn -->
+             <ul class="btn_box">
+                 <li class="it1 on"><button class="btn"><i class="xi-sketch"></i></button></li>
+                 <li class="it2"><button class="btn"><i class="xi-sketch"></i></button></li>
+                 <li class="it3"><button class="btn"><i class="xi-sketch"></i></button></li>
+                 <li class="it4"><button class="btn"><i class="xi-sketch"></i></button></li>
+             </ul>
+         </figure>
+     </div>
+     <div class="page" id="page2">
+         
+     </div>
+     <div class="page" id="page3"></div>
+     <div class="page" id="page4"></div>
+     <footer class="ft"></footer>
+
+    
+    
+</body>
+</html>
