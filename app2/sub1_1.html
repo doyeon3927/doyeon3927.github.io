@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>롯데칠성사이다</title>
+    <link rel="shorcut icon" href="data/favicon.png">
+    <!-- 메타정보 -->
+    <meta name="title" content="롯데칠성음료">
+    <meta name="description" content="롯데칠성음료, 칠성사이다, 펩시콜라, 칸타타, 핫식스">
+    <meta name="keywords" content="롯데칠성음료, 칠성사이다, 펩시콜라, 칸타타, 핫식스">
+    <script src="./jquery.min.js"></script>
+    <!-- <script src="./bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap.min.css"> -->
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
+
+<!-- 부가적인 테마 -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"> -->
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<!-- <link rel="stylesheet" href="./xeicon.min.css">
+<link rel="stylesheet" href="./xeicon.css"> -->
+<link rel="stylesheet" href="./normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto&display=swap" rel="stylesheet">
+    <style>
+
+    /*메인과 서브의 공통 서식*/
+         @charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+body,html{width: 100%; height: 100%; margin: 0 auto; font-family: 'Noto Sans', 'Roboto', sans-serif;}
+ul{list-style: none;}
+a{text-decoration: none;}
+button,label,input{background-image: none; background-color:transparent; border: 0; outline: 0;}
+
+.hd{width: 100%; height:40px; }
+.logo{
+    position:absolute; 
+    top:0.5em;
+    left:calc(50% - 60px);
+    display: block; width:120px; height: 26px;
+    background-image: url("./img/logo.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center center;}
+
+.lst_btn  { display: block; float: left; margin-left: 10px; margin-top:7px;  }
+.sns_btn, .log_btn  { display: block; float: right; margin-right: 10px; margin-top: 7px;  }
+
+
+.lst_box, .sns_box, .log_box {position: fixed; width: 100%; height: 100vh; z-index: 999; transition: 0.3s;}
+.lst_box{left: -110%; top: 0;}
+.lst_box.on{left: 0;}
+.sns_box{ right:0 ; top:-110%; background:rgba(0,0,0,0.6); height: 200px; }
+.sns_box.on{top: 0;}
+.log_box{right: -110%; bottom: 0;  background: #fff;}
+.log_box.on{right: 0;}
+
+.lst_box{position: fixed; top: 0; width: 65%;height: 100%;z-index: 999;transition: 0.5s;
+background-image: url("img/bg.jpg");
+background-repeat: no-repeat;}
+.log_fr{width: 100%;height: 200px;padding-top: 40px;border-bottom: 1px solid #fff;}
+.login{display: block;margin: 0 auto; margin-top: 20px; width: 50px; height: 25px; font-size: 0.8em; border: 1px solid #fff;
+ background: rgb(248, 141, 141);color: #fff; border-radius: 10px;}
+.log_fr .log_pic{display: block; margin: 0 auto; margin-top: 40px; }
+.lst_box .close{color: #000; }
+
+
+.sns_box li{float: left; width: 50px; height: 50px; text-align: center;}
+.sns_box .main{width: 200px; height: 30%;  margin: 0 auto; margin-top: 80px; }
+
+.sns_box .main .sitem1 a{display: block; width: 50px; height: 50px; color: rgb(170, 3, 3); }
+.sns_box .main .sitem2 a{display: block; width: 50px; height: 50px; ; color: rgb(238, 71, 154);  }
+.sns_box .main .sitem3 a{display: block; width: 50px; height: 50px; color: rgb(0, 150, 236); }
+.sns_box .main .sitem4 a{display: block; width: 50px; height: 50px; color: rgb(8, 35, 192); }
+.sns_box .close{  display: block;  font-size: 0.8em; color: #ffffff;
+ bottom: 0; right: 0;position: absolute; margin-top: 150px;}
+
+
+
+.log_box .collat_tit{text-align: center; padding-top: 20px; padding-bottom: 8px;box-sizing: border-box; 
+border-bottom: 1px solid #000; }
+.frm1{width: 100%; height:100%;  padding-top: 80px; text-align: center; line-height: 1.5em;}
+.in_frm{ border: 1px solid #000; width: 80%; height: 30px; top: 40px; margin-top: 10px; text-indent: 10px;}
+
+.frm_btn_frm{width: 100%;  border: none; margin-top: 50px;}
+.btn_frm{display: block; width: 80%; height: 27px; margin: 0 auto; font-size: 0.8em;  margin-bottom: 2px;
+background: rgb(255, 209, 209);}
+.close{color: #000;  width: 50px; height: 50px; display: block; font-size: 20px;
+position: absolute;top: 3px; right: 0;}
+
+.lst_status{width: 100%; color: #ffffff; font-size: 1em;}
+.lst_status li{display: block; width: 33.3333%; float: left;
+  text-align: center; padding-top: 0.7em; padding-bottom: 0.5em;}
+.lst_status li span{display: block; line-height: 2em;}
+.lst_status li span .txt{font-size: 0.7em; font-weight: 600;}
+
+
+
+
+
+
+
+.ft{width: 100%; height: 90px; clear: both;}
+.fnb{width: 100%; height: 90px; background-color: rgb(250, 141, 141); }
+.ft_logo{}
+.ft_tab{float: left;}
+.address{font-size: 0.5em;}
+
+</style>
+
+    <script>
+    $(document).ready(function(){
+        $(".lst_btn").click(function(){
+            $(".lst_box").addClass("on");
+        });
+
+        $(".lst_box .close").click(function(){
+            $(".lst_box").removeClass("on");
+        });
+
+        $(".sns_btn").click(function(){
+            $(".sns_box").addClass("on");
+        });
+
+        $(".sns_box .close").click(function(){
+            $(".sns_box").removeClass("on");
+        });
+
+        $(".log_btn").click(function(){
+            $(".log_box").addClass("on");
+        });
+
+        $(".log_box .close").click(function(){
+            $(".log_box").removeClass("on");
+        });
+
+        
+    });
+    </script>
+
+    <style>
+    /*sub1.html만의 스타일*/
+    .content{clear: both; padding-top: 40px;}
+    .tb_box{width: 100%;}
+    .tb_box .tb_btn{display: block; width: 33.333%; line-height: 40; text-align: center;
+         background: #333333; color: #ffffff; position: absolute; top: 0px;z-index: 40; padding-top: 40px;}
+    #tab1 .tb_btn{left: 0;}
+    #tab2 .tb_btn{left: 33.3333%;}
+    #tab3 .tb_btn{left: 66.6666%;}
+    .tb_box:target .tb_btn{background: rgb(154, 229, 236);}
+    .tb_con{width: 100%; height: 100vh; display: none; padding-top: 40px;}
+    .tb_box:target .tb_con{display: block;}
+    </style>
+</head>
+<body>
+    <!-- header.hd>button.lst_btn+a.logo+button.sns+button.ev+button.log -->
+    <header class="hd">
+        <button class="lst_btn">
+            <i class="xi-bars xi-2x"></i>
+        </button>
+
+        <a href="index.html" class="logo"></a>
+
+        <button class="log_btn">
+            <i class="xi-user xi-2x"></i>
+        </button>
+
+        <button class="sns_btn">
+            <i class="xi-globus xi-2x"></i>
+        </button>
+    </header>
+
+    <!-- div.lst_box+div.sns_box+div.log_box+div.event_box -->
+    <div class="lst_box">
+            <button class="close"><i class="xi-close-thin xi-2x"></i></button>
+      <div class="log_fr">
+          <img src="./img/logimg.png" alt="로그인아이콘" class="log_pic">
+          <button class="login">로그인</button>
+          
+        </div>
+
+        <!-- ul.lst_status>li.ltem$*3>span*2 -->
+        <ul class="lst_status">
+            <li class="ltem1">
+                <span class="ico">0</span><br>
+                <span class="txt">칠성사이다</span>
+            </li>
+            <li class="ltem2">
+                <span class="ico">0</span><br>
+                <span class="txt">팹시콜라</span>
+                </li>
+            <li class="ltem3">
+                <span class="ico">0</span><br>
+                <span class="txt">델몬트</span>
+            </li>
+        </ul>
+
+        
+    </div>
+
+    <div class="sns_box">
+       <ul class="main">
+          <li class="sitem1">
+              <a href="sub1.html#tab1"><i class="xi-youtube xi-2x"></i></a>
+            </li>
+
+          <li class="sitem2">
+              <a href="sub1.html#tab2"><i class="xi-instagram xi-2x"></i></a>
+            </li>
+
+          <li class="sitem3">
+              <a href="sub1.html#tab3"><i class="xi-twitter xi-2x"></i></a>
+        </li>
+
+        <li class="sitem4">
+            <a href="sub1.html#tab4"><i class="xi-facebook xi-2x"></i></a>
+        </li>
+       </ul>
+
+       <button class="close"><i class=" xi-close-thin xi-x"></i></button>
+    </div>
+
+  
+
+    <div class="log_box">
+        <h3 class="collat_tit">로그인창</h3>
+
+    <form action="" class="frm1">
+        <input type="text" id="m_id" placeholder="아이디 입력" class="in_frm" ><br>
+        <input type="password" id="m_pw" placeholder="비밀번호 입력" class="in_frm">
+
+      <fieldset class="frm_btn_frm">
+         <input type="submit" class="btn_frm" value="로그인">
+         <input type="reset" class="btn_frm" value="취소">
+      </fieldset>
+    </form>
+
+    <button class="close"><i class="xi-close-thin xi-x"></i></button>
+    </div>
+
+   
+
+    <div class="content">
+        <div class="tb_box" id="tab1">
+            <a href="#tab1" class="tb_btn">칠성사이다</a>
+            <div class="tb_con">
+                <h3 class="tb_title">칠성사이다</h3>
+            </div>
+        </div>
+        <div class="tb_box" id="tab2">
+            <a href="#tab1">펩시콜라</a>
+            <div class="tb_con">
+                    <h3 class="tb_title">펩시콜라</h3>
+            </div>
+        </div>
+        <div class="tb_box" id="tab3">
+            <a href="#tab1">델몬트</a>
+            <div class="tb_con">
+                    <h3 class="tb_title">델몬트</h3>
+            </div>
+        </div>
+    </div>
+    <footer class="ft">
+        <nav class="fnb">
+            <ul class="menu">
+                <li class="ftab">
+                    <a href="" class="ft_logo"><img src="./img/ftlogo.PNG" alt=""></a>
+                </li>
+                <li><a href="">이용약관</a></li>
+                <li><a href="">개인정보처리방침</a></li>
+                <li><a href="">롯데칠성몰</a></li>
+                <li><a href="">신문고</a></li>
+                <li><a href="">사이트맵</a></li>
+            </ul>
+            <p class="address">서울특별시 송파구 올림픽로 269 롯데캐슬골드 4,5층<br></p>
+        </nav>
+    </footer>
+</div>
+</body>
+</html>
