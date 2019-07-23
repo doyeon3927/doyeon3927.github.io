@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="국립경주박물관, 박물관, 역사, 경주, 신라, 한국사, 통일신라">
+        <meta name="author" content="Lee Do Yeon">
+        <meta name="keyword" content="국립경주박물관, 박물관, 역사, 경주, 신라, 한국사, 통일신라">
+        <!-- 기본 세팅시 모바일 메신저로 넘기기 위한 세팅 -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="국립경주박물관">
+        <meta property="og:image" content="http://doyeon3927.github.io/gyeogju/data/logo2.png">
+        <meta property="og:description" content="국립경주박물관">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+        <link rel="shortcut icon" href="./data/favicon.png">
+        <link rel="stylesheet" href="./fnt.css">
+        <link rel="stylesheet" href="./common.css" type="text/css" media="all">
+        <link rel="stylesheet" href="./mobile.css" type="text/css" media="screen and (max-width:750px)">
+        <link rel="stylesheet" href="./tablet.css" type="text/css" media="screen and (min-width:751px) and (max-width:1000px)">
+        <link rel="stylesheet" href="./desktop.css" type="text/css" media="screen and (min-width:1001px)">
+    <title>국립경주박물관</title>
+    <!-- 데스크탑 용 -->
+    
+   
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        // 스크롤시 hd 색감변화
+        $(document).ready(function(){
+            $(window).scroll(function(){
+          var sc_top = parseInt($("body, html").scrollTop());
+            if(sc_top>=140 && sc_top<3000){
+                $(".hd").addClass("on");
+                $(".hd").removeClass("off");
+            } else if(sc_top>=3000) {
+                $(".hd").removeClass("on");
+                $(".hd").addClass("off");                      
+            } else {
+                $(".hd").removeClass("on");
+                $(".hd").removeClass("off");
+            } 
+            });    
+        });
+    </script>
+      
+<!--
+    <script>
+            $(document).ready(function(){
+                // 1) 한 페이지의 높이를 계산
+                var wh = $(window).height();
+                // 2) 페이지 마다의 top(꼭대기)로 부터의 해당 페이지 위치를 계산해서 지정
+                $(".main").each(function(index){
+                    $(this).attr("data-val", index*wh);
+                });
+                // 3) 해당 페이지 에서 마우스를 휠을 굴 때 - 위로 스크롤 할 때/ 아래로 스크롤 할 때
+                $(".main").on("mousewheel DOMMouseScroll", function(e){
+                    // 현재 페이지의 위치값을 불러오기
+                    var secPos = parseInt($(this).attr("data-val"));
+                    // wheelDelta:마우스 휠의 동작 값을 저장
+                    if(e.originalEvent.wheelDelta >= 0){
+                        $("html, body").stop().animate({scrollTop:secPos - wh});
+                        return false;
+                        // 위로 스크롤
+                    } else if(e.originalEvent.wheelDelta < 0){
+                        $("html, body").stop().animate({scrollTop:secPos + wh});
+                        return false;
+                        // 아래로 스크롤
+                    }
+                });
+                
+            });
+    
+        
+        </script>
+-->
+    
+</head>
+<body>
+    <!-- 헤더시작 -->
+    <header class="hd">
+        <div class="hd_wrap">
+            <a href="" class="logo">
+                <img src="./img/logo2.png" alt="로고">
+            </a>
+    <!-- tnb 시작 -->
+            <nav id="tnb">
+                <ul class="loc desk">
+                    <li class="log"><a href="">로그인</a></li>
+                    <li><a href="">HOME</a></li>
+                </ul>
+
+                <div class="lang">
+                    <p class="cur desk">KOR &nbsp;▼</p>
+                    <ul class="lang_sel">
+                        <li><a href="">ENGLISH</a></li>
+                        <li><a href="">中國語</a></li>
+                        <li><a href="">日本語</a></li>
+                    </ul>
+                </div>
+
+                <div id="search_btn"><button><i class="xi-search xi-x="></i></button> </div>
+                <div class="mo" id="lst_btn"><button><i class="xi-align-right xi-x="></i></button></div>               
+            </nav>
+            <div>
+            <i class="xi-spinner-4 xi-spin"></i><h5 class="open">오늘은 개관일 입니다.  관람시간 10:00 ~ 18:00 </h5>
+            </div>
+<!-- gnb시작 -->
+            <nav id="gnb">
+                <ul class="gnb_box">
+                    <li class="dp1 it1"><a href="" class="dept">관람정보</a>
+                        <ul class="sub first">
+                            <li class="dp2"><a href="">관람안내</a></li>
+                            <li class="dp2"><a href="">전시해설</a></li>
+                            <li class="dp2"><a href="">시설안내</a></li>
+                            <li class="dp2"><a href="">찾아오시는길</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="dp1 it2"><a href="" class="dept">전시</a>
+                        <ul class="sub">
+                            <li class="dp2"><a href="">상설전시</a></li>
+                            <li class="dp2"><a href="">특별전시</a></li>   
+                        </ul>
+                    </li>
+                    <li class="dp1 it3"><a href="" class="dept">교육ㆍ행사</a>
+                        <ul class="sub">
+                            <li class="dp2"><a href="">교육/행사소식</a></li>
+                            <li class="dp2"><a href="">교육프로그램</a></li>
+                            <li class="dp2"><a href="">문화행사</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="dp1 it4"><a href="" class="dept">소장품</a>
+                        <ul class="sub">
+                            <li class="dp2"><a href="">소장품검색</a></li>
+                            <li class="dp2"><a href="">국보ㆍ보물</a></li>
+                            <li class="dp2"><a href="">이달의문화재</a></li>
+             
+                        </ul>
+                    </li>
+                    <li class="dp1 it5"><a href="" class="dept">학술</a>                   
+                        <ul class="sub">
+                            <li class="dp2"><a href="">발간자료</a></li>
+                            <li class="dp2"><a href="">보존과학</a></li>
+                            <li class="dp2"><a href="">도서관</a></li>
+                           
+                        </ul>
+                    </li>
+                    <li class="dp1 it6"><a href="" class="dept">소식ㆍ참여</a>
+                        <ul class="sub last">
+                            <li class="dp2"><a href="">새소식</a></li>
+                            <li class="dp2"><a href="">월간소식지</a></li>
+                            <li class="dp2"><a href="">자원봉사</a></li>
+                         
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+    </div>
+</header>
+<!-- 메인 1시작 -->
+    <main class="main" id="main1">
+        <div class="main_wrap1">
+            <img src="./img/title.png" alt="" class="img_tit">
+            <ul class="cbox">
+                <li class="citem1">
+                    <a href="" class="item1_1">관람안내<i class="xi-calendar-list xi-x="></i></a>
+                </li>
+                <li class="citem2">
+                    <a href="" class="item2_1">오시는 길<i class="xi-map-o xi-x="></i></a>
+                </li>
+            </ul>
+<!-- 슬라이드 배너 -->
+           <div class="slide">
+                <ul class="ban_box">
+                    <li class="bitem1 on">
+                        <a href="">
+                            <img src="./img/ban1_1.jpg" alt="">
+                        </a>
+                    </li>
+                    <li class="bitem2">
+                        <a href="">
+                            <img src="./img/ban111.jpg" alt="">
+                        </a>
+                    </li>         
+                </ul>
+
+                <ul class="nbtn">
+                    <li><button class="lbtn"><span></span></button></li>
+                    <li><button class="rbtn"><span></span></button></li>          
+                </ul>       
+            </div>
+
+            <div class="bar">
+                <ul class="bar_box">
+                    <li class="btem1"><a href="">소식</a></li>
+                    <li class="btem2"><a href="">전시</a></li>
+                    <li class="btem3"><a href="">행사</a></li>
+                </ul>
+            </div>
+<!-- 새소식 부분 -->
+            <hr>
+            <div class="rbottom">               
+                <h3 class="rtit">새소식</h3>
+                <span class="c1"></span>
+                <ul class="rbox">
+                    <li class="ritem1">
+                        <a href="">
+                        <span class="c1_1"></span><br>
+                        <span class="date">2019.06.28</span><br>
+                        <span class="txt">2019 초중등교원연수(2차)...</span>
+                        </a>
+                    <li class="ritem2">
+                        <a href="">
+                        <span class="c2"></span><br>
+                        <span class="date">2019.06.10</span><br>
+                        <span class="txt"> 제35회 우리 문화재 그리기...</span>
+                        </a>
+                    <li class="ritem3">
+                        <a href="">
+                        <span class="c3"></span><br>
+                        <span class="date">2019.06.04</span><br>
+                        <span class="txt">경상북도 박물관 미술관 소장...</span>
+                        </a>
+                    </li>             
+                </ul>
+            </div>
+            <!-- 플러스 표시 -->
+            <div class="plus">
+                <i class="xi-plus"></i>
+            </div>
+            <!-- SNS시작 -->
+            <div class="sns_box">
+                <ul class="sns_menu">
+                    <li class="sitem1">
+                        <a href="" >
+                            <span class="facebook c"><i class="xi-facebook xi-x="></i></span>
+                            <span class="sns_text">facebook</span> 
+                        </a>
+                    </li>
+                    <li class="sitem2">
+                        <a href="" >
+                            <span class="instagram c"><i class="xi-instagram xi-x="></i></span>
+                            <span class="sns_text">instagram</span>
+                        </a>
+                    </li>
+                    <li class="sitem3">
+                        <a href="" >
+                            <span class="blogger c"><i class="xi-blogger xi-x="></i></span>
+                            <span class="sns_text">blogger</span>
+                        </a>
+                    </li>
+                    <li class="sitem4">
+                        <a href="">
+                            <span class="youtube c"><i class="xi-youtube-play xi-x="></i></span>
+                            <span class="sns_text">youtube</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+<!-- 메인 2P 시작 -->
+    </main>
+    <main class="main" id="main2">
+        <div class="main_wrap">
+            <h2 class="mtit">전시</h2>
+            <span class="csq"></span>
+
+            <div class="as_box">
+                <span class="always">상설</span>
+                <ul class="always_box">
+                    <li class="aitem1"><a href=""><img src="./img/image1.png" alt="신라역사관"></a></li>
+                    <li class="aitem2"><a href=""><img src="./img/image2.png" alt="신라미술관"></a></li>
+                    <li class="aitem3"><a href=""><img src="./img/image3.png" alt="월지관"></a></li>
+                    <li class="aitem4"><a href=""><img src="./img/image4.png" alt="옥외전시"></a></li>
+                </ul>
+
+                <span class="special">특별</span>
+                <ul class="special_box">
+                    <li class="sitem">
+                        <a href="">
+                            <img src="./img/index (14).jpg" alt="금관령 특별 전시">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+    <main class="main" id="main3">
+        <div class="main_wrap">
+            <ul class="img_box3">
+                <li class="iitem3">
+                    교육행사
+
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="ft">
+        <ul class="ft_nav">
+            <li class="ftem1"><a href="">박물관소개</a></li>
+            <li class="ftem2"><a href="">관람안내</a></li>
+            <li class="ftem3"><a href="">개인정보처리방침</a></li>
+            <li class="ftem4"><a href="">찾아오시는길</a></li>
+            <li class="ftem5"><a href="">저작권정책</a></li>
+        </ul>
+        <a href="" class="flogo">
+            <img src="./img/logo.png" alt="푸터로고">
+        </a>
+        <p class="f_com">(38171)경상북도 경주시 일정로 186 국립경주박물관  |  Tel : 054-740-7500  | Fax : 054-740-7522
+            <br> Copyright(c)2017 Gyeongju National Museum. All rights reserved.</p>
+    </footer>
+    
+    
+</body>
+</html>

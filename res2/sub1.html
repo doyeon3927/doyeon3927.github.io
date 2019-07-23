@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="국립경주박물관, 박물관, 역사, 경주, 신라, 한국사, 통일신라">
+        <meta name="author" content="Lee Do Yeon">
+        <meta name="keyword" content="국립경주박물관, 박물관, 역사, 경주, 신라, 한국사, 통일신라">
+        <!-- 기본 세팅시 모바일 메신저로 넘기기 위한 세팅 -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="국립경주박물관">
+        <meta property="og:image" content="http://doyeon3927.github.io/gyeogju/data/logo2.png">
+        <meta property="og:description" content="국립경주박물관">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+        <link rel="shortcut icon" href="./data/favicon.png">
+        <link rel="stylesheet" href="./fnt.css">
+        <link rel="stylesheet" href="./common.css" type="text/css" media="all">
+        <link rel="stylesheet" href="./mobile.css" type="text/css" media="screen and (max-width:750px)">
+        <link rel="stylesheet" href="./tablet.css" type="text/css" media="screen and (min-width:751px) and (max-width:1000px)">
+        <link rel="stylesheet" href="./desktop.css" type="text/css" media="screen and (min-width:1001px)">
+    <title>국립경주박물관</title>
+    <!-- 데스크탑 용 -->
+    
+   
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        // 스크롤시 hd 색감변화
+        $(document).ready(function(){
+            $(window).scroll(function(){
+          var sc_top = parseInt($("body, html").scrollTop());
+            if(sc_top>=140 && sc_top<3000){
+                $(".hd").addClass("on");
+                $(".hd").removeClass("off");
+            } else if(sc_top>=3000) {
+                $(".hd").removeClass("on");
+                $(".hd").addClass("off");                      
+            } else {
+                $(".hd").removeClass("on");
+                $(".hd").removeClass("off");
+            } 
+            });    
+        });
+    </script>
+
+    <style>
+     .hd{width: 100%; height: 120px; position: fixed; top: 0; left: 0; z-index: 10; border-bottom: 3px solid #fff;background: rgba(167, 3, 3);}
+    .hd.on{background: rgba(167, 3, 3);}
+    .logo{display: block; width: 173px; height: 40px; float: left; margin-top: 22px; margin-left: 26px;}
+    #tnb{ width: 380px; height: 55px;position: relative; float: right; margin-top: 1%; border-bottom: 2px solid rgb(255, 255, 255);}
+    #tnb .loc{width: 380px; height: 50px; }
+    #tnb .loc li{float: left;padding-right: 2em;padding-top: 1.2em; box-sizing: border-box;}
+    #tnb .loc .log{padding-left: 2.6em;box-sizing: border-box;}
+    #tnb .loc li a{color: #ffffff;}
+    .lang{float: right;position: absolute;top: 0;left: 50%;padding-top: 1.2em;}
+    .lang .cur{display: block; color: #ffffff;}
+    
+    .lang .lang_sel{transition: 0.3s; height: 0;background: #000;position:absolute; 
+        overflow:hidden; z-index:50;}
+    .lang .cur:hover .lang_sel{ height: 120px;}
+    
+    
+    .hd i{position: absolute; left: 1em; bottom: 9px;display: block; color: #ffffff;}
+    .hd .open{position: absolute; bottom: 8px; left: 3em; color: #ffffff;}
+    
+    .page { height:100vh; clear:both; margin-top: 6.4%;  }
+    .more { position:absolute; top:10%; right:10%; z-index:50; 
+    border-radius:24px; line-height:40px; padding:0px 15px; background:#333; color:#fff; }    
+
+    .page_title { text-align:center; line-height: 4em;font-size: 1.4em}
+    .form_in { width:900px; margin:0 auto; border-top:2px solid #333; }
+    .field { height:60px; border-bottom:1px solid #333; }
+    .field label { line-height:60px; display:block; width:150px; float:left; text-indent:2em; }
+    .field .data_f { display:block; float:left; height:32px; 
+    border:1px solid #333; width:650px; margin-top: 14px; text-indent:1em;    }
+    .field .data_f2 { display:block; width:300px; height:32px; float:left; margin-top:14px; border:1px solid #333; text-indent:1em; }
+    .frm_div { display:block; width:40px; text-align:center; float:left; line-height:60px; }
+    .frm_ra { display:none; }
+    .frm_ra + label:before { content:""; display:block; width:20px; height:20px; margin-top:20px; margin-left:20px; border:1px solid rgba(167, 3, 3); border-radius:20px; float:left; background:transparent; }
+    .frm_ra:checked + label:before { background:rgba(167, 3, 3); }
+    .frm_btn { display:block; width:180px; height:32px; margin-right: 50px; margin-top:12px; background:#333; color:#fff; text-align:center; float:left; border-radius:5px; }
+    </style>
+      
+<!--
+    <script>
+            $(document).ready(function(){
+                // 1) 한 페이지의 높이를 계산
+                var wh = $(window).height();
+                // 2) 페이지 마다의 top(꼭대기)로 부터의 해당 페이지 위치를 계산해서 지정
+                $(".main").each(function(index){
+                    $(this).attr("data-val", index*wh);
+                });
+                // 3) 해당 페이지 에서 마우스를 휠을 굴 때 - 위로 스크롤 할 때/ 아래로 스크롤 할 때
+                $(".main").on("mousewheel DOMMouseScroll", function(e){
+                    // 현재 페이지의 위치값을 불러오기
+                    var secPos = parseInt($(this).attr("data-val"));
+                    // wheelDelta:마우스 휠의 동작 값을 저장
+                    if(e.originalEvent.wheelDelta >= 0){
+                        $("html, body").stop().animate({scrollTop:secPos - wh});
+                        return false;
+                        // 위로 스크롤
+                    } else if(e.originalEvent.wheelDelta < 0){
+                        $("html, body").stop().animate({scrollTop:secPos + wh});
+                        return false;
+                        // 아래로 스크롤
+                    }
+                });
+                
+            });
+    
+        
+        </script>
+-->
+    
+</head>
+<body>
+    <!-- 헤더시작 -->
+    <header class="hd">
+        <div class="hd_wrap">
+            <a href="" class="logo">
+                <img src="./img/logo2.png" alt="로고">
+            </a>
+    <!-- tnb 시작 -->
+            <nav id="tnb">
+                <ul class="loc desk">
+                    <li class="log"><a href="">로그인</a></li>
+                    <li><a href="">HOME</a></li>
+                </ul>
+
+                <div class="lang">
+                    <p class="cur desk">KOR &nbsp;▼</p>
+                    <ul class="lang_sel">
+                        <li><a href="">ENGLISH</a></li>
+                        <li><a href="">中國語</a></li>
+                        <li><a href="">日本語</a></li>
+                    </ul>
+                </div>
+
+                <div id="search_btn"><button><i class="xi-search xi-x="></i></button> </div>
+                <div class="mo" id="lst_btn"><button><i class="xi-align-right xi-x="></i></button></div>               
+            </nav>
+            <div>
+            <i class="xi-spinner-4 xi-spin"></i><h5 class="open">오늘은 개관일 입니다.  관람시간 10:00 ~ 18:00 </h5>
+            </div>
+<!-- gnb시작 -->
+            <nav id="gnb">
+                <ul class="gnb_box">
+                    <li class="dp1 it1"><a href="" class="dept">관람정보</a>
+                        <ul class="sub first">
+                            <li class="dp2"><a href="">관람안내</a></li>
+                            <li class="dp2"><a href="">전시해설</a></li>
+                            <li class="dp2"><a href="">시설안내</a></li>
+                            <li class="dp2"><a href="">찾아오시는길</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="dp1 it2"><a href="" class="dept">전시</a>
+                        <ul class="sub">
+                            <li class="dp2"><a href="">상설전시</a></li>
+                            <li class="dp2"><a href="">특별전시</a></li>   
+                        </ul>
+                    </li>
+                    <li class="dp1 it3"><a href="" class="dept">교육ㆍ행사</a>
+                        <ul class="sub">
+                            <li class="dp2"><a href="">교육/행사소식</a></li>
+                            <li class="dp2"><a href="">교육프로그램</a></li>
+                            <li class="dp2"><a href="">문화행사</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="dp1 it4"><a href="" class="dept">소장품</a>
+                        <ul class="sub">
+                            <li class="dp2"><a href="">소장품검색</a></li>
+                            <li class="dp2"><a href="">국보ㆍ보물</a></li>
+                            <li class="dp2"><a href="">이달의문화재</a></li>
+             
+                        </ul>
+                    </li>
+                    <li class="dp1 it5"><a href="" class="dept">학술</a>                   
+                        <ul class="sub">
+                            <li class="dp2"><a href="">발간자료</a></li>
+                            <li class="dp2"><a href="">보존과학</a></li>
+                            <li class="dp2"><a href="">도서관</a></li>
+                           
+                        </ul>
+                    </li>
+                    <li class="dp1 it6"><a href="" class="dept">소식ㆍ참여</a>
+                        <ul class="sub last">
+                            <li class="dp2"><a href="">새소식</a></li>
+                            <li class="dp2"><a href="">월간소식지</a></li>
+                            <li class="dp2"><a href="">자원봉사</a></li>
+                         
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+    </div>
+</header>
+
+<div class="page" id="page1">
+    <div class="page_wrap">
+        <h3 class="page_title">회원가입</h3>
+        <form action="" id="frm1" method="post" class="form_in">
+            <div class="field">
+                <label for="m_name">성명</label>
+                <input type="text" id="m_name" class="data_f" placeholder="성명을 입력해주세요">
+            </div>
+            <div class="field">
+                <label for="m_id">아이디</label>
+                <input type="text" id="m_id" class="data_f" placeholder="아이디를 입력해주세요">
+            </div>
+            <div class="field">
+                <label for="m_pw">암호</label>
+                <input type="password" id="m_pw" class="data_f" placeholder="암호를 입력해주세요">
+            </div>
+            <div class="field">
+                <label for="m_pw2">암호확인</label>
+                <input type="password" id="m_pw2" class="data_f" placeholder="암호확인을 입력해주세요">
+            </div>
+            <div class="field">
+                <label for="m_email">이메일</label>
+                <input type="email" id="m_email" class="data_f2" placeholder="이메일을 입력해주세요">
+                <span class="frm_div">@</span>
+                <select name="email_sel" id="email_sel" class="data_f2">
+                    <option value="">선택안함</option>
+                    <option value="naver.com">네이버</option>
+                    <option value="daum.net">다음</option>
+                    <option value="gmail.com">지메일</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="m_hp">연락처</label>
+                <input type="tel" id="m_hp" class="data_f" placeholder="연락처를 입력해주세요">
+            </div>
+            <div class="field">
+                <label for="">성별</label>
+                <input type="radio" name="male" id="sex1" class="frm_ra" checked>
+                <label for="sex1">여성</label> 
+                <input type="radio" name="male" id="sex2" class="frm_ra">
+                <label for="sex2">남성</label> 
+            </div>
+            <div class="field">
+                <input type="submit" value="회원가입" class="frm_btn">
+                <input type="reset" value="가입취소" class="frm_btn">
+            </div>
+        </form>
+    </div>
+</div>
+
+    <footer class="ft">
+        <ul class="ft_nav">
+            <li class="ftem1"><a href="">박물관소개</a></li>
+            <li class="ftem2"><a href="">관람안내</a></li>
+            <li class="ftem3"><a href="">개인정보처리방침</a></li>
+            <li class="ftem4"><a href="">찾아오시는길</a></li>
+            <li class="ftem5"><a href="">저작권정책</a></li>
+        </ul>
+        <a href="" class="flogo">
+            <img src="./img/logo.png" alt="푸터로고">
+        </a>
+        <p class="f_com">(38171)경상북도 경주시 일정로 186 국립경주박물관  |  Tel : 054-740-7500  | Fax : 054-740-7522
+            <br> Copyright(c)2017 Gyeongju National Museum. All rights reserved.</p>
+    </footer>
+    
+    
+</body>
+</html>
