@@ -6,7 +6,7 @@ $(document).ready(function(){
         $("#gnb a.ap1").removeClass("on");
         $(this).addClass("on");
     });
-});
+
 
 var wd = parseInt ($(".vs").width());
 $(".btn_box li").click(function(){
@@ -16,3 +16,4 @@ $(".btn_box li").click(function(){
         $(this).addClass("on");
     });
 });
+

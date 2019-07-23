@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="common.css">
     <style>
     .wrap{width: 100%; height: 100%;}
-    .hd{width: 100%; height: 45%;
+    .hd{width: 100%; 
         background: #bdf3fd; /* Old browsers */
 background: -moz-linear-gradient(-45deg, #bdf3fd 0%, #4ab7f7 29%, #4095d6 56%, #006dc6 100%); /* FF3.6-15 */
 background: -webkit-linear-gradient(-45deg, #bdf3fd 0%,#4ab7f7 29%,#4095d6 56%,#006dc6 100%); /* Chrome10-25,Safari5.1-6 */
@@ -40,7 +40,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bdf3fd', end
 .top_btn li{float: left;}
 .top_btn li label{display: block; width: 25px; height: 25px;
  background-repeat: no-repeat; background-position: center; text-indent: -9999px;}
-.top_btn li.search label{background-image: url("./img/search.png");width: 30px;height: 30px;margin-right: 5px;}
+.top_btn li.search label{background-image: url("./img/search.png");width: 30px;height: 30px;}
 .top_btn li.menu label{background-image: url("./img/list.png"); width: 30px; height: 30px;}
 .close{display: block; width: 28px; height: 28px; background-image: url("./img/close.png");
  background-size: cover;}
@@ -54,8 +54,7 @@ transition: 0.5s;}
 
 .frm1{clear: both; padding-top: 1.6em; width: 250px; margin: 0 auto;}
 .frm1 input{display: block; float: left;}
-.in_data{width: 200px; line-height: 32px; border-radius: 20px; 
-border: 1px solid rgb(66, 66, 66); text-indent: 1em;}
+.in_data{width: 200px; line-height: 32px; border-radius: 20px; border: 1px solid rgb(66, 66, 66); text-indent: 1em;}
 .frm_btn{width: 32px; height: 32px; background-color: #000;
      background-image: url("./img/search.png");
      background-repeat: no-repeat; margin-left: 10px;
@@ -77,7 +76,7 @@ border: 1px solid rgb(66, 66, 66); text-indent: 1em;}
 #gnb li a.dp1.on:after{content: "▲";}
 #gnb:before {content: "MENU"; display: block; clear: both;
  width: 100%; line-height: 80px; font-size: 2em;
-text-align: center; border-bottom: 3px solid #333;}
+text-align: center; border-bottom: 1px solid #333;}
 #gnb .close{position: absolute; right: 20px; top: 20px;}
 
 .ft{clear: both; width: 100%; height: 140px; background: #333; color:#fff;
@@ -85,45 +84,34 @@ font-size: 0.8em; text-align: center; line-height: 1.6; padding-bottom: 15px;
 font-weight: 200; position: absolute; bottom: 0; left: 0;}
 .ft_wrap{width: 280px; margin: 0 auto;}
 </style>
-    <script>
-        $(document).ready(function(){
-            $("#gnb a.dp1").click(function(){
-                $(".sub").removeClass("on");
-                $(this).next(".sub").addClass("on");
-                $("#gnb a.dp1").removeClass("on");
-                $(this).addClass("on");
-            });
-        });    
-        </script>
+  <script>
+    $(document).ready(function(){
+        $("#gnb a.dp1").click(function(){
+            $(".sub").removeClass("on");
+            $(this).next(".sub").addClass("on");
+            $("#gnb a.dp1").removeClass("on");
+            $(this).addClass("on");
+        });
+    });    
+    </script>
     
 
     <style>
-    body,html{width: 100%; height: 100%; overflow: hidden;}
-    .vs{position: absolute; width: 80%; top: 50px; left: 10%; max-height: 55%; overflow:hidden; z-index: 1;}
-    .img_box{width: 500%; height: auto;}
-    .img_box li{width: 20%; height: auto; float: left;}
-    .img_box li a{display: block; width: 100%;}
-    .img_box li img{display: block; width: 100%; height: auto;}
+    body,html{width: 100%; height: 100%; overflow: auto;}
 
-    .btn_box{position: absolute; bottom: 0px; width: 100px; left: calc(50% - 50px);}
-    .btn_box li {width: 20px; height: 20px; float: left;}
-    .btn_box li button{display: block; width: 10px; height: 10px; border-radius: 6px;
-     background: #333333;}
-     .btn_box li.on button{background: rgb(46, 81, 255);}
-
-     .shortcut{width: 200px; margin: 50px auto; margin-top: 5em;border-right: 1px solid #ccc; border-bottom: 1px solid #ccc;height: 117px;}
-     .shortcut li{float: left; width: 65px; border-left: 1px solid rgb(155, 155, 155);border-top: 1px solid rgb(155, 155, 155);} 
-     .shortcut li a{display: block; }
-     .shortcut li span{display: block;}
-     .shortcut li span[class*=ico] {background-repeat: no-repeat; background-image: url("./img/split1.png");
-    width: 65px; height: 42px;}
-    .shortcut li span.ico1 {background-position: -100px -48px;}
-    .shortcut li span.ico2 {background-position: 8px 0;}
-    .shortcut li span.ico3 {background-position:  -100px -98px}
-    .shortcut li span.ico4 {background-position: -154px 0px;}
-    .shortcut li span.ico5 {background-position: -100px 0px;}
-    .shortcut li span.ico6 {background-position:  -48px -98px;}
-    .shortcut li span.txt {color: #333; font-size: 0.85em; text-align: center;}
+     .hd{height: 50px; 
+        position: fixed;  z-index: 80;}
+     .ft{position: fixed;bottom: 0px; left: 0; z-index: 80;}
+     .page_title{padding-top: 70px; text-align: center;} 
+     .frm2{clear: both;}
+     .frm2 fieldset{border: 0;}
+     .in_frm{display: block; width: 280px; clear: both; margin: 15px auto; line-height: 2;
+    font-size: 1em; color: #222; border: 1px solid #222; border-radius: 30px;}
+    .frm2 .in_frm{color: #222222; text-indent: 1em;}
+    .btn_frm{display: block; float: left; width: 100px; line-height: 32px; 
+        text-align: center; margin: 10px; background: #222222; color: #ffffff; border-radius: 20px;}
+    .frm_btn_frame{width: 240px; margin: 20px auto;}
+    
 
     </style>
     <script src="main.js"></script>
@@ -159,11 +147,11 @@ font-weight: 200; position: absolute; bottom: 0; left: 0;}
                 <!-- ul.hash>li*5>a  p.hash_title-->
                 <p class="hash_title">자주 사용하는 메뉴는 아래의 링크를 이용하세요!</p>
                 <ul class="hash">
-                    <li class="item1"><a href="sub1.html">채용공고</a></li>
-                    <li class="item2"><a href="sub2.html">순찰지역신청</a></li>
-                    <li class="item3"><a href="sub3.html">헤시메뉴3</a></li>
-                    <li class="item4"><a href="sub4.html">헤시메뉴4</a></li>
-                    <li class="item5"><a href="sub5.html">헤시메뉴5</a></li>
+                    <li class="item1"><a href="">채용공고</a></li>
+                    <li class="item2"><a href="">순찰지역신청</a></li>
+                    <li class="item3"><a href="">헤시메뉴3</a></li>
+                    <li class="item4"><a href="">헤시메뉴4</a></li>
+                    <li class="item5"><a href="">헤시메뉴5</a></li>
                 </ul>
                 <label for="ck1" class="close"></label>
             </nav>
@@ -218,91 +206,24 @@ font-weight: 200; position: absolute; bottom: 0; left: 0;}
             </nav>
         </header>
 
-        <figure class="vs">
-         <ul class="img_box">
-             <li class="item1">
-                 <a href="">
-                     <img src="./img/banner1.jpg" alt="호국 보훈의 달">
-                     <h2 class="vs_tit"></h2>
-                    </a>
-                </li>
-             <li class="item2">
-                 <a href="">
-                     <img src="./img/banner2.jpg" alt="독립운동가">
-                     <h2 class="vs_tit"></h2>
-                    </a>
-                </li>
-             <li class="item3">
-                 <a href="">
-                     <img src="./img/banner3.jpg" alt="디지털 성범죄 피해 방지">
-                     <h2 class="vs_tit"></h2>
-                    </a>
-                </li>
-             <li class="item4">
-                 <a href="">
-                     <img src="./img/banner4.jpg" alt="사이버 도박 특별 단속">
-                     <h2 class="vs_tit"></h2>
-                    </a>
-                </li>
-             <li class="item5">
-                 <a href="">
-                     <img src="./img/banner5.png" alt="지문 사전 등록">
-                     <h2 class="vs_tit"></h2>
-                    </a>
-                </li>
-         </ul>
+        <h2 class="page_title">회원가입</h2>
+     <from class="frm2">
+         <fieldset>
+             <input type="text" id="m_id" placeholder="아이디 입력" class="in_frm" name="m_id">
+             <input type="password" id="m_pw" placeholder="암호입력" class="in_frm" name="m_pw">
+             <input type="password" id="m_pw2" placeholder="암호확인" class="in_frm" name="m_pw2">
+             <input type="text" id="m_name" placeholder="이름입력" class="in_frm" name="m_name">
+             <input type="email" id="m_email" placeholder="이메일입력" class="in_frm" name="m_email">
+             <input type="file" id="m_pic" placeholder="사진첨부" class="in_frm" name="m_pic">
+             <input type="date" id="m_birth" placeholder="생년 월 일" class="in_frm" name="m_birth">
+         </fieldset>
 
-         <ul class="btn_box">
-             <li class="item1 on"><button></button></li>
-             <li class="item2"><button></button></li>
-             <li class="item3"><button></button></li>
-             <li class="item4"><button></button></li>
-             <li class="item5"><button></button></li>
-         </ul>
-        </figure>    
-        
-        
-            <nav class="shortcut">
-            <ul>
-                <li class="item1">
-                    <a href="list.html" rel="external">
-                        <span class="ico1"></span>
-                        <span class="txt">목록보기</span>
-                    </a>
-                </li>
-                <li class="item2">
-                    <a href="search.html">
-                        <span class="ico2"></span>
-                        <span class="txt">검색</span>
-                    </a>
-                </li>
-                
-                <li class="item3">
-                    <a href="tel:112">
-                        <span class="ico3"></span>
-                        <span class="txt">문자</span>
-                        </a>
-                    </li>
-                <li class="item4">
-                    <a href="news.html">
-                        <span class="ico4"></span>
-                        <span class="txt">전화연결</span>
-                        </a>
-                </li>
-                <li class="item5">
-                    <a href="communicate.html">
-                        <span class="ico5"></span>
-                        <span class="txt">소통게시판</span>
-                        </a>
-                    </li>
-                    <li class="item6">
-                        <a href="communicate.html">
-                            <span class="ico6"></span>
-                            <span class="txt">e-mail</span>
-                            </a>
-                        </li>
-            </ul>
-
+         <fieldset class="frm_btn_frame">
+             <input type="submit" class="btn_frm" value="회원가입">
+             <input type="reset" class="btn_frm" value="취소">
+         </fieldset>
+     </from>
+            
         <footer class="ft">
             <div class="ft_wrap">
                 <p class="copyright">
