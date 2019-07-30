@@ -20,26 +20,47 @@ body,html{width: 100%; margin: 0 auto;font-family: 'Noto Sans KR', sans-serif;fo
 a{text-decoration: none;}
 ul{list-style: none;}
 label, button, input{background-image: none; background-color: transparent; border: 0; outline: 0;}
+        
+/*lst_box 시작        */
 
-    .hd{width: 100%; height: 80px; position: fixed; background: rgba(225, 225, 225,0.4); top: 0;left: 0; z-index: 99;}
+.lst_logo{display: block; width:150px; height: 59px; position: absolute; top: 3%;left: 44%;}
+.main_menu{width: 84%;  margin: 0 auto; margin-top: 8%; }
+.close{display: block; width: 40px; height: 40px;position: absolute; right: 30px; top: 35px; border: 1.6px solid #fff;}
+.close i{color: #fff; font-size: 25px;  }
+        
+.collap { right:-110%;  position:fixed; top:0;  z-index:80; transition:0.7s; width: 100vw; height:100vh; background:#000843; 
+        box-sizing:border-box; padding-top:90px;z-index: 9999;}   
+.collap.on { right:0; }    
+.collap li { clear:both; position:relative; }    
+.collap li a { display: block; height: 40px; }    
+.collap li a.dep1 {  color:#fff; line-height:3;  cursor:pointer;  padding-left: 0.3rem;  height:46px; font-size:1rem;  }
+.collap li a.dep1:after { content:"▼"; position:absolute;  left:90%; }    
+.collap li.on a.dep1:after{ content:"▲";  }        
+.collap li ul.dep2 {display: none; visibility:visible; opacity:1; height:auto;  transition:0.6s; 
+    width:80%; margin-left: 8%; background:transparent; position:static; }
+
+.collap li.on ul.dep2 { display:block;}    
+.collap li ul.dep2 li { line-height:2.2;  border-bottom: 0.1px solid #fff;}     
+.collap li ul.dep2 li a { color:#fff; font-size:0.9rem; }   
+
+    .hd{width: 100%; height: 80px; position: fixed; background: rgba(225, 225, 225,0.3); top: 0;left: 0; z-index: 99;}
     .page{clear: both; width: 100%; height: 100vh;position: relative; overflow: hidden;}
     .logo{display: block; width: 150px; height: 49px; float: left; margin-left: 20px; margin-top: 10px;}
     #gnb{float: right; margin-right: 90px; margin-top: 30px}
     #gnb li{float: left; padding-left: 2em;}
-    #gnb li a{color: #333333;}
-    #gnb .style{margin-top: 3px;}
-    .lst_btn{position: absolute; right: 0; display: block; width: 38px; height: 38px; margin-right: 1em;
-        font-size: 22px; border: 1px solid #000; margin-top: 1em;}
+    #gnb li a{color: #000; font-size: 1em;}
+   
+    .lst_btn { display:block; width:40px; height:40px; box-sizing:border-box; border:1.4px solid #00003c; position:absolute;right:2%; top:0.7em; z-index:99; cursor:pointer; }
+    .lst_btn .line { display:block; height:1.5px; background:#00003c; position:absolute; right:0.5em; z-index:99; 
+    transition:0.4s; transform:rotate(0deg); }
+    .lst_btn .item1 { width:18px; top:1em; height:1.4px;}     
+    .lst_btn .item2 { width:24px; top:1.8em; height:1.6px;}    
+    .lst_btn:hover .item1 { width:27px; }    
+    .lst_btn:hover .item2 { width:20px; }  
+    
     /* box-sizing:border-box; 를 써주면 안전하게 할 수 있음. .page에*/
         
-/*lst_box 시작        */
-    .lst_box{display: none;width: 100%; height: 100vh; background: #000843;position: fixed; z-index: 999;}
-    .lst_box .lst_logo{display: block; margin-left: 20px; margin-top: 22px}
-    .lst_box .close{display: block; width: 36px; height: 36px;position: absolute; right: 0; top: 35px; margin-right: 1.6em;border: 1px solid #fff; }
-    .lst_box .close i{color: #fff; font-size: 25px;  }
-        .lst_menu{width: 60%; height: 50%; margin: 0 auto; margin-top: 8%; background: #fff;}
-        .lst_menu .litem{float: left; }
-        
+
         
 /*    메인 1p 시작*/
     .vs{width: 100%; height: 100vh;position: relative; clear: both;}
@@ -48,11 +69,11 @@ label, button, input{background-image: none; background-color: transparent; bord
     .img_box li.item1{background-image: url("./img/SS19-ALWAYSON-DIGITAL-FEST03-OF-GL-CS-L-LD.jpg");}
     .img_box li.item2{background-image: url("./img/SS19-WEDDING-VISUAL-BRIDE-DAY-1-OF-GL-CS-L-LD.jpg");}
     .img_box li.item3{background-image: url("./img/main1.jpg");}
-    .img_box li.item4{background-image: url("./img/main3.jpg");}
+    .img_box li.item4{background-image: url("./img/SS19-VD-DIGITAL-GINGER-HERO-OF-GL-CS-L-SD.jpg");}
 
-    .img_box li .vs_tit{padding-left: 40px; padding-top: 8em;transition: 0.6s; transition-delay:0.6s; opacity: 0; color: #9b0925; font-size: 50px;}
+    .img_box li .vs_tit{padding-left: 40px; padding-top: 30%; transition: 0.6s; transition-delay:0.6s; opacity: 0; font-size: 50px;}
     .img_box li .vs_com{padding-left: 40px; outline: 15em;transition: 0.6s; transition-delay:0.6s;opacity: 0; word-break: break-all; margin-top: 14px;}
-    .img_box li .vs_more{display: block;  width: 80px; margin-left: 40px; margin-top: 16px;transition: 0.6s; opacity: 0; border-radius: 20px; padding: 5px; text-align: center; transition:0.6s; transition-delay:0.6s; }
+    .img_box li .vs_more{display: block;  width: 80px; margin-left: 40px; margin-top: 16px;transition: 0.6s; opacity: 0; border-radius: 20px; padding: 5px; text-align: center; transition:0.6s; transition-delay:0.6s;}
 /*   li.item1*/
     .img_box li.item1 .vs_tit{ color: #9b0925; }
     .img_box li.item1 .vs_com{color: #3b000b; }
@@ -66,9 +87,9 @@ label, button, input{background-image: none; background-color: transparent; bord
     .img_box li.item3 .vs_com{color: #071b52; }
     .img_box li.item3 .vs_more{border: 1px solid #071b52; color: #071b52;}
 /*  li.item4*/
-    .img_box li.item4 .vs_tit{ color: #196880; }
-    .img_box li.item4 .vs_com{color: #024053; }
-    .img_box li.item4 .vs_more{border: 1px solid #024053; color: #024053;}
+    .img_box li.item4 .vs_tit{ color: #960762; }
+    .img_box li.item4 .vs_com{color: #61033f; }
+    .img_box li.item4 .vs_more{border: 1px solid #61033f; color: #61033f;}
         
         
         
@@ -77,58 +98,260 @@ label, button, input{background-image: none; background-color: transparent; bord
     .img_box li.on .vs_com{padding-left: 4rem; opacity: 1;} 
     .img_box li.on .vs_more{opacity: 1;margin-left: 4rem;}
 
-    .btn_box{width: 100px; height: 30px; position: absolute; top: 38%; left: calc(5.6% - 40px);}
+    .btn_box{width: 100px; height: 30px; position: absolute; top: calc(50% - 15px); left: calc(5.6% - 40px);}
     .btn_box li{float: left; width: 22px; height: 30px;}
 
     .btn_box li button{width: 12px; height: 12px; margin: 0 auto;  background: transparent;}
     .btn_box li button i{color: #ffffff; font-size: 15px;}
     .btn_box li.on button i{color: #00003c;}
 
+    .page{width: 100%; height: 100vh;}
     #page1{background: rgb(192, 102, 102); }
-    #page2{background: rgb(102, 123, 192);}
-    #page3{background: rgb(163, 140, 11);}
-    #page4{background: rgb(122, 7, 61);}
-    .ft{clear: both; width: 100%; height: 120px; background: rgb(214, 133, 2);}
-    </style>
-        <script src="https://code.jquery.com/jquery-latest.js"></script>
-        <script>
-            $(document).ready(function(){
-                // 1) 한 페이지의 높이를 계산
-                var wh = $(window).height();
-                // 2) 페이지 마다의 top(꼭대기)로 부터의 해당 페이지 위치를 계산해서 지정
-                $(".page").each(function(index){
-                    $(this).attr("data-val", index*wh);
-                });
-                // 3) 해당 페이지 에서 마우스를 휠을 굴 때 - 위로 스크롤 할 때/ 아래로 스크롤 할 때
-                $(".page").on("mousewheel DOMMouseScroll", function(e){
-                    // 현재 페이지의 위치값을 불러오기
-                    var secPos = parseInt($(this).attr("data-val"));
-                    // wheelDelta:마우스 휠의 동작 값을 저장
-                    if(e.originalEvent.wheelDelta >= 0){
-                        $("html, body").stop().animate({scrollTop:secPos - wh});
-                        return false;
-                        // 위로 스크롤
-                    } else if(e.originalEvent.wheelDelta < 0){
-                        $("html, body").stop().animate({scrollTop:secPos + wh});
-                        return false;
-                        // 아래로 스크롤
-                    }
-                });
-                 var wd = parseInt($(".vs").width());
-                $(".btn_box li").click(function(){
-                    var idx = $(this).index();
-                    $(".img_box").not(":animated").animate({"margin-left":wd*idx*-1+"px"},600);
-                    $(".img_box li").removeClass("on");
-                    $(".img_box li").eq(idx).addClass("on");
-                    $(".btn_box li").removeClass("on");
-                    $(this).addClass("on");
-                 });
-            });
+    #page2{background-image: url("./img/video-screenshot-branding.jpg");background-size: cover;background-position: center center;  background-attachment: fixed;position: relative;}
+    #page2 iframe{display: none; height: 100vh;width: 100vw;}
+    #page2 button{display: block; width: 100px; height: 100px; position: absolute; top: calc(72% - 50px); left: calc(50% - 50px);}
+    #page2 button i{color: #ffffff; font-size: 9em; font-weight: normal;}
+    #page3{background-image: url("./img/SS19-SUMMER-VISUAL-PRIO1-PF-GL-CS-S-LD.jpg"); background-repeat: no-repeat;background-size: cover;}
+    .white{width: 88%;height: 84%;background: rgba(255, 255, 255, 0.3);margin: 0 auto; margin-top: 7%;position: relative;}
+    .share{width: 100%;height: 100%;position: relative;}
+    .share li{float: left;}
+    .share .share1{display: block; width: 470px;height: auto;position: absolute; left: 3%;top: 3%;}
+    .share .share2{display: block; width: 400px; height: auto;position: absolute; bottom: 3%;left: 21%;}
+
+    .box{width: 42%;height: 56%;position: absolute; bottom: 25%;right: 3%;border: 1.6px solid #000;}
+    .wtit{line-height: 2em;padding-left: 29%;padding-top: 14%; box-sizing: border-box;font-size: 1.7em;}
+    .wtit2{padding-left: 20%;font-size: 1.4em; font-size: 18px;}
+    .box img{margin-left: 42%;margin-top: 6%;display: block;}
+
+    .go_btn{width: 45%; height: 50px; margin: 0 auto;margin-top: 3%;}
+    .go_btn a{display: block; width: 130px; height: 50px; border: 1.5px solid #000;text-align: center;
+    float: left; font-size: 1.2em; padding-top: 4%;box-sizing: border-box; margin-left: 6.2%;  margin-top: 4%;}
+
+    #page4{ width: 100%; height: 100vh;}
+    .thum_lst{width: 100%; height: 100%;}
+    .thum_lst li{width: 33.3333%; height: 100%; float: left; clear: none; background-repeat: no-repeat; background-position: center center; background-size: cover;}
+    .thum_lst li.thum_tem1 { background-image:url("./img/thummain1 (3).jpg"); }    
+    .thum_lst li.thum_tem2 { background-image:url("./img/FW19-ALWAYSON-KV-SWAPOW2-OF-GL-INS-L-LD.jpg"); }
+    .thum_lst li.thum_tem3 { background-image:url("./img/normal (5).jpg"); }
+    
+    .thum_tit { color:#fff; }
+    .thum_com { color:#fff; }   
+    .thum_lst li a { display:block; width:100%; height:100%; 
+        background:rgba(0,0,0,0.5); transition:0.5s; box-sizing:border-box; padding-top:6rem; } 
+    .thum_lst li a:hover { background:rgba(0,0,0,0); }    
+    .thum_lst .pic_box { clear:both; display:block; width: 120px; height: 120px; 
+        background-color:rgba(255,255,255, 0.6);  margin-left:42%; margin-top: 30%;
+        border-radius:70px; background-repeat: no-repeat; background-position:center center; }    
+    .thum_lst li.thum_tem1 .pic_box { background-image:url("./img/sec4_icon1.png"); }    
+    .thum_lst li.thum_tem2 .pic_box { background-image:url("./img/sec4_icon2.png"); }    
+    .thum_lst li.thum_tem3 .pic_box { background-image:url("./img/sec4_icon3.png"); }  
+    .thum_tit { font-size:2rem; line-height:3; margin-top: 3%;margin-left: 1.6%;
+        text-align:center; width: 100%; }
+    .thum_com { font-size:1.1rem; text-align:center;  
+        width: 100%; }    
+
+    .ft{clear: both; width: 100%; height: 130px; background: #000843; padding-top: 0.8%}
+        .ft_nav{width: 16%; height: 40px;  margin: 0 auto; }
+    .ft_nav li{float: left; width: 90px; height: 30px;  margin-right: 3%; text-align: center; }
+    .ft_nav li.ftem1{margin-left: 3%}
+    .ft_nav li a{color: #fff; display: block; width: 90px; height: 30px; padding-top: 0.2em; font-size: 0.9em;}
+    .address{color: #fff; font-size: 0.8em;text-align: center;line-height: 3em;}
+    .copyright{text-align: center; color: #fff;font-size: 0.8em;}
+    
+
+
+    @media screen and (max-width:767px) {
+        /* 모바일 사이즈 */
+        .close{display: block; width: 36px; height: 36px;position: absolute; top: 14px; right: 9px; border: 1.4px solid #fff;}
+        .lst_logo{display: block; width:110px; height: auto; position: absolute; top: 2%;left: 4%;}
+        .lst_logo img{display: block; width: 110px; height: auto;}
+        .main_menu{width: 84%;  margin: 0 auto; margin-top: 10%; }
+        
+        .hd{position: fixed;background: rgba(255,255,255,0.4); height: 58px;}
+        .logo{display: block; width: 100px; height: auto;}
+        .hd img{display: block; width: 100px; height: auto;}
+        #gnb { display:none; }
+        .img_box li.item1{background-image: url("./img/SS19-ALWAYSON-DIGITAL-FEST04-OF-GL-INS-L-SD.jpg");}
+        .img_box li.item2{background-image: url("./img/SS19-ALWAYSON-WEDDING-DAY-OF-GL-INS-L-SD.jpg");}
+        .img_box li.item3{background-image: url("./img/SS19-SUMMER-VISUAL-PRIO1-OF-GL-INS-L-LD.jpg");}
+        .img_box li.item4{background-image: url("./img/SS19-VD-DIGITAL-GINGER-INSTA-STORY-OF-GL-INS-L-SD-.jpg");background-position:  32%;}
+        #page2{ height: auto; background-image: url("./img/normal (6).jpg");background-repeat: no-repeat;background-size: cover;}
+        #page2 button{top: calc(50% - 50px);}
+        
+        .btn_box{width: 100px; height: 30px; position: absolute; top:calc(97% - 15px); left: calc(50% - 50px);}
+        .img_box li .vs_tit{padding-top: 90%; padding-right: 2rem;}
+        .img_box li .vs_com{word-break: break-all;padding-right: 2rem;}
+        .img_box li.on .vs_tit{padding-left: 2rem; opacity: 1;} 
+        .img_box li.on .vs_com{padding-left: 2rem; opacity: 1;} 
+        .img_box li.on .vs_more{margin-left: 2rem; opacity: 1;}
+        
+      .white{width: 100%;height: 100%;}
+        .share{width: 100%;height: 100%;margin-top: 15%}
+        .share li{width: 170px;}
+        .share .share1{width: 170px;height: auto; left: 3%;top: 3%;}
+        .share .share2{ width: 170px; height: auto;top: 3%;left: 52%;}
+
+        .box{width: 94%;height: 44%;position: absolute; bottom: 14%;right: 2.6%;}
+        .wtit{line-height: 2em;padding-left: 0; padding-top: 14%;font-size: 1.2em;text-align: center;}
+        .wtit2{ padding-left: 5%;padding-right: 5%; padding-bottom: 4%; font-size: 0.9em;text-align: center;}
+        .box img{margin-top: 6%;display: block; width: 90px; height: auto;margin: 0 auto;}
+
+        .go_btn{width: 72%;height: 60px;margin: 0 auto;}
+        .go_btn a{width: 110px; height: 40px;  padding-top: 2.7%; border: 1.4px solid #000;}
+
+        .thum_lst{width: 100%; height: 100%;}
+        .thum_lst li{width: 100%; height: 33.333%; }
+        .thum_lst li a{padding-top: -2rem;}
+        .thum_lst .pic_box { margin-left:5%; margin-top: -28px;}    
+        .thum_tit { font-size:1.7rem; line-height:3; margin-top: -28%;margin-left: 12%;
+        text-align:center; width: 100%; }
+        .thum_com { font-size:0.9rem; text-align:center;  margin-left: 11%;
+         width: 100%; } 
+        
+        .ft{clear: both; width: 100%; height: 156px; background: #000843; padding-top: 0.8%}
+        .ft_nav{width: 60%; height: 30px; margin-top: 3%;}
+        .ft_nav li{width: 60px;height: 30px;  margin-right: 3%;}
+        .ft_nav li.ftem1{margin-left: 10%}
+        .ft_nav li a{ width: 60px;height: 30px; padding-top: 0.2em; font-size: 0.9em;}
+        .address{margin-top: 2%; line-height: 1.8em;}
+        .copyright{font-size: 0.8em;}
     
         
-        </script>
+    }
+    @media screen and (min-width:768px) and (max-width:1280px){
+        /* 저해상도 데스크탑 및 태블릿 */
+        #gnb { display:none; }
+       
+    }    
+    @media screen and (min-width:1281px){
+        /* 고해상도 데스크탑 */
+        #gnb { display:block; }
+        .lst_btn{display: none;}
+        .btn_box{width: 100px; height: 30px; position: absolute; top: calc(53% - 15px); left: calc(5.6% - 40px);}
+     
+    }    
+</style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        /*페럴렉스 스크롤링*/
+        $(document).ready(function(){
+            // 1) 한 페이지의 높이를 계산
+            var wh = $(window).height();
+            // 2) 페이지 마다의 top(꼭대기)로 부터의 해당 페이지 위치를 계산해서 지정
+            $(".page").each(function(index){
+                $(this).attr("data-val", index*wh);
+            });
+            // 3) 해당 페이지 에서 마우스를 휠을 굴 때 - 위로 스크롤 할 때/ 아래로 스크롤 할 때
+            $(".page").on("mousewheel DOMMouseScroll", function(e){
+                // 현재 페이지의 위치값을 불러오기
+                var secPos = parseInt($(this).attr("data-val"));
+                // wheelDelta:마우스 휠의 동작 값을 저장
+                if(e.originalEvent.wheelDelta >= 0){
+                    $("html, body").stop().animate({scrollTop:secPos - wh});
+                    return false;
+                    // 위로 스크롤
+                } else if(e.originalEvent.wheelDelta < 0){
+                    $("html, body").stop().animate({scrollTop:secPos + wh});
+                    return false;
+                    // 아래로 스크롤
+                }
+            });
+            /*메인 이미지 슬라이드*/
+             var wd = parseInt($(".vs").width());
+            $(".btn_box li").click(function(){
+                var idx = $(this).index();
+                $(".img_box").not(":animated").animate({"margin-left":wd*idx*-1+"px"},600);
+                $(".img_box li").removeClass("on");
+                $(".img_box li").eq(idx).addClass("on");
+                $(".btn_box li").removeClass("on");
+                $(this).addClass("on");
+             });
+          });
+    </script>
+
+     <script>
+         /*리스트 비티엔 모바일 버전*/
+        $(document).ready(function(){
+            $(".lst_btn").click(function(){
+            $(".collap").addClass("on");
+        });
+
+        $(".collap .close").click(function(){
+            $(".collap").removeClass("on");
+        });
+       
+    });    
+    </script>
+    
+    
+   <script>
+    $(document).ready(function(){
+         $(".collap li").click(function(){
+               $(".collap li").removeClass("on");
+               $(this).addClass("on");
+        }); 
+        
+        $("#page2 button").click(function(){
+            $("#page2 iframe").css("display", "block");
+            $("#page2 button").css("display", "none");
+        });
+        
+    });
+    </script>
 </head>
 <body>
+<!--     lst_box 시작-->
+    <nav class="collap">
+           <a href="index.html" class="lst_logo">
+            <img src="./img/wlogo.png" alt="리스트박스 로고">
+           </a>
+           <button class="close"><i class="xi-close-thin"></i></button>
+           
+           <ul class="main_menu">
+               <li>
+                  <a class="dep1">컬렉션</a>
+                   <ul class="dep2">
+                       <li><a href="">SUMMER 컬렉션</a></li>
+                       <li><a href="">아이코닉 컬렉션</a></li>
+                       <li ><a href="">ATELER SWAROVSKI</a></li>
+                   </ul>
+               </li>
+               <li>
+                  <a class="dep1">STYLE EDIT</a>
+                   <ul class="dep2">
+                       <li><a href="">스토리</a></li>
+                       <li><a href="">#FOLLOW THE LIGHT</a></li>
+                   </ul>
+               </li>
+               <li >
+                  <a class="dep1">주얼리</a>
+                   <ul class="dep2">
+                       <li ><a href="">이어링</a></li>
+                       <li ><a href="">네크리스</a></li>
+                       <li><a href="">브레이슬릿</a></li>
+                   </ul>
+               </li>
+               
+               <li>
+                  <a class="dep1">액세서리</a>
+                   <ul class="dep2">
+                       <li ><a href="">크리스털 펜</a></li>
+                       <li ><a href="">키폴더</a></li>
+                       <li ><a href="">스마트폰 케이스</a></li>
+                   </ul>                
+               </li>
+               <li >
+                   <a class="dep1">워치</a>
+                    <ul class="dep2">
+                       <li ><a href="">전체보기</a></li>
+                       <li ><a href="">메탈 브레이슬릿</a></li>
+                       <li ><a href="">레더 스트랩</a></li>
+                       <li ><a href="">페브릭 및 크리스털 스트랩</a></li>
+                   </ul>               
+               </li>
+           </ul>
+    </nav>
+
 <!--    헤더-->
      <header class="hd">
          <a href="" class="logo">
@@ -143,54 +366,13 @@ label, button, input{background-image: none; background-color: transparent; bord
                  <li><a href="">액세서리</a></li>
              </ul>
          </nav>
+         <button class="lst_btn">
+            <span class="line item1"></span>
+            <span class="line item2"></span>
+         </button>
      </header>
      
-<!--     lst_box 시작-->
-    <div class="lst_box">
-           <a href="index8change.html" class="lst_logo">
-            <img src="./img/wlogo.png" alt="리스트박스 로고">
-           </a>
-           <button class="close"><i class="xi-close-thin"></i></button>
-           
-           <ul class="lst_menu">
-               <li class="litem"><a href="" class="dp1">컬렉션</a>
-                   <ul class="sub">
-                       <li class="subtem1"><a href="">SUMMER 컬렉션</a></li>
-                       <li class="subtem2"><a href="">아이코닉 컬렉션</a></li>
-                       <li class="subtem3"><a href="">ATELER SWAROVSKI</a></li>
-                   </ul>
-               </li>
-               <li class="litem"><a href="" class="dp1">STYLE EDIT</a>
-                   <ul class="sub">
-                       <li class="subtem1"><a href="">스토리</a></li>
-                       <li class="subtem2"><a href="">#FOLLOW THE LIGHT</a></li>
-                   </ul>
-               </li>
-               <li class="litem"><a href="" class="dp1">주얼리</a>
-                   <ul class="sub">
-                       <li class="subtem1"><a href="">이어링</a></li>
-                       <li class="subtem2"><a href="">네크리스</a></li>
-                       <li class="subtem3"><a href="">브레이슬릿</a></li>
-                   </ul>
-               </li>
-               
-               <li class="litem"><a href="" class="dp1">액세서리</a>
-                   <ul class="sub">
-                       <li class="subtem1"><a href="">크리스털 펜</a></li>
-                       <li class="subtem2"><a href="">키폴더</a></li>
-                       <li class="subtem3"><a href="">스마트폰 케이스</a></li>
-                   </ul>                
-               </li>
-               <li class="litem"><a href="" class="dp1">워치</a>
-                    <ul class="sub">
-                       <li class="subtem1"><a href="">전체보기</a></li>
-                       <li class="subtem2"><a href="">메탈 브레이슬릿</a></li>
-                       <li class="subtem3"><a href="">레더 스트랩</a></li>
-                       <li class="subtem4"><a href="">페브릭 및 크리스털 스트랩</a></li>
-                   </ul>               
-               </li>
-           </ul>
-    </div>
+
 
      
 <!--     메인 1p시작-->
@@ -205,17 +387,17 @@ label, button, input{background-image: none; background-color: transparent; bord
                  </li>
                  <li class="item2">
                      <h2 class="vs_tit">HERE COMES THE BRIDE</h2>
-                     <p class="vs_com">빛나는 주인공인 신부.<br>낮에는 품위있는 분위기로 우아함을 저녁엔 화려한 쥬얼리로 황홀함에 빠져보세요.</p>
+                     <p class="vs_com">낮에는 품위있는 분위기로 우아함을 저녁엔 화려한 쥬얼리로 황홀함에 빠져보세요.</p>
                      <a href="" class="vs_more">more</a>
                  </li>
                  <li class="item3">
                      <h2 class="vs_tit">SUMMER COLLECTION</h2>
-                     <p class="vs_com">비비드한 썸머 아이템.<br>생동감 넘치는 디자인의 유쾌한 컬렉션으로 햇빛 가득한 시즌을 즐겨보세요.</p>
+                     <p class="vs_com">비비드한 썸머 아이템.<br>생동감 넘치는 유쾌한 컬렉션으로 햇빛 가득한 시즌을 즐겨보세요.</p>
                      <a href="" class="vs_more">more</a>
                  </li>
                  <li class="item4">
-                     <h2 class="vs_tit">TURE BLIU SWAN</h2>
-                     <p class="vs_com">스와로브스키 크리스털을 화이트와 블루 컬러 그라데이션의 파베 세팅으로 <br>섬세하게 디자인되어 새롭게 선보입니다.</p>
+                     <h2 class="vs_tit">GIRL SQUAD GLAMOUR</h2>
+                     <p class="vs_com">눈부신 광채가 돋보이는 Ginger 컬렉션.<br> 친구들의 일상에 사랑과 반짝임을 더해주세요.</p>
                      <a href="" class="vs_more">more</a>
                  </li>
              </ul>
@@ -229,11 +411,67 @@ label, button, input{background-image: none; background-color: transparent; bord
          </figure>
      </div>
      <div class="page" id="page2">
+         <button><i class="xi-play-circle-o"></i></button>
+            <iframe width="auto" height="auto" src="https://www.youtube.com/embed/DZXfV6ZMk5I?amp;autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; encrypted-media; gyroscope; picture-in-picture" allowfullscreen p></iframe>
+            
+      
          
      </div>
-     <div class="page" id="page3"></div>
-     <div class="page" id="page4"></div>
-     <footer class="ft"></footer>
+     <div class="page" id="page3">
+         <div class="white">
+             <ul class="share">
+                 <li><img src="./img/normal (17).jpg" alt="" class="share1"></li>
+                 <li><img src="./img/normal(27).jpg" alt="" class="share2"></li> 
+             </ul>
+
+             <div class="box">
+                <h2 class="wtit">반짝이는 순간을 공유해보세요!</h2>
+                <h3 class="wtit2">공유를 원하시면 인스타그램에서 @swarovski를 탭하세요.</h3>
+                <img src="./img/dia.png" alt="" class="cris">
+                <div class="go_btn">
+                    <a class="looking">looking</a>
+                    <a class="sharing">sharing</a>
+                </div>
+            </div>
+         </div>
+     </div>
+     <div class="page" id="page4">
+        <ul class="thum_lst">
+            <li class="thum_tem1">
+                   <a href="">
+                    <div class="pic_box"></div>
+                    <h3 class="thum_tit">BRAND STORY</h3>
+                    <p class="thum_com">스와로브스키 이야기</p>
+                </a>
+                </li>
+            <li class="thum_tem2">
+                   <a href="">
+                    <div class="pic_box"></div>
+                    <h3 class="thum_tit">SNS</h3>
+                    <p class="thum_com">스와로브스키 소통</p>
+                </a>
+            </li>
+            <li class="thum_tem3">
+                <a href="">
+                    <div class="pic_box"></div>
+                    <h3 class="thum_tit">COMMUNITY</h3>
+                    <p class="thum_com">스와로브스키 고객센터</p>
+                </a>
+            </li>
+        </ul>    
+     </div>
+     <footer class="ft">
+         <ul class="ft_nav">
+             <li class="ftem1"><a href="">회사소개</a></li>
+             <li class="ftem2"><a href="">이용약관</a></li>
+             <li class="ftem3"><a href="">저작권</a></li>
+         </ul>
+   
+         <p class="address">서울시 강남구 도산대로 456 (청담동 백영빌딩10-13층) 06062 | 고객센터 ☏1522-9065 | 대표번호 ☏1661-9060 | 온라인 구매고객상담 kr.shophelp@swarovski.com 
+         </p>
+         <p class="copyright">© Swarovski Crystal Online AG</p>
+
+     </footer>
 
     
     
