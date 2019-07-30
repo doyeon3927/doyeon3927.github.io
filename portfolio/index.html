@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="title" content="이도연, Lee Do Yeon, 웹디자인, 퍼블리셔, 프론트엔드 개발">
+    <meta name="keywords" content="이도연, Lee Do Yeon, 웹디자인, 퍼블리셔, 프론트엔드 개발, ">
+    <meta name="auther" content="LEE DO YEON">
+    <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Noto+Serif+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./img/favicon.png"> 
+
+   <script src="prefixfree.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <title>이도연의 portfolio</title>
+    <style>
+    @charset "UTF-8";
+
+    *{margin: 0; padding: 0;}
+    body,html{width: 100%;height: 100%; margin: 0 auto;font-family: 'Noto Sans KR', sans-serif;font-family: 'Questrial', sans-serif;
+    -ms-overflow-style: none;}
+    ::-webkit-scrollbar{display: none;}
+    a{text-decoration: none;}
+    ul{list-style: none;}
+    label, button, input{background-image: none; background-color: transparent; border: 0; outline: 0;}
+    
+        .main{width: 100%; height: 100%;background-image: url("./img/bg1.jpg");background-repeat: no-repeat; background-size: cover; background-position: center center;position: relative;overflow: hidden;position: relative;}
+        .main_tit{color: #fff; font-size: 12em; word-spacing: 1.2em;text-align: center;}
+/*        .wborder{width: 500px; height: 500px; border: 5px solid #fff; position: absolute; left: calc(50% - 250px); top: calc(53% - 250px);}*/
+         .port_name{color: #fff; font-size: 8em;letter-spacing: 0.4em;position: absolute; top: 30%;}
+        .port_name2{color: #fff; font-size: 8em;letter-spacing: 0.24em;position: absolute; bottom: 20%;}
+        .line{ width: 13%; height: 200px;position: absolute; bottom: 12%;left: 6%; color: #fff;}
+        .line li{border-bottom: 1px solid #fff; font-size: 1.4em;width: 100%; height: 30px;margin-top: 5%;}
+        .line li:after{display: block; position: absolute; left: -2%;content:"";width: 10px; height: 10px; background: #a91543;}
+        
+        .tiem{width: 600px; height: 600px; position: relative; margin: 0 auto; }
+        #rect2{animation:mov2 10s; stroke-dasharray: 2500; animation-fill-mode: both;}
+        @keyframes mov2{
+            0%{stroke-dashoffset: 2500;}
+            100%{stroke-dashoffset: 0;}
+
+        }
+        .s_up{width: 100%;height: 100%; background: #5c00aa;position: absolute;z-index: 99;}
+        .s_up h1{color: #ffffff; font-size: 11em;text-align: center;line-height: 2.5;padding-top: 10%;box-sizing: border-box;}
+        .s_up span{color: #fff; font-size: 1em;display: block;width: 100px; height: 40px;margin: 0 auto;
+        margin-top: 5%;border: 1px solid #fff;}
+        #page1{width: 100%; height: 100%; background: #FC5C7D;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+position: relative;}
+        .page{position: relative;}
+        .hd{width: 748px; height: 48px; border: 1px solid #fff; border-radius: 26px;position: absolute;left: calc(50% - 374px); top: calc(8% - 25px);}
+        #gnb{width: 100%; height: 50px;}
+        .gnb_box{width: 100%; height: 50px;}
+        .gnb_box li{width: 140px; height: 30px; float: left; margin-right: 5%;text-align: center;margin-top: 1%;}
+        .gnb_box .gitem1{margin-left: 5%;}
+        .gnb_box a{display: block; width: 140px; height: 30px; color: #fff; padding-top: 6px; box-sizing: border-box;transition: 0.4s;}
+        .gnb_box a:hover{ color: #de205b;}
+        .pic{display: block; border-radius: 40px; width: 300px;height: 300px; position: absolute; left: calc(14% - 150px);top: 22%;}
+        .pofile_box{ width: 40%; height: 40%;position: absolute; margin-top: 10%;margin-left: 30%; border-radius: 15px}
+        .ctem{display: block; width: 16px; height: 35px; background: #763737;border-radius:9px; transform: rotate(145deg);
+        position: absolute;top: 21%;left: 28%; }
+        .pofile_box h3{color: #fff;opacity: 0;}
+        .pofile_box h3{font-size: 2em; padding-top: 60rem; line-height: 2; transition: 5s; transition-delay: 0.7s;}
+        .pofile_box .self{color: #fff; font-weight: normal;padding-top: 60rem; transition: 5s;font-size: 1em;transition-delay: 0.8s;}
+        
+        .pofile_box h3.on{padding-top: 1rem; opacity: 1;}
+        .pofile_box .self.on{padding-top: 2rem; opacity: 1;line-height: 1.6em; }
+        
+        .pofile_box .hello{color: #fff;margin-top: 7%;}
+        #page2{width: 100%; height: 100%; background:#2a4131; }
+   
+        
+  #page2 h1 {
+	font-family: 'Open Sans';
+	color: rgb(255, 255, 255);
+	text-align: center;
+	margin: 50px 0 -80px;
+}
+#page2 a {
+	font-family: 'Open Sans';
+	color: rgb(255, 255, 255);
+	margin: 50px 0 -80px;
+	text-align: center;
+	width: 100%;
+	font-size: 12px;
+	text-decoration: none;
+}
+        #wrapper{
+	position: relative;
+	top: 80px;
+	width: 404px;
+}
+.center {
+	left: 50%;
+	-webkit-transform: translate( -50% );
+	-ms-transform: translate( -50% );
+	transform: translate( -50% );
+}
+
+/*===== The CSS =====*/
+.progress{
+	width: 200px;
+	height: 280px;
+}
+.progress .track, .progress .fill{
+	fill: rgba(0, 0, 0, 0);
+	stroke-width: 3;
+	transform: rotate(90deg)translate(0px, -80px);
+}
+.progress .track{
+	stroke: rgb(56, 71, 83);
+}
+.progress .fill {
+	stroke: rgb(255, 255, 255);
+	stroke-dasharray: 219.99078369140625;
+	stroke-dashoffset: -219.99078369140625;
+	transition: stroke-dashoffset 1s;
+}
+.progress.blue .fill {
+	stroke: rgb(104, 214, 198);
+}
+.progress.green .fill {
+	stroke: rgb(186, 223, 172);
+}
+.progress .value, .progress .text {
+	font-family: 'Open Sans';
+	fill: rgb(255, 255, 255);
+	text-anchor: middle;
+}
+.progress .text {
+	font-size: 12px;
+}
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+		cursor: default;
+} 
+        
+        
+        
+        
+        
+        
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".s_up span").click(function(){
+                $(".s_up").slideUp(800);
+            });
+            
+            $("h3").addClass("on");
+            $(".self").addClass("on");
+        });
+    </script>
+    <script>
+    $(document).ready(function(){
+        var max = 150.72259521484375;
+        $.each($('.progress'), function( index, value ){
+            percent = $(value).data('progress');
+            $(value).children($('.fill')).attr('style', 'stroke-dashoffset: ' + ((100 - percent) / 100) * max);
+            $(value).children($('.value')).text(percent + '%');
+        });
+    });
+    </script>
+</head>
+<body>
+  
+<section class="main" id="main1"><!--메뉴의 각각 첫 페이지 goal-oriented-->
+    <h1 class="main_tit">LEE DO YEON</h1>
+  
+<!--
+    <div class="wborder">
+        
+    </div>
+-->
+    
+<div class="tiem cat2">
+    <svg id="svg2" width="1000"height="1000">
+        <rect x="50" y="30" width="500" height="500" style="fill:transparent; stroke:#fff; stroke-width:5; fill-opacity:0.9; stroke-opacity:1" id="rect2" />
+    </svg>
+</div>
+    <h1 class="port_name">PORT</h1>
+    <h1 class="port_name2">FOLIO</h1>
+   
+    <ul class="line">
+        <li class="litem1">UI/UX</li>
+        <li class="litem2">WEB DESIGNER</li>
+        <li class="litem3">PUBLISHER</li>
+    </ul>
+</section>
+ 
+ <section class="s_up">
+     <h1 class="s_up_tit">GOAL - ORIENTED</h1>
+     <span>open</span>
+ </section>
+  
+   <section class="page" id="page1">
+       <header class="hd">
+           <nav id="gnb">
+               <ul class="gnb_box">
+                   <li class="gitem1"><a href="">LEE DO YEON</a></li>
+                   <li class="gitem2"><a href="">AVILITY</a></li>
+                   <li class="gitem3"><a href="">GALLERLY</a></li>
+                   <li class="gitem4"><a href="">CONTACT</a></li>
+               </ul>
+           </nav>
+       </header>
+       
+       <img src="./img/ldy2.jpeg" alt="" class="pic">
+<!--       <span class="ctem"></span>-->
+       
+       <div class="pofile_box"> 
+           <h3 class="prof"># PROFILE</h3>
+           <p class="self">
+              이름 : 이도연 (Lee Do Yeon)<br>
+              나이 : 2* (19**.**.**)<br>
+              주소 : 대전광역시 유성구<br>
+              연락처: 010.3***.4***<br>
+              E-mail : doyeon3927@naver.com     
+           </p>
+           <p class="hello">
+              안녕하세요. 목표지향적인 사람 이도연 입니다.blabla<br>
+              dkwodj wdokdnajkduw djfhwd yd eiwodj sdhw diw <br>duwhod dgod d
+              skdw bbod biwidn duwojcnxo gwod eywhdos avwd suqo yqgdls dprbf.<br>
+              djhw dowjdg dpwu svabnbpf dlsha bpeybd dpduwbl sgcis. 
+           </p>
+          
+       </div>
+   
+   </section>
+   <section class="page" id="page2">
+       <div id="wrapper" class="center">
+	<svg class="progress blue noselect" data-progress="100" x="0px" y="0px" viewBox="0 0 80 80">
+		<path class="track" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+		<path class="fill" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+		<text class="value" x="50%" y="55%">0%</text>
+		<text class="text" x="50%" y="115%">Blue</text>
+	</svg>
+	<svg class="progress green noselect" data-progress="33" x="0px" y="0px" viewBox="0 0 80 80">
+		<path class="track" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+		<path class="fill" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+		<text class="value" x="50%" y="55%">0%</text>
+		<text class="text" x="50%" y="115%">Green</text>
+	</svg>
+</div>
+   </section>
+   <section class="page" id="page3">
+       
+   </section>
+   <section class="page" id="page4"></section>
+    
+</body>
+</html>
