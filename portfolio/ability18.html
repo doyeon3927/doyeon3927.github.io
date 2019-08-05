@@ -254,18 +254,20 @@ background: linear-gradient(to right, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, F
             100%{transform: scale(1.2);}
         }
        
-        #page1 img{display: block;position: absolute; top: 22%;left: 39%;}
-        #page1 .chat_pic1{display: block; position: absolute;top: 22%;left: 22%;}
-        #page1 .chat_pic2{display: block; position: absolute;top: 25%;left: 50%;}
-        #page1 .ps, #page1 .ai{left: 38%;}
+        #page1 img{}
         
-        .chat_box1{width: 100%; height: 100%;}
-        .chat_box1 ul{white-space: 100%; height: 100%;}
-        .chat_box1 li{float: left;width: 19.9%;height: 100%;position: relative;}
-        .chat_box1 li:nth-child(1),li:nth-child(2),li:nth-child(3),li:nth-child(4){border-right: 0.4px solid rgba(70, 4, 4, 0.27);}
         
+        
+        .chat_box1{width: 40%; height: 70%;background: rgba(255, 247, 247, 0.58);position: absolute; top: 15%;}
+        .chat_box1 ul{width: 100%; height: 100%;background: #355a44;}
+        .chat_box1 li{ width: 100%;height: 210px;background: rgba(255, 255, 255, 0.28);}
+       
+        .chat_box2{width: 40%; height: 50%; background: #ddd;position: absolute;right: 0;top: 0;}
+        
+/*
         #page1 h3{text-align: center; padding-top: 100%;color: #0b0b0b;font-size: 1.8rem;}
         #page1 h4{text-align: center; line-height: 1.6em;color: #0b0b0b; margin-top: 20%; padding-right: 4%;padding-left: 4%;box-sizing: border-box; font-weight: normal;}
+*/
         
 
         
@@ -447,18 +449,24 @@ background: linear-gradient(to right, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, F
               jQuery :메인메뉴, 사이드 메뉴, 로컬 메뉴, 상*하단 메뉴, 탭, 아코디언, 컬랩시블, 슬라이더, 레이어 팝업 등</h4>
               <h4 class="ghat_tit3"></h4>
           </li>
-          <li class="chat_item4">
-             <img src="./img/ps_logo.jpg" alt="" class="chat_pic ps">
-              <h3 class="chat_tit1">Ps</h3>
-              <h4 class="chat_tit2">이미지 편집, 시안 제작, 패턴 제작, 배너 제작, 사진 리터칭, 프로토타입 제작 등</h4>
-          </li>
-          <li class="chat_item5">
-             <img src="./img/ai_logo.jpg" alt="" class="chat_pic ai">
-              <h3 class="chat_tit1">Ai</h3>
-              <h4 class="chat_tit2">뉴스페이퍼, 매거진, 포스터, 사인, 전단지, 로고, 심볼, 패턴, 앰블럼, 아이콘, 타이포 등</h4>
-          </li>
-      </ul>
-    </div>    
+        </ul>
+    </div>
+    <div class="chat_box2">
+         <ul class="chat_lst2">
+              <li class="chat_item4">
+                 <img src="./img/ps_logo.jpg" alt="" class="chat_pic ps">
+                  <h3 class="chat_tit1">Ps</h3>
+                  <h4 class="chat_tit2">이미지 편집, 시안 제작, 패턴 제작, 배너 제작, 사진 리터칭, 프로토타입 제작 등</h4>
+              </li>
+              <li class="chat_item5">
+                 <img src="./img/ai_logo.jpg" alt="" class="chat_pic ai">
+                  <h3 class="chat_tit1">Ai</h3>
+                  <h4 class="chat_tit2">뉴스페이퍼, 매거진, 포스터, 사인, 전단지, 로고, 심볼, 패턴, 앰블럼, 아이콘, 타이포 등</h4>
+              </li>
+          </ul>
+    </div> 
+      
+      
  </section>
  
  
