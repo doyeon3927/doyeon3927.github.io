@@ -323,6 +323,7 @@ z-index: 9999;
     </style>
     <script>
         $(document).ready(function(){
+	    var cur;
             $(".gall_tit").addClass("on");
             $(".effect_wrap").addClass("on");
             //토글
@@ -339,7 +340,7 @@ z-index: 9999;
                 $("#img_box1").not(":animated").animate({"margin-left":idx*wd*-1+"px"}, 500);
                 $(this).addClass("on");
                 $(this).siblings().removeClass("on");
-                
+	    });	    
                 // 왼쪽, 오른쪽 슬라이드
                 $("#btn_box2 li.left button").click(function(){ //이전 이미지
                     ml = parseInt($("#img_box1").css("margin-left"));
