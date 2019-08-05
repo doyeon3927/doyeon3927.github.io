@@ -35,7 +35,148 @@
 background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-}    
+}  
+.toggle {
+  position: fixed;
+  display: block;
+  cursor: pointer;
+  top: 5%;
+  right: 0.7%;
+  transform: translate(-50%, -50%);
+z-index: 9999;
+}
+        
+.toggle:hover span{color: #f00;}
+        
+.toggle span {
+  display: block;
+  background: #FFF;
+  width: 42px;
+  height: 4px;
+  border-radius: 3px;
+  transition: 0.25s margin 0.25s, 0.25s transform;
+}
+.toggle span:nth-child(1) {
+    margin-bottom: 8px;
+}
+.toggle span:nth-child(3) {
+    margin-top: 8px;
+}
+.toggle.active span {
+    transition: 0.25s margin, 0.25s transform 0.25s;
+}
+.toggle.active span:nth-child(1) {
+  margin-top: 8px;
+  margin-bottom: -4px;
+    transform: rotate(45deg);
+}
+.toggle.active span:nth-child(2) {
+    transform: rotate(45deg);
+}
+.toggle.active span:nth-child(3) {
+  margin-top: -4px;
+    transform: rotate(135deg);
+}
+       
+
+        
+/*호버 효과, 메뉴*/
+        .dyEffects{width: 20%; height: 100%; background: rgba(6, 2, 28, 0.85); position: fixed; right: -100%; transition: 0.7s;z-index: 999;}
+        .dyEffects.on{right: 0;}
+        .border1{display: block; width: 64%; height: 2px; background: #fff;position: absolute; top: 5%;left: 8%;}
+       
+        .border2{display: block; width: 2px; height: 86.6%; background: #fff; position: absolute;top: 8.2%; right: 8%;}
+        .border3{display: block; width: 84%; height: 2px;background: #fff;position: absolute; bottom: 5%;left: 8%;}
+        .border4{display: block; width: 2px;background: #fff; position: absolute;height: 90%; top: 5%;left: 8%; }
+        
+ .dyEffects ul{
+     width: 50%;
+     height: 27%;
+	margin:0 auto;
+    margin-top: 70%;
+	text-align:center;
+
+     
+    
+}
+.dyEffects li{
+	width: 100%;
+    height: 42px;
+	margin-bottom: 30%;
+    
+}
+.dyEffects li a{
+	font-weight: 400;
+	font-size: 1.6em;
+	position: relative;
+	display: inline-block;
+	outline: none;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+    z-index: 9999;
+    
+}
+.dyEffects a:hover,
+.dyEffects a:focus {
+	outline: none;
+}
+
+.dyHoverEffect a:hover {
+	
+  -ms-animation: opacity forwards 1s;
+  -moz-animation: opacity forwards 1s;
+  -webkit-animation: opacity forwards 1s;
+  animation: opacity forwards 1s;
+}
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.dyHoverEffect a:before, 
+.dyHoverEffect a:after {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: "◯";
+  display: block;
+  width: 100%;
+  font-size: 0px;
+  color: #de205b;
+  text-align: center;
+  z-index: -100;
+}
+.dyHoverEffect a:hover::before {
+   animation: drop 1s;
+  -ms-animation: drop 1s;
+  -moz-animation: drop 1s;
+  -webkit-animation: drop 1s;
+}
+.dyHoverEffect a:hover::after {
+   animation: drop 1s 0.5s;	
+  -ms-animation: drop 1s 0.5s;
+  -moz-animation: drop 1s 0.5s;
+  -webkit-animation: drop 1s 0.5s;
+}
+@keyframes drop {
+  0% {
+    opacity: 1;
+    font-size: 0;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    font-size: 80px;
+    top: -50px;
+  }
+}        
+        
+        
     .main_tit{color: #fff; font-size: 1.9rem; letter-spacing: 0.3rem; float: left;padding-top: 1.2%; padding-left: 1.4%; font-family: 'Great Vibes', cursive; font-weight: normal;position: fixed;z-index: 9999;}
     .contact_tit{text-align: center; line-height: 7em; color: #fff; letter-spacing: 0.05em;padding-top: 2%;box-sizing: border-box;  text-shadow: 1px 1px 1px rgb(162, 162, 162); transition: 3s; opacity: 0;}
     .contact_tit.on{opacity: 1;}
@@ -101,13 +242,40 @@ background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, F
     </style>
     <script>
         $(document).ready(function(){
+            //title
             $(".contact_tit").addClass("on");
             $(".con_box li").addClass("on");
+            //toggle
+            $('.toggle').click(function(){
+                $(this).toggleClass('active');
+                $(".dyEffects").toggleClass("on");
+            });
         });
 
     </script>
 </head>
 <body>
+  
+  <nav class="dyEffects dyHoverEffect about">
+       <span class="border1"></span>
+       <span class="border1_1"></span>
+       <span class="border2"></span>
+       <span class="border3"></span>
+       <span class="border4"></span>
+   
+   <div class="toggle close">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+        
+        <ul class="about_box">
+            <li class="about_item1"><a href="about.html">ABOUT ME</a></li>
+            <li class="about_item2"><a href="ability.html">ABILITY</a></li>
+            <li class="about_item3"><a href="gallery.html">GALLERY</a></li>
+            <li class="about_item4"><a href="contact.html">CONTACT</a></li>
+        </ul>
+</nav>
    <div class="page" id="page1">
        <a href="index.html#page1"> <h1 class="main_tit">Dear.dy</h1></a>
        <h1 class="contact_tit"># CONTACT</h1>

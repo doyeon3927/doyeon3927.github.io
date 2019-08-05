@@ -10,8 +10,8 @@
     <meta name="keywords" content="이도연, Lee Do Yeon, 웹디자인, 퍼블리셔, 프론트엔드 개발, ">
     <meta name="auther" content="LEE DO YEON">
     <meta name="description" content="">
-    <link href="https://fonts.googleapis.com/css?family=Dosis|Noto+Serif+KR&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    
+    
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
@@ -24,9 +24,11 @@
      @charset "UTF-8";
 
     *{margin: 0; padding: 0;}
-    body,html{width: 100%;height: 100%; margin: 0 auto;font-family: 'Noto Sans KR', sans-serif;font-family: 'Questrial', sans-serif;background: #FC5C7D;  /* fallback for old browsers */
+    body,html{width: 100%;height: 100%; margin: 0 auto;font-family: 'Questrial', sans-serif;background: #FC5C7D;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to left, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
     -ms-overflow-style: none;}
     ::-webkit-scrollbar{display: none;}
     a{text-decoration: none;}
@@ -82,7 +84,7 @@ z-index: 9999;
 
         
 /*호버 효과, 메뉴*/
-        .dyEffects{width: 20%; height: 100%; background: rgba(255, 255, 255, 0.14); position: fixed; right: -100%; transition: 0.7s;z-index: 999;}
+        .dyEffects{width: 20%; height: 100%; background: rgba(255, 255, 255, 0.2); position: fixed; right: -100%; transition: 0.7s;z-index: 999;}
         .dyEffects.on{right: 0;}
         .border1{display: block; width: 64%; height: 2px; background: #fff;position: absolute; top: 5%;left: 8%;}
        
@@ -208,8 +210,8 @@ z-index: 9999;
         .loc2.on{opacity: 1; }
         .about_tit3{padding-bottom: 4px; box-sizing: border-box; color: #fff;}
         .profile_box3{position: relative;width: 50%; margin-top: 1.6%;line-height: 1.4em;color: #fff;}
-        .lic_tit1{padding-left: 4%;line-height: 1.6em;}
-        .lic_tit2{padding-left: 4%;}
+        .lic_tit1{padding-left: 4%;line-height: 1.6em; font-weight: normal;}
+        .lic_tit2{padding-left: 4%;font-weight: normal;}
         
         .about_tit4{ padding-top: 37.9%;padding-bottom: 4px; box-sizing: border-box; color: #fff;}
         
@@ -246,11 +248,11 @@ z-index: 9999;
        <span class="border3"></span>
        <span class="border4"></span>
    
-       <div class='toggle close'>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+   <div class="toggle close">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
         
         <ul class="about_box">
             <li class="about_item1"><a href="about.html">ABOUT ME</a></li>
@@ -258,7 +260,7 @@ z-index: 9999;
             <li class="about_item3"><a href="gallery.html">GALLERY</a></li>
             <li class="about_item4"><a href="contact.html">CONTACT</a></li>
         </ul>
-     </nav>
+</nav>
    
 <section class="page" id="page1">
    
