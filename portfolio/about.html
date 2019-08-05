@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="title" content="이도연, Lee Do Yeon, 웹디자인, 퍼블리셔, 프론트엔드 개발">
+    <meta name="keywords" content="이도연, Lee Do Yeon, 웹디자인, 퍼블리셔, 프론트엔드 개발, ">
+    <meta name="auther" content="LEE DO YEON">
+    <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Noto+Serif+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./img/favicon.png"> 
+
+   <script src="prefixfree.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <title>이도연의 portfolio</title>
+    <style>
+     @charset "UTF-8";
+
+    *{margin: 0; padding: 0;}
+    body,html{width: 100%;height: 100%; margin: 0 auto;font-family: 'Noto Sans KR', sans-serif;font-family: 'Questrial', sans-serif;background: #FC5C7D;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -ms-overflow-style: none;}
+    ::-webkit-scrollbar{display: none;}
+    a{text-decoration: none;}
+    ul{list-style: none;}
+    label, button, input{background-image: none; background-color: transparent; border: 0; outline: 0;}
+        
+/*    intro 대 메인*/
+        #page1{width: 100%;}
+.main_tit{color: #fff; font-size: 1.9rem; letter-spacing: 0.3rem; float: left;padding-top: 1.2%; padding-left: 1.4%; font-family: 'Great Vibes', cursive; font-weight: normal;position: fixed;z-index: 9999;}
+/* 토글버튼       */
+.toggle {
+  position: fixed;
+  display: block;
+  cursor: pointer;
+  top: 5%;
+  right: 0.7%;
+  transform: translate(-50%, -50%);
+z-index: 9999;
+}
+        
+.toggle:hover span{color: #f00;}
+        
+.toggle span {
+  display: block;
+  background: #FFF;
+  width: 42px;
+  height: 4px;
+  border-radius: 3px;
+  transition: 0.25s margin 0.25s, 0.25s transform;
+}
+.toggle span:nth-child(1) {
+    margin-bottom: 8px;
+}
+.toggle span:nth-child(3) {
+    margin-top: 8px;
+}
+.toggle.active span {
+    transition: 0.25s margin, 0.25s transform 0.25s;
+}
+.toggle.active span:nth-child(1) {
+  margin-top: 8px;
+  margin-bottom: -4px;
+    transform: rotate(45deg);
+}
+.toggle.active span:nth-child(2) {
+    transform: rotate(45deg);
+}
+.toggle.active span:nth-child(3) {
+  margin-top: -4px;
+    transform: rotate(135deg);
+}
+       
+
+        
+/*호버 효과, 메뉴*/
+        .dyEffects{width: 20%; height: 100%; background: rgba(255, 255, 255, 0.14); position: fixed; right: -100%; transition: 0.7s;z-index: 999;}
+        .dyEffects.on{right: 0;}
+        .border1{display: block; width: 64%; height: 2px; background: #fff;position: absolute; top: 5%;left: 8%;}
+       
+        .border2{display: block; width: 2px; height: 86.6%; background: #fff; position: absolute;top: 8.2%; right: 8%;}
+        .border3{display: block; width: 84%; height: 2px;background: #fff;position: absolute; bottom: 5%;left: 8%;}
+        .border4{display: block; width: 2px;background: #fff; position: absolute;height: 90%; top: 5%;left: 8%; }
+        
+ .dyEffects ul{
+     width: 50%;
+     height: 27%;
+	margin:0 auto;
+    margin-top: 70%;
+	text-align:center;
+
+     
+    
+}
+.dyEffects li{
+	width: 100%;
+    height: 42px;
+	margin-bottom: 30%;
+    
+}
+.dyEffects li a{
+	font-weight: 400;
+	font-size: 1.6em;
+	position: relative;
+	display: inline-block;
+	outline: none;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+    z-index: 9999;
+    
+}
+.dyEffects a:hover,
+.dyEffects a:focus {
+	outline: none;
+}
+
+.dyHoverEffect a:hover {
+	
+  -ms-animation: opacity forwards 1s;
+  -moz-animation: opacity forwards 1s;
+  -webkit-animation: opacity forwards 1s;
+  animation: opacity forwards 1s;
+}
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.dyHoverEffect a:before, 
+.dyHoverEffect a:after {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: "◯";
+  display: block;
+  width: 100%;
+  font-size: 0px;
+  color: #de205b;
+  text-align: center;
+  z-index: -100;
+}
+.dyHoverEffect a:hover::before {
+   animation: drop 1s;
+  -ms-animation: drop 1s;
+  -moz-animation: drop 1s;
+  -webkit-animation: drop 1s;
+}
+.dyHoverEffect a:hover::after {
+   animation: drop 1s 0.5s;	
+  -ms-animation: drop 1s 0.5s;
+  -moz-animation: drop 1s 0.5s;
+  -webkit-animation: drop 1s 0.5s;
+}
+@keyframes drop {
+  0% {
+    opacity: 1;
+    font-size: 0;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    font-size: 80px;
+    top: -50px;
+  }
+}
+        .page{width: 100%; position: relative;}
+        .about_me{text-align: center;line-height: 7em; color: #fff; letter-spacing: 0.05em;box-sizing: border-box;transition: 2s; opacity: 0;font-size: 1.9rem;}
+        .about_me.on{opacity: 1;}
+        
+        .pic{ display: none;width: 230px;height: auto; position: absolute; left: calc(13% - 150px);top: 17%;}
+      
+        .loc{position: relative;opacity: 0;width: 700px;margin-left: 24%;}
+        .loc.on{opacity: 1;transition: 2s;}
+        
+        .about_tit1{box-sizing: border-box; color: #fff;padding-bottom: 4px;}
+        .hr_line{display: block;height: 2px; background: #fff;animation-name: go1; animation-duration: 1.6s; animation-fill-mode: both; }
+        @keyframes go1{
+            0%{width: 0;}
+            100%{width: 50%;}
+        }
+        .profile_box{ position: relative;width: 100%; height: 52%; margin-top: 1.6%;}
+        
+        .pro_tem{font-size: 1em;line-height: 1.7; transition: 5s; color: #fff;}
+        .hello{margin-top: 2%; color: #fff; font-weight: normal;text-indent: 1em;line-height: 1.4em;}
+        
+        .profile_box2{position: relative;width: 100%; margin-top: 1.6%;}
+        .about_tit2{padding-bottom: 4px;padding-top: 13%; box-sizing: border-box; color: #fff;}
+        .hline{display: block;left: 0.86%; width: 2px; height: 240px; background: #fff;position: absolute;}
+        .circle{display: block; margin-bottom: 12%; width: 13px; height: 13px; background: #fff; border-radius: 7px;}
+        .cir_tit1{position: absolute; top: 0; left: 5%; color: #fff;font-weight: normal;}
+        .cir_tit2{position: absolute; top: 48%; left: 5%;color: #fff;font-weight: normal;}
+        .cir_tit3{position: absolute; top: 96%; left: 5%;color: #fff;font-weight: normal;}
+       
+        .loc2{position: absolute;width: 700px;top: 17.2%;right: 5%;transition: 2s; opacity: 0;}
+        .loc2.on{opacity: 1; }
+        .about_tit3{padding-bottom: 4px; box-sizing: border-box; color: #fff;}
+        .profile_box3{position: relative;width: 50%; margin-top: 1.6%;line-height: 1.4em;color: #fff;}
+        .lic_tit1{padding-left: 4%;line-height: 1.6em;}
+        .lic_tit2{padding-left: 4%;}
+        
+        .about_tit4{ padding-top: 37.9%;padding-bottom: 4px; box-sizing: border-box; color: #fff;}
+        
+        .aboutMe_typo{width: 930px; height: 200px; margin-top: 12%;}
+        .typo{ animation-name: typo; animation-duration: 4s; animation-iteration-count: infinite; stroke-dasharray: 2500; width: 800px; height: 400px;}
+        @keyframes typo{
+        0%{stroke-dashoffset: 2500;}
+        100%{stroke-dashoffset: 0;}
+        }
+        
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('.toggle').click(function(){
+                $(this).toggleClass('active');
+                $(".dyEffects").addClass("on");
+            });
+            $(".about_me").addClass("on");
+            $(".pic").fadeIn('3000');
+            $(".loc").addClass("on");
+            $(".loc2").addClass("on");
+            
+        });
+    </script>
+</head>
+<body>
+
+      
+        
+ <nav class="dyEffects dyHoverEffect about">
+       <span class="border1"></span>
+       <span class="border1_1"></span>
+       <span class="border2"></span>
+       <span class="border3"></span>
+       <span class="border4"></span>
+   
+       <div class='toggle close'>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <ul class="about_box">
+            <li class="about_item1"><a href="about.html">ABOUT ME</a></li>
+            <li class="about_item2"><a href="ability.html">ABILITY</a></li>
+            <li class="about_item3"><a href="gallery.html">GALLERY</a></li>
+            <li class="about_item4"><a href="contact.html">CONTACT</a></li>
+        </ul>
+     </nav>
+   
+<section class="page" id="page1">
+   
+    <a href="index.html#page1"> <h1 class="main_tit">Dear.dy</h1></a>
+    
+    <h3 class="about_me"># ABOUT ME</h3>
+    
+    <img src="./img/ldy4.jpg" alt="" class="pic">
+    
+    <div class="loc">
+      <h3 class="about_tit1"># LEE DO YEON</h3>
+      <span class="hr_line"></span>
+      <div class="profile_box">          
+           <p class="pro_tem">
+              이름 : 이도연 (Lee Do Yeon)<br>
+              나이 : 2* (19**.**.**)<br>
+              주소 : 대전광역시 유성구<br>
+              연락처: 010.3***.4***<br>
+              E-mail : doyeon3927@naver.com   
+           </p>
+           <p class="hello">
+              안녕하세요. 오늘보다 더 나은 내일을 향해 뛰는 '이도연' 입니다.<br>
+              웹 퍼블리셔로서의 코딩 기술들을 깔끔하게 다루면서 감각있는 디자인을.<br>
+              추후엔 백엔드 분야까지 나아가 실력있는 개발자가 되는것이 저의 목표입니다.
+           </p>       
+       </div>
+       
+       <h3 class="about_tit2"># EDUCATION</h3>
+      <span class="hr_line"></span>
+      
+      <div class="profile_box2">             
+            <span class="hline"></span>
+            <span class="circle"></span><br>
+            <span class="circle"></span><br>
+            <span class="circle"></span>
+             
+            <h4 class="cir_tit1">새로운거 배운거 넣어야징~~</h4>  
+            <h4 class="cir_tit2"> 2019.03 ~ 2019.08그린컴퓨터아트학원 수료<br>&nbsp; 스마트웹_콘텐츠서비스개발_하이브리드웹, 웹앱</h4>
+            <h4 class="cir_tit3"> 2015.03 ~ 2019.02 목원대학교 경찰법학과 졸업</h4>      
+       </div>
+    </div>
+    <div class="loc2">
+       
+      <h3 class="about_tit3"># LICENSE</h3>
+      <span class="hr_line"></span>
+      
+      <div class="profile_box3">              
+            <h4 class="lic_tit1">2019 &nbsp;  웹디자인 기능사</h4>  
+            <h4 class="lic_tit2">2019 &nbsp;  다른 자격증1</h4>
+                
+       </div>
+       
+      <h3 class="about_tit4"># AWARDS</h3>
+      <span class="hr_line"></span>
+      
+      <div class="profile_box3">              
+            <h4 class="lic_tit1">2019 &nbsp;  수상경력1</h4>  
+            <h4 class="lic_tit2">2019 &nbsp;  수상경력2</h4>  
+       </div>
+</div>
+       
+    <div class="aboutMe_typo">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         width="927.5px" height="178px" viewBox="0 0 927.5 178" enable-background="new 0 0 927.5 178" xml:space="preserve">
+    <path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M138.933,173.133h-26.496l-13.346-43.8h-40.25
+        l-13.349,43.8H19l47.732-149h24.469L138.933,173.133z M92.215,106.733l-13.148-43.4l-13.349,43.4H92.215z" class="typo"/>
+    <path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M239.852,129.133c0,11.601-2.968,20.835-8.9,27.7
+        c-5.936,6.869-13.349,11.635-22.246,14.3c-3.105,0.8-6.543,1.335-10.313,1.601c-3.777,0.269-6.746,0.399-8.9,0.399h-43.889v-149
+        h41.46c14.694,0,26.292,3.568,34.789,10.7c8.496,7.134,12.739,17.368,12.739,30.7c0,7.068-1.615,13.034-4.853,17.899
+        c-3.234,4.869-7.481,8.435-12.739,10.7c6.603,2.669,12.064,6.669,16.382,12C237.694,111.468,239.852,119.133,239.852,129.133z
+         M209.107,65.533c0-6.131-1.584-10.666-4.753-13.6c-3.168-2.932-7.516-4.666-13.044-5.201c-1.214-0.131-2.628-0.23-4.248-0.299
+        c-1.614-0.066-2.897-0.101-3.842-0.101h-12.335v37.8h20.425c5.258-0.665,9.537-2.6,12.844-5.8
+        C207.458,75.133,209.107,70.867,209.107,65.533z M170.885,150.933h16.382c1.345,0,3.338-0.065,5.967-0.199
+        c2.628-0.132,4.548-0.4,5.763-0.801c5.257-1.6,9.132-4.23,11.629-7.899c2.493-3.666,3.742-7.966,3.742-12.9
+        c0-5.2-1.249-9.6-3.742-13.2c-2.498-3.6-6.373-6.199-11.629-7.8c-1.215-0.399-3.034-0.8-5.463-1.2c-2.424-0.399-4.582-0.6-6.472-0.6
+        h-16.177V150.933z" class="typo"/>
+    <path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M371.916,98.733c0,10.399-1.419,20.399-4.248,30
+        c-2.833,9.6-7.012,17.868-12.538,24.8c-5.531,7.068-12.339,12.469-20.43,16.2c-8.086,3.734-16.517,5.6-25.278,5.6
+        c-8.768,0-17.192-1.865-25.283-5.6c-8.086-3.731-14.897-9.132-20.425-16.2c-5.531-6.932-9.71-15.2-12.54-24.8
+        c-2.833-9.601-4.247-19.601-4.247-30c0-10.531,1.414-20.601,4.247-30.2c2.83-9.6,7.008-17.932,12.54-25
+        c5.528-6.932,12.339-12.332,20.425-16.2c8.091-3.866,16.515-5.8,25.283-5.8c8.761,0,17.191,1.934,25.278,5.8
+        c8.091,3.868,14.899,9.269,20.43,16.2c5.526,7.068,9.705,15.4,12.538,25C370.497,78.133,371.916,88.202,371.916,98.733z
+         M346.229,98.733c0-7.866-0.979-15.4-2.933-22.601c-1.954-7.2-4.687-13.331-8.191-18.4c-3.233-4.799-7.176-8.399-11.829-10.799
+        c-4.653-2.4-9.274-3.601-13.854-3.601c-4.587,0-9.202,1.2-13.854,3.601c-4.652,2.399-8.596,6-11.834,10.799
+        c-3.507,5.069-6.236,11.2-8.19,18.4c-1.954,7.2-2.93,14.734-2.93,22.601c0,7.734,0.976,15.168,2.93,22.3
+        c1.955,7.134,4.684,13.234,8.19,18.3c3.238,4.8,7.182,8.369,11.834,10.7c4.651,2.334,9.267,3.5,13.854,3.5
+        c4.579,0,9.2-1.166,13.854-3.5c4.652-2.331,8.596-5.9,11.829-10.7c3.504-5.065,6.238-11.166,8.191-18.3
+        C345.25,113.901,346.229,106.468,346.229,98.733z" class="typo"/>
+    <path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M435.214,152.733
+        c4.453,0.269,8.326-0.566,11.629-2.5c3.304-1.932,5.897-4.5,7.786-7.7c2.024-3.866,3.539-8.031,4.553-12.5
+        c1.009-4.466,1.514-9.432,1.514-14.9v-91h25.484v92.4c0,6.134-0.575,12.6-1.72,19.399c-1.145,6.801-3.607,13.069-7.38,18.801
+        c-3.64,5.868-8.896,10.769-15.774,14.699c-6.875,3.935-15.571,5.9-26.091,5.9c-10.515,0-19.211-1.966-26.087-5.9
+        c-6.877-3.931-12.134-8.831-15.777-14.699c-3.775-5.731-6.201-12.031-7.282-18.9c-1.078-6.865-1.614-13.3-1.614-19.3v-92.4h25.483
+        v91c0,5.469,0.471,10.435,1.414,14.9c0.941,4.469,2.429,8.634,4.449,12.5c1.889,3.2,4.453,5.7,7.686,7.5
+        C426.723,151.833,430.632,152.733,435.214,152.733z" class="typo"/>
+    <path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M600.852,46.732H561.41v126.4h-25.478v-126.4h-39.44
+        v-22.6h104.359V46.732z" class="typo"/>
+    <path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M801.883,173.133h-24.069v-95.8l-31.345,95.8h-19.42
+        l-31.146-95.8v95.8h-24.069v-149h29.326l35.803,109.601l35.393-109.601h29.527V173.133z" class="typo"/>
+    <path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M903,173.133h-83.32v-149h81.701v22.6h-56.222v37.4
+        h53.793v22.601h-53.793v43.8H903V173.133z" class="typo"/>
+    </svg>
+
+    </div>  
+</section>
+  
+ 
+  
+   
+    
+</body>
+</html>

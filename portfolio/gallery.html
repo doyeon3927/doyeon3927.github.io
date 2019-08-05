@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta name="title" content="이도연, Lee Do Yeon, 웹디자인, 퍼블리셔, 프론트엔드 개발">
+        <meta name="keywords" content="이도연, Lee Do Yeon, 웹디자인, 퍼블리셔, 프론트엔드 개발, ">
+        <meta name="auther" content="LEE DO YEON">
+        <meta name="description" content="">
+        <link href="https://fonts.googleapis.com/css?family=Dosis|Noto+Serif+KR&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+        <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+        <link rel="apple-touch-icon" href="./img/favicon.png"> 
+    
+       <script src="prefixfree.min.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+        <title>이도연의 portfolio</title>
+    <style>
+        *{margin: 0; padding: 0;}
+    body,html{width: 100%; margin: 0 auto;font-family: 'Noto Sans KR', sans-serif;font-family: 'Questrial', sans-serif;
+    -ms-overflow-style: none;}
+    ::-webkit-scrollbar{display: none;}
+    a{text-decoration: none;}
+    ul{list-style: none;}
+    label, button, input{background-image: none; background-color: transparent; border: 0; outline: 0;}
+
+.page{width: 100%; clear: both; height:auto; background: #D3CCE3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.page_tit{color: #fff; font-size: 1.9rem; letter-spacing: 0.3rem; float: left;padding-top:0%; padding-left: 1.4%; padding-top: 1.2%;
+font-family: 'Great Vibes', cursive; font-weight: normal;position: fixed;z-index: 9999;}
+
+.gall_tit{text-align: center;color: #fff;text-align: center; line-height: 7rem; font-size: 2.5rem; letter-spacing: 0.05em;
+padding-top: 2%;padding-right: 1%;padding-bottom: 0.9%; box-sizing: border-box; opacity: 0; transition: 2s;}
+.gall_tit.on{opacity: 1;}
+
+/*visual 한 번에 보기*/
+.vs1{ width: 90%; height: 80vh;background: #2c8;margin: 0 auto;overflow: hidden;position: relative;}
+#img_box1{width: 100%; height: 80vh;background: rgba(255, 255, 255, 0.37);position: relative;}
+        .slider{float:  left;width: 100%; height: 100%;}
+        #btn_box2{position: relative;}
+        .left{position: absolute;width: 60px; height: 60px; background: #000;bottom:0; left: 42.5%;}
+        .left button{display: block; width: 60px; height: 60px;}
+        .right{position: absolute;width: 60px; height: 60px; background: #000;bottom: 0;right: 36%;}
+        .right button{display: block; width: 60px; height: 60px;}
+        .pic_box{width: 850px; height: 800px;background: #000;position: absolute;}
+        .pic1{}
+        .story{position: absolute; left: 55.92%; width: 800px; height: 800px; background: rgba(0, 0, 0, 0.05);text-align: center;line-height: 1.6;}
+        .story_tit1{font-size: 1.6em;padding-top: 11.8%; box-sizing: border-box;}
+        .story_tit2{font-size: 1.7em;padding-top: 2%;}
+        .story_tit3{font-size: 1.4em;}
+        .story_cap{padding-top: 1%;}
+        .main_color{width: 12.3%; height: 100px;position: absolute;bottom: 35%;left: 73.2%;}
+        .color{width: 60px; height: 60px; display: block; background: #fff; float: left;margin-left: 5%;}
+        .c1{background: #040834;}
+        .c2{background: #000;}
+        .c3{background: #fff;}
+        .link_box{width: 25.1%; height: 16%;position: absolute;bottom: 19%;left: 67.1%;}
+        .link_box li{width: 180px;height: 50px; float: left;text-align: center; margin: 4%;border: 1px solid #000;}
+        .link_box a{  display: block; color: #000;padding-top: 10%; box-sizing: border-box;}
+/*        하단 버튼*/
+        #btn_box1{position: absolute;left: 47.6%; bottom: 1%;z-index: 10; }
+        #btn_frame{width: 260px; height: 20px; clear: both; position: relative;}
+        #btn_frame li{float: left; width: 14px; height: 14px;border-radius: 8px;margin-left: 7px;}
+        #btn_frame li button{display: block; width: 14px; height: 14px;border-radius: 8px;background: #fff;}
+        #btn_frame li.on button{ background:#000; }
+        
+        
+
+
+.effect_wrap {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 3%;
+    opacity: 0;
+    transition: 3.2s;
+    transition-delay: 0.3s;
+}
+.effect_wrap.on{opacity: 1;}
+        
+.effect1 {
+    position: relative;
+    width: 400px; height: 300px;
+    background: rgba(255, 255, 255, 0.29);
+    overflow: hidden;
+    float: left;
+    margin-left: 4%;
+    margin-right: 3.3%;
+    
+}
+.effect1 img {
+    width: 100%;
+    margin-top: 11.3%;
+    z-index: 9999;
+}
+.effect1 figcaption {
+    position: absolute;
+    top: 0; right:0; bottom: 0; left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+    text-align: center;
+    line-height: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    opacity:0;
+    transition: all 0.3s ease;
+}
+        .go_box {width: 400px; height: 300px;position: absolute; top: 0;z-index: 9999;}
+        .go_box a{width: 400px; height: 300px; display: block;cursor: pointer;}
+
+        
+.effect1 figcaption h3 {
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+.effect1:before,
+.effect1:after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: rgba(0,0,0,0.3);
+    border-top: 70px solid rgba(0,0,0,0.4);
+    border-bottom: 70px solid rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+    z-index: 1;
+    opacity:0;
+}
+.effect1:before {
+    transform: scaley(2);
+}
+.effect1:after {
+    transform: scaley(2);
+}
+
+.effect1:hover:before,
+.effect1:hover:after {
+    opacity:1;
+    transform: scale(1);
+}
+/*
+.effect1:hover > img {
+    opacity:0.7;
+}
+*/
+.effect1:hover figcaption {
+    opacity:1;
+    transition-delay: 0.1s;
+}
+        
+/*        타이포*/
+        
+        .gallery{width: 800px; background: #000;}
+        .typo{ animation-name: typo; animation-duration: 4s; animation-iteration-count: infinite; stroke-dasharray: 2500; width: 800px; height: 400px;}
+        @keyframes typo{
+        0%{stroke-dashoffset: 2500;}
+        100%{stroke-dashoffset: 0;}
+        }
+    
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".gall_tit").addClass("on");
+            $(".effect_wrap").addClass("on");
+//슬라이드
+             var wd = $("#vs1").width();
+    var len = $("#img_box1 .slider").length;
+    var ml;
+    $("#btn_frame li").click(function(){
+        var idx = $(this).index();
+        $("#img_box1").not(":animated").animate({"margin-left":idx*wd*-1+"px"}, 500);
+        $(this).addClass("on");
+        $(this).siblings().removeClass("on");
+    });
+    
+           
+        //var wd = parseInt($("#vs1").width());
+         //   $("#btn_frame li").click(function(){
+         //       var idx = $(this).index();
+         //       $("#img_box1").not(":animated").animate({"margin-left":-wd*idx+"px"},600);
+//                $("#img_box1 li").removeClass("on");
+//                $("#img_box1 li").eq(idx).addClass("on");
+        //        $("#btn_frame li").removeClass("on");
+         //       $(this).addClass("on");
+          //   });
+        });
+    </script>
+</head>
+<body>
+    <div class="page" id="page1">
+            <a href="index.html#page1"> <h1 class="page_tit">Dear.dy</h1></a>
+            <h1 class="gall_tit"># GALLERY</h1>
+            
+    <figure class="vs1">
+        <ul id="img_box1">
+            <li id="sl1" class="slider">
+               <div class="pic_box">
+                <img src="https://placehold.it/850x800" alt="" class="pic1">
+                </div>
+                <div class="story">
+                   <h4 class="story_tit1">#1</h4>
+                    <h2 class="story_tit2">SWAROBSKI</h2>
+                    <h4 class="story_tit3">RESPONSIVE WEBSITE</h4>
+                    <p class="story_cap">
+                        디자인: 100%<br>
+                        퍼블리싱: 100%<br>
+                        Main Page, Sub Page1, Sub Page2<br>
+                        1) 디자인:main color의 추가로 확실한 인상과, Full Page로 디자인적인 부분을 보완 하였습니다.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) 퍼블리싱: 버튼을 이용한 슬라이드로 원하는 이미지를 볼 수 있게하고,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;페럴렉스 스크롤링으로 시각적인 부분에 집중할 수 있게 하였습니다.
+                    </p>
+                </div>
+                <div class="main_color">
+                    <span class="color c1"></span>
+                    <span class="color c2"></span>
+                    <span class="color c3"></span>
+                </div>
+                <ul class="link_box">
+                    <li class="link_item1"><a href="">VIEW WEBSITE</a></li>
+                    <li class="link_item2"><a href="">VIEW SUB1</a></li>
+                    <li class="link_item3"><a href="">VIEW SUB2</a></li>
+                    <li class="link_item4"><a href="">VIEW CODE</a></li>
+                </ul>
+            </li>
+            <li id="sl2" class="slider">
+                <div class="pic_box">
+                <img src="https://placehold.it/850x800" alt="" class="pic1">
+                </div>
+                <div class="story">
+                   <h4 class="story_tit1">#2</h4>
+                    <h2 class="story_tit2">SWAROBSKI</h2>
+                    <h4 class="story_tit3">RESPONSIVE WEBSITE</h4>
+                    <p class="story_cap">
+                        디자인: 100%<br>
+                        퍼블리싱: 100%<br>
+                        Main Page, Sub Page1, Sub Page2<br>
+                        1) 디자인:main color의 추가로 확실한 인상과, Full Page로 디자인적인 부분을 보완 하였습니다.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) 퍼블리싱: 버튼을 이용한 슬라이드로 원하는 이미지를 볼 수 있게하고,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;페럴렉스 스크롤링으로 시각적인 부분에 집중할 수 있게 하였습니다.
+                    </p>
+                </div>
+                <div class="main_color">
+                    <span class="color c1"></span>
+                    <span class="color c2"></span>
+                    <span class="color c3"></span>
+                </div>
+                <ul class="link_box">
+                    <li class="link_item1"><a href="">VIEW WEBSITE</a></li>
+                    <li class="link_item2"><a href="">VIEW SUB1</a></li>
+                    <li class="link_item3"><a href="">VIEW SUB2</a></li>
+                    <li class="link_item4"><a href="">VIEW CODE</a></li>
+                </ul>
+            </li>
+            <li id="sl3" class="slider">
+                <div class="pic_box">
+                <img src="https://placehold.it/850x800" alt="" class="pic1">
+                </div>
+                <div class="story">
+                   <h4 class="story_tit1">#3</h4>
+                    <h2 class="story_tit2">SWAROBSKI</h2>
+                    <h4 class="story_tit3">RESPONSIVE WEBSITE</h4>
+                    <p class="story_cap">
+                        디자인: 100%<br>
+                        퍼블리싱: 100%<br>
+                        Main Page, Sub Page1, Sub Page2<br>
+                        1) 디자인:main color의 추가로 확실한 인상과, Full Page로 디자인적인 부분을 보완 하였습니다.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) 퍼블리싱: 버튼을 이용한 슬라이드로 원하는 이미지를 볼 수 있게하고,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;페럴렉스 스크롤링으로 시각적인 부분에 집중할 수 있게 하였습니다.
+                    </p>
+                </div>
+                <div class="main_color">
+                    <span class="color c1"></span>
+                    <span class="color c2"></span>
+                    <span class="color c3"></span>
+                </div>
+                <ul class="link_box">
+                    <li class="link_item1"><a href="">VIEW WEBSITE</a></li>
+                    <li class="link_item2"><a href="">VIEW SUB1</a></li>
+                    <li class="link_item3"><a href="">VIEW SUB2</a></li>
+                    <li class="link_item4"><a href="">VIEW CODE</a></li>
+                </ul>
+            </li>
+            <li id="sl4" class="slider">
+                <div class="pic_box">
+                <img src="https://placehold.it/850x800" alt="" class="pic1">
+                </div>
+                <div class="story">
+                   <h4 class="story_tit1">#4</h4>
+                    <h2 class="story_tit2">SWAROBSKI</h2>
+                    <h4 class="story_tit3">RESPONSIVE WEBSITE</h4>
+                    <p class="story_cap">
+                        디자인: 100%<br>
+                        퍼블리싱: 100%<br>
+                        Main Page, Sub Page1, Sub Page2<br>
+                        1) 디자인:main color의 추가로 확실한 인상과, Full Page로 디자인적인 부분을 보완 하였습니다.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) 퍼블리싱: 버튼을 이용한 슬라이드로 원하는 이미지를 볼 수 있게하고,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;페럴렉스 스크롤링으로 시각적인 부분에 집중할 수 있게 하였습니다.
+                    </p>
+                </div>
+                <div class="main_color">
+                    <span class="color c1"></span>
+                    <span class="color c2"></span>
+                    <span class="color c3"></span>
+                </div>
+                <ul class="link_box">
+                    <li class="link_item1"><a href="">VIEW WEBSITE</a></li>
+                    <li class="link_item2"><a href="">VIEW SUB1</a></li>
+                    <li class="link_item3"><a href="">VIEW SUB2</a></li>
+                    <li class="link_item4"><a href="">VIEW CODE</a></li>
+                </ul>
+            </li>
+            <li id="sl5" class="slider">
+                <div class="pic_box">
+                <img src="https://placehold.it/850x800" alt="" class="pic1">
+                </div>
+                <div class="story">
+                   <h4 class="story_tit1">#5</h4>
+                    <h2 class="story_tit2">SWAROBSKI</h2>
+                    <h4 class="story_tit3">RESPONSIVE WEBSITE</h4>
+                    <p class="story_cap">
+                        디자인: 100%<br>
+                        퍼블리싱: 100%<br>
+                        Main Page, Sub Page1, Sub Page2<br>
+                        1) 디자인:main color의 추가로 확실한 인상과, Full Page로 디자인적인 부분을 보완 하였습니다.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) 퍼블리싱: 버튼을 이용한 슬라이드로 원하는 이미지를 볼 수 있게하고,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;페럴렉스 스크롤링으로 시각적인 부분에 집중할 수 있게 하였습니다.
+                    </p>
+                </div>
+                <div class="main_color">
+                    <span class="color c1"></span>
+                    <span class="color c2"></span>
+                    <span class="color c3"></span>
+                </div>
+                <ul class="link_box">
+                    <li class="link_item1"><a href="">VIEW WEBSITE</a></li>
+                    <li class="link_item2"><a href="">VIEW SUB1</a></li>
+                    <li class="link_item3"><a href="">VIEW SUB2</a></li>
+                    <li class="link_item4"><a href="">VIEW CODE</a></li>
+                </ul>
+            </li>
+            <li id="sl6" class="slider">
+                <div class="pic_box">
+                <img src="https://placehold.it/850x800" alt="" class="pic1">
+                </div>
+                <div class="story">
+                   <h4 class="story_tit1">#6</h4>
+                    <h2 class="story_tit2">SWAROBSKI</h2>
+                    <h4 class="story_tit3">RESPONSIVE WEBSITE</h4>
+                    <p class="story_cap">
+                        디자인: 100%<br>
+                        퍼블리싱: 100%<br>
+                        Main Page, Sub Page1, Sub Page2<br>
+                        1) 디자인:main color의 추가로 확실한 인상과, Full Page로 디자인적인 부분을 보완 하였습니다.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) 퍼블리싱: 버튼을 이용한 슬라이드로 원하는 이미지를 볼 수 있게하고,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;페럴렉스 스크롤링으로 시각적인 부분에 집중할 수 있게 하였습니다.
+                    </p>
+                </div>
+                <div class="main_color">
+                    <span class="color c1"></span>
+                    <span class="color c2"></span>
+                    <span class="color c3"></span>
+                </div>
+                <ul class="link_box">
+                    <li class="link_item1"><a href="">VIEW WEBSITE</a></li>
+                    <li class="link_item2"><a href="">VIEW SUB1</a></li>
+                    <li class="link_item3"><a href="">VIEW SUB2</a></li>
+                    <li class="link_item4"><a href="">VIEW CODE</a></li>
+                </ul>
+            </li>
+            <li id="sl7" class="slider">
+                <div class="pic_box">
+                <img src="https://placehold.it/850x800" alt="" class="pic1">
+                </div>
+                <div class="story">
+                   <h4 class="story_tit1">#7</h4>
+                    <h2 class="story_tit2">SWAROBSKI</h2>
+                    <h4 class="story_tit3">RESPONSIVE WEBSITE</h4>
+                    <p class="story_cap">
+                        디자인: 100%<br>
+                        퍼블리싱: 100%<br>
+                        Main Page, Sub Page1, Sub Page2<br>
+                        1) 디자인:main color의 추가로 확실한 인상과, Full Page로 디자인적인 부분을 보완 하였습니다.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) 퍼블리싱: 버튼을 이용한 슬라이드로 원하는 이미지를 볼 수 있게하고,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;페럴렉스 스크롤링으로 시각적인 부분에 집중할 수 있게 하였습니다.
+                    </p>
+                </div>
+                <div class="main_color">
+                    <span class="color c1"></span>
+                    <span class="color c2"></span>
+                    <span class="color c3"></span>
+                </div>
+                <ul class="link_box">
+                    <li class="link_item1"><a href="">VIEW WEBSITE</a></li>
+                    <li class="link_item2"><a href="">VIEW SUB1</a></li>
+                    <li class="link_item3"><a href="">VIEW SUB2</a></li>
+                    <li class="link_item4"><a href="">VIEW CODE</a></li>
+                </ul>
+            </li>
+            <li id="sl8" class="slider">
+                <div class="pic_box">
+                <img src="https://placehold.it/850x800" alt="" class="pic1">
+                </div>
+                <div class="story">
+                   <h4 class="story_tit1">#8</h4>
+                    <h2 class="story_tit2">SWAROBSKI</h2>
+                    <h4 class="story_tit3">RESPONSIVE WEBSITE</h4>
+                    <p class="story_cap">
+                        디자인: 100%<br>
+                        퍼블리싱: 100%<br>
+                        Main Page, Sub Page1, Sub Page2<br>
+                        1) 디자인:main color의 추가로 확실한 인상과, Full Page로 디자인적인 부분을 보완 하였습니다.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) 퍼블리싱: 버튼을 이용한 슬라이드로 원하는 이미지를 볼 수 있게하고,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;페럴렉스 스크롤링으로 시각적인 부분에 집중할 수 있게 하였습니다.
+                    </p>
+                </div>
+                <div class="main_color">
+                    <span class="color c1"></span>
+                    <span class="color c2"></span>
+                    <span class="color c3"></span>
+                </div>
+                <ul class="link_box">
+                    <li class="link_item1"><a href="">VIEW WEBSITE</a></li>
+                    <li class="link_item2"><a href="">VIEW SUB1</a></li>
+                    <li class="link_item3"><a href="">VIEW SUB2</a></li>
+                    <li class="link_item4"><a href="">VIEW CODE</a></li>
+                </ul>
+            </li>
+            <li id="sl9" class="slider">
+                <div class="pic_box">
+                <img src="https://placehold.it/850x800" alt="" class="pic1">
+                </div>
+                <div class="story">
+                   <h4 class="story_tit1">#9</h4>
+                    <h2 class="story_tit2">SWAROBSKI</h2>
+                    <h4 class="story_tit3">RESPONSIVE WEBSITE</h4>
+                    <p class="story_cap">
+                        디자인: 100%<br>
+                        퍼블리싱: 100%<br>
+                        Main Page, Sub Page1, Sub Page2<br>
+                        1) 디자인:main color의 추가로 확실한 인상과, Full Page로 디자인적인 부분을 보완 하였습니다.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) 퍼블리싱: 버튼을 이용한 슬라이드로 원하는 이미지를 볼 수 있게하고,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;페럴렉스 스크롤링으로 시각적인 부분에 집중할 수 있게 하였습니다.
+                    </p>
+                </div>
+                <div class="main_color">
+                    <span class="color c1"></span>
+                    <span class="color c2"></span>
+                    <span class="color c3"></span>
+                </div>
+                <ul class="link_box">
+                    <li class="link_item1"><a href="">VIEW WEBSITE</a></li>
+                    <li class="link_item2"><a href="">VIEW SUB1</a></li>
+                    <li class="link_item3"><a href="">VIEW SUB2</a></li>
+                    <li class="link_item4"><a href="">VIEW CODE</a></li>
+                </ul>
+            </li>
+        </ul> 
+        <div id="btn_box1">
+            <ul id="btn_frame">
+                <li class="it1 on"><button></button></li>
+                <li class="it2"><button></button></li>
+                <li class="it3"><button></button></li>
+                <li class="it4"><button></button></li>
+                <li class="it5"><button></button></li>
+                <li class="it6"><button></button></li>
+                <li class="it7"><button></button></li>
+                <li class="it8"><button></button></li>
+                <li class="it9"><button></button></li>
+            </ul>
+        </div>
+           
+    <ul id="btn_box2">
+        <li class="left"><button>왼쪽</button></li>
+        <li class="right"><button>오른쪽</button></li>
+    </ul>
+</figure>
+
+    
+        <div class="effect_wrap">
+                <figure class="effect1">
+                    <img src="./img/swa.jpg" alt="">
+                    <figcaption>
+                        <h3>more</h3>
+                    </figcaption>
+                   <div class="go_box"><a href="" class="go"></a></div>
+                </figure>
+                
+                <figure class="effect1">
+                        <img src="./img/kj.jpg" alt="">
+                        <figcaption>
+                            <h3>Mouse Hover</h3>
+                        </figcaption>
+                        <div class="go_box"><a href="" class="go"></a></div>
+                </figure>
+                <figure class="effect1">
+                        <img src="https://placehold.it/400x300/ccc" alt="">
+                        <figcaption>
+                            <h3>Mouse Hover></h3>
+                        </figcaption>
+                        <div class="go_box"><a href="" class="go"></a></div>
+                </figure>            
+        </div>
+        <div class="effect_wrap">
+                <figure class="effect1">
+                    <img src="https://placehold.it/400x300/ccc" alt="">
+                    <figcaption>
+                        <h3>Mouse Hover</h3>
+                    </figcaption>
+                    <div class="go_box"><a href="" class="go"></a></div>
+                </figure>
+                <figure class="effect1">
+                        <img src="https://placehold.it/400x300/ccc" alt="">
+                        <figcaption>
+                            <h3>Mouse Hover</h3>
+                        </figcaption>
+                        <div class="go_box"><a href="" class="go"></a></div>
+                </figure>
+                <figure class="effect1">
+                        <img src="https://placehold.it/400x300/ccc" alt="">
+                        <figcaption>
+                            <h3>Mouse Hover></h3>
+                        </figcaption>
+                        <div class="go_box"><a href="" class="go"></a></div>
+                </figure>
+                
+        </div>
+        <div class="effect_wrap">
+                <figure class="effect1">
+                    <img src="https://placehold.it/400x300/ccc" alt="">
+                    <figcaption>
+                        <h3>Mouse Hover</h3>
+                    </figcaption>
+                    <div class="go_box"><a href="" class="go"></a></div>
+                </figure>
+                <figure class="effect1">
+                        <img src="https://placehold.it/400x300/ccc" alt="">
+                        <figcaption>
+                            <h3>Mouse Hover</h3>
+                        </figcaption>
+                        <div class="go_box"><a href="" class="go"></a></div>
+                </figure>
+                <figure class="effect1">
+                        <img src="https://placehold.it/400x300/ccc" alt="">
+                        <figcaption>
+                            <h3>Mouse Hover></h3>
+                        </figcaption>
+                        <div class="go_box"><a href="" class="go"></a></div>
+                </figure>
+                
+                
+        </div>
+        
+        <div class="pra">
+            반응형:웹 접근성과 웹 표준 준수 ㅣㅏㅇ러ㅣㅇ리ㅓ머애러ㅏ등등<br>이런설명
+            
+        </div>
+        <div class="par2"></div>
+
+   
+        <div class="gallery">
+           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="775.312px" height="213.974px" viewBox="0 0 775.312 213.974" enable-background="new 0 0 775.312 213.974"
+	 xml:space="preserve">
+<path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M137.379,84.741h-26.2c0-7.065-0.7-12.065-2.1-15
+	c-1.4-2.932-3.1-5.331-5.1-7.2c-2.134-1.6-4.534-2.865-7.2-3.8c-2.668-0.932-5.2-1.466-7.6-1.6c-4.535,0-8.9,1-13.1,3
+	c-4.2,2-8.035,5.199-11.5,9.6c-3.469,4.8-6.234,10.8-8.3,18c-2.068,7.2-3.1,14.534-3.1,22c0,4.669,0.6,10.334,1.8,17
+	c1.2,6.669,3.331,13.135,6.4,19.4c2.8,5.734,6.866,10.568,12.2,14.5c5.331,3.934,12,5.899,20,5.899c6.531,0,12.331-0.8,17.4-2.399
+	v-38.4h-30.6v-22.8h55.8v73.399c-12.935,8.27-28.535,12.4-46.8,12.4c-10.8,0-20.2-2.432-28.2-7.3c-8-4.866-14.535-11.101-19.6-18.7
+	c-5.069-7.466-8.669-15.8-10.8-25c-2.134-9.2-3.2-18.531-3.2-28c0-9.6,1.131-18.831,3.4-27.7c2.266-8.865,6-16.631,11.2-23.3
+	c5.065-6.8,11.5-12.466,19.3-17c7.8-4.531,17.031-6.8,27.7-6.8c6.531,0,12.731,1.169,18.6,3.5c5.866,2.334,10.932,5.435,15.2,9.3
+	c4.4,3.869,7.9,8.534,10.5,14C136.08,67.21,137.379,74.876,137.379,84.741z" class="typo"/>
+<path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M260.979,186.541h-26.2l-13.2-43.8h-39.8l-13.2,43.8
+	h-26.2l47.2-149h24.2L260.979,186.541z M214.779,120.142l-13-43.4l-13.2,43.4H214.779z" class="typo"/>
+<path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M350.178,186.541h-82.6v-149h25.2v126.4h57.4
+	V186.541z" class="typo"/>
+<path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M440.177,186.541h-82.6v-149h25.2v126.4h57.4
+	V186.541z" class="typo"/>
+<path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M529.977,186.541h-82.4v-149h80.801v22.601h-55.6
+	v37.399h53.2v22.601h-53.2v43.8h57.2V186.541z" class="typo"/>
+<path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M635.375,82.142c0,6.934-1.533,13.269-4.6,19
+	c-3.068,5.734-7.135,10.269-12.199,13.6c-2.801,1.869-4.535,2.869-5.201,3c5.867,3.068,10.666,9.8,14.4,20.2
+	c4.666,12.8,8.531,29,11.6,48.6h-26.199c-3.734-24.8-8.135-40.865-13.199-48.2c-5.336-7.73-12.07-11.6-20.201-11.6h-8.6v-23.2
+	h10.199c4.801,0,8.766-0.3,11.9-0.899c3.131-0.601,5.832-1.832,8.1-3.7c2.4-1.601,4.467-3.866,6.201-6.8
+	c1.73-2.932,2.6-6.266,2.6-10c0-4.266-0.869-7.801-2.6-10.601c-1.734-2.8-3.734-5-6-6.6c-2.67-1.731-5.568-3-8.701-3.8
+	c-3.133-0.801-6.1-1.2-8.898-1.2h-15.201v126.6h-25.199v-149h39.799c6.531,0,12.801,0.869,18.801,2.601
+	c6,1.734,11.4,4.134,16.199,7.199c5.201,3.601,9.332,8.2,12.4,13.801C633.842,66.741,635.375,73.741,635.375,82.142z" class="typo"/>
+<path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M685.773,92.941l29-55.4h27.602l-43.801,81.601
+	v67.399h-25.199v-67.399l-43.801-81.601h27.4L685.773,92.941z" class="typo"/>
+</svg>
+            
+        </div>
+    </div>
+    
+           
+   
+            
+    
+</body>
+</html>

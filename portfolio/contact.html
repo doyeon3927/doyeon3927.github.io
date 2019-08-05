@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="title" content="이도연, Lee Do Yeon, 웹디자인, 퍼블리셔, 프론트엔드 개발">
+    <meta name="keywords" content="이도연, Lee Do Yeon, 웹디자인, 퍼블리셔, 프론트엔드 개발, ">
+    <meta name="auther" content="LEE DO YEON">
+    <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Noto+Serif+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./img/favicon.png"> 
+
+    <script src="prefixfree.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <title>이도연의 portfolio</title>
+    <style>
+        @charset "UTF-8";
+
+    *{margin: 0; padding: 0;}
+    body,html{width: 100%;height: 100%; margin: 0 auto;font-family: 'Noto Sans KR', sans-serif;font-family: 'Questrial', sans-serif;
+    -ms-overflow-style: none;}
+    ::-webkit-scrollbar{display: none;}
+    a{text-decoration: none;}
+    ul{list-style: none;}
+    label, button, input{background-image: none; background-color: transparent; border: 0; outline: 0;}
+/*    intro 대 메인*/
+    .page{width: 100%; height: 100%;position: relative;background: #B993D6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}    
+    .main_tit{color: #fff; font-size: 1.9rem; letter-spacing: 0.3rem; float: left;padding-top: 1.2%; padding-left: 1.4%; font-family: 'Great Vibes', cursive; font-weight: normal;position: fixed;z-index: 9999;}
+    .contact_tit{text-align: center; line-height: 7em; color: #fff; letter-spacing: 0.05em;padding-top: 2%;box-sizing: border-box;  text-shadow: 1px 1px 1px rgb(162, 162, 162); transition: 3s; opacity: 0;}
+    .contact_tit.on{opacity: 1;}
+        .con_box{width: 90%; height: 400px; margin: 0 auto;}
+        .con_box li{float: left;width: 520px; height: 400px; margin-left: 2.3%; transition: 5s;opacity: 0;}
+        .con_box li.on{opacity: 1;}
+        
+        
+        
+        .con_im{display: block; width: 70px; height: 70px;margin: 0 auto;margin-top: 19%;box-sizing: border-box;}
+        .ph{padding-left:3.3%; animation-name: shake; animation-duration: 3s; animation-fill-mode: both;animation-delay: 0.5s;}
+        @keyframes shake{
+            0%{transform: rotate(-45deg); }
+            50%{transform: rotate(45deg);}
+            100%{transform: rotate(0); }
+        }
+        .sns{padding-left: 1.4%; animation-name: earth; animation-duration: 3s; animation-fill-mode: both; animation-delay: 0s;}
+         @keyframes earth{
+            0%{transform: rotateY(360deg); }
+            50%{transform: rotateY(360deg);}
+            100%{transform: rotateY(0); }
+        }
+        .mail{padding-left: 1.2%; }
+        .mail i{animation-name: fly; animation-duration: 2s; animation-fill-mode: both; animation-delay: 2s;}
+        @keyframes fly{
+            0%{position: relative;margin-top: 20%; margin-left: -25%;}
+            100%{position: relative; margin-top: 0; margin-left: 0;}
+        }
+       
+        .con_im i{font-size: 3.5rem; color: rgb(29, 0, 69); text-shadow: 1px 1px 1px rgba(9, 0, 46, 0.12);transition: 0.4s;}
+/*
+        .con_box li:hover .con_tit,.con_box li:hover .con_tit2 {color: #fff;}
+        .con_box li:hover{border: 1.5px solid rgb(29, 0, 69); }
+*/
+
+        
+        .con_tit{text-align: center;font-size: 1.3rem;padding-top: 6%; color: rgb(29, 0, 69);transition: 0.8s;}
+        .con_tit2{text-align: center; padding-top: 5%; font-size: 1.1rem;color: rgb(29, 0, 69);transition: 0.8s;}
+        
+        .tiem{width: 520px; height: 400px; position: absolute; margin: 0 auto;top: 24.1%; left: 4.5%;}
+        #rect2{animation:mov2 5s; stroke-dasharray: 2500; animation-fill-mode: both;}
+        @keyframes mov2{
+            0%{stroke-dashoffset: 2500;}
+            100%{stroke-dashoffset: 0;stroke: #fff;}
+        }
+        .tiem2{width: 520px; height: 400px; position: absolute; margin: 0 auto;top: 24.1%; left: 33.8%;}
+        #rect3{animation:mov2 5s; stroke-dasharray: 2500; animation-fill-mode: both;}
+        @keyframes mov2{
+            0%{stroke-dashoffset: 2500;}
+            100%{stroke-dashoffset: 0;}
+        }
+        .tiem3{width: 520px; height: 400px; position: absolute; margin: 0 auto;top: 24.1%; right: 9.8%;}
+        #rect4{animation:mov2 5s; stroke-dasharray: 2500; animation-fill-mode: both;}
+        @keyframes mov2{
+            0%{stroke-dashoffset: 2500;}
+            100%{stroke-dashoffset: 0; stroke: #fff;}
+        }
+        
+        
+        .ft{width: 300px; height: 20px; position: absolute; bottom: 2.5%;left: calc(50% - 150px);}
+        .copy{text-align: center;color: #fff; font-weight: normal;}
+        
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".contact_tit").addClass("on");
+            $(".con_box li").addClass("on");
+        });
+
+    </script>
+</head>
+<body>
+   <div class="page" id="page1">
+       <a href="index.html#page1"> <h1 class="main_tit">Dear.dy</h1></a>
+       <h1 class="contact_tit"># CONTACT</h1>
+       
+       <ul class="con_box">
+           <li class="con_item1">
+              <span class="con_im ph"><i class="fas fa-mobile-alt"></i></span>
+              <h4 class="con_tit">PHONE<br>NUMBER</h4>
+              <h5 class="con_tit2">010-****-****</h5>
+               
+           </li>
+           <li class="con_item2">
+              <span class="con_im sns"><i class="fas fa-globe"></i></span>
+              <h4 class="con_tit">SNS</h4>
+              <h5 class="con_tit2">Kakao: doyeon3927@naver.com<br>
+              insta: dear.dy</h5>
+               
+           </li>
+           <li class="con_item3">
+               <span class="con_im mail"><i class="far fa-paper-plane"></i></span>
+               <h4 class="con_tit">E-MAIL</h4>
+               <h5 class="con_tit2">doyeon3927@naver.com</h5>
+           </li>
+       </ul>
+       
+       <div class="tiem cat2">
+            <svg id="svg2" width="800"height="600">
+                <rect x="50" y="30" width="520" height="400" style="fill:transparent; stroke:#fff; stroke-width:2; fill-opacity:1; stroke-opacity:1" id="rect2" />
+            </svg>
+        </div>
+        <div class="tiem2 cat2">
+            <svg id="svg2" width="800"height="600">
+                <rect x="50" y="30" width="520" height="400" style="fill:transparent; stroke:#fff; stroke-width:2; fill-opacity:1; stroke-opacity:1" id="rect3" />
+            </svg>
+        </div>
+         <div class="tiem3 cat2">
+            <svg id="svg2" width="800"height="600">
+                <rect x="50" y="30" width="520" height="400" style="fill:transparent; stroke:#fff; stroke-width:2; fill-opacity:1; stroke-opacity:1" id="rect4" />
+            </svg>
+        </div>
+       
+       <footer class="ft">
+       <h5 class="copy">© 2019 Designed by 이도연 All right reserved</h5>
+   </footer>
+   </div>
+   
+    
+</body>
+</html>

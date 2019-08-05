@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="title" content="이도연, Lee Do Yeon, 웹디자인, 퍼블리셔, 프론트엔드 개발">
+    <meta name="keywords" content="이도연, Lee Do Yeon, 웹디자인, 퍼블리셔, 프론트엔드 개발, ">
+    <meta name="auther" content="LEE DO YEON">
+    <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Noto+Serif+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./img/favicon.png"> 
+
+   <script src="prefixfree.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <title>이도연의 portfolio</title>
+    <style>
+/*        메인과 about me*/
+    @charset "UTF-8";
+
+    *{margin: 0; padding: 0;}
+    body,html{width: 100%;height: 100%; margin: 0 auto;font-family: 'Noto Sans KR', sans-serif;font-family: 'Questrial', sans-serif;
+    -ms-overflow-style: none;}
+    ::-webkit-scrollbar{display: none;}
+    a{text-decoration: none;}
+    ul{list-style: none;}
+    label, button, input{background-image: none; background-color: transparent; border: 0; outline: 0;}
+
+/*        대 메뉴 page -header*/
+        #page1{width: 100%; height: 100vh; background:#06021c;
+position: relative; border-bottom: #000; overflow-y: hidden;}
+        .main_tit{color: #fff; font-size: 1.9rem; letter-spacing: 0.3rem; float: left;padding-top: 1.2%; padding-left: 1.4%; font-family: 'Great Vibes', cursive; font-weight: normal;position: fixed;z-index: 9999;}
+        
+        
+    .dyEffects ul{
+	margin:0;
+	padding:0;
+	text-align:center;
+    
+}
+.dyEffects li{
+	list-style:none;
+	display:inline-block;
+	margin: 15px 25px;
+}
+.dyEffects li a{
+	font-weight: 400;
+	font-size: 2.6em;
+	position: relative;
+	display: inline-block;
+	outline: none;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+    z-index: 9999;
+    
+}
+.dyEffects a:hover,
+.dyEffects a:focus {
+	outline: none;
+}
+
+.dyHoverEffect a:hover {
+	
+  -ms-animation: opacity forwards 1s;
+  -moz-animation: opacity forwards 1s;
+  -webkit-animation: opacity forwards 1s;
+  animation: opacity forwards 1s;
+}
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.dyHoverEffect a:before, 
+.dyHoverEffect a:after {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: "◯";
+  display: block;
+  width: 100%;
+  font-size: 0px;
+  color: #de205b;
+  text-align: center;
+  z-index: -100;
+}
+.dyHoverEffect a:hover::before {
+   animation: drop 1s;
+  -ms-animation: drop 1s;
+  -moz-animation: drop 1s;
+  -webkit-animation: drop 1s;
+}
+.dyHoverEffect a:hover::after {
+   animation: drop 1s 0.5s;	
+  -ms-animation: drop 1s 0.5s;
+  -moz-animation: drop 1s 0.5s;
+  -webkit-animation: drop 1s 0.5s;
+}
+@keyframes drop {
+  0% {
+    opacity: 1;
+    font-size: 0;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    font-size: 80px;
+    top: -50px;
+  }
+}
+/*        lee do yeon*/
+        .page{position: relative;}
+        .about{ width: 1724px; height: 10%;position: absolute;left: calc(50% - 852px); top: 36%;}   
+        .about_box{width: 100%; height: 100%;}
+        .about li{width: 380px; height: 80%;float: left;}
+        .about a{color: #fff; padding-right: 3%;display: block;}
+/*        꽃 장식*/
+        .bottom_fr{display: block; position: absolute; right: -50%; bottom: 1%; width: 700px; height: auto;}
+        .bottom_fr.on {  animation-name: flower_r;  animation-duration: 2s; animation-fill-mode: both; }
+        @keyframes flower_r{
+            0% {transform: rotate(0deg); }
+           
+            100% {transform: rotate(-90deg);position: absolute;right: -4%;bottom: 5%;}
+        }
+        .bottom_fl{display: block;position: absolute; left: -50%; bottom: -3.2%; width: 700px; height: auto;}
+        .bottom_fl.on { animation-name: flower_l; animation-duration: 2s; animation-fill-mode: both; }
+        @keyframes flower_l{
+            0% {transform: rotate(0deg); }
+           
+            100% {transform: rotate(90deg);position: absolute;left: -4%;bottom: 5%;}
+        }
+        
+        
+       
+/*
+      
+        .gnb_box a:hover{ color: #de205b;}
+*/
+        
+
+
+  
+        
+        
+        
+        
+        
+    </style>
+
+    <script>
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            var s_top = $(window).scrollTop();
+            $(".page, .main").each(function(index){
+                var obj = $(this).offset();
+                var tp = parseInt(obj.top);
+                if(s_top>=tp){  //다른 페이지 요소들을 찾을 때 꽃 말구
+                    $(this).find(".ani_item").addClass("on");
+                }
+            });
+            if(s_top>=600){
+                $(".bottom_fr, .bottom_fl").addClass("on");
+            } else {
+                $(".bottom_fr, .bottom_fl").removeClass("on");
+            }
+        });
+
+    });
+    </script>
+
+</head>
+<body>
+ 
+ <section class="page" id="page1">
+     <a href="index.html#page1"> <h1 class="main_tit">Dear.dy</h1></a>
+     
+      <nav class="dyEffects dyHoverEffect about">
+         <ul class="about_box">
+             <li class="about_item1"><a href="about.html">ABOUT ME</a></li>
+             <li class="about_item2"><a href="ability.html">ABILITY</a></li>
+             <li class="about_item3"><a href="gallery.html">GALLERY</a></li>
+             <li class="about_item4"><a href="contact.html">CONTACT</a></li>
+         </ul>
+     </nav>
+     
+     
+     <img src="./img/f1_rrrr.png" alt="왼쪽 하단 꽃들" class="bottom_fr on">
+     <img src="./img/f1_lll.png" alt="오릉쪽 하단 꽃들" class="bottom_fl on">
+<!--
+     <img src="./img/f2_2.png" alt="" class="flower1">
+     <img src="./img/f2_3.png" alt="" class="flower2">
+-->
+     
+      
+ </section>
+ 
+ 
+  
+  
+
+    
+</body>
+</html>
