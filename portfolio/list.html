@@ -165,7 +165,7 @@ position: relative; border-bottom: #000; overflow-y: hidden;}
             $(".page, .main").each(function(index){
                 var obj = $(this).offset();
                 var tp = parseInt(obj.top);
-                if(s_top>=tp){  //다른 페이지 요소들을 찾을 때 꽃 말구
+                if(s_top>=tp){  //다른요소들을 찾을 때 꽃 말구
                     $(this).find(".ani_item").addClass("on");
                 }
             });

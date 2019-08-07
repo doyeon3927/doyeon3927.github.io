@@ -220,6 +220,7 @@ background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, F
     }
     
     .cat_tit{position: absolute; left: 2%; bottom: 22px; text-align: center; color: #fff;width: 210px; font-weight: normal;font-size: 29px;}
+    
     .tw{bottom: 3%;font-size: 1.6em;}
     .cat_img{display: block; position: absolute; }
     .com1{top: 15%; left: 24%; width: 65px;height: auto;}
@@ -279,7 +280,7 @@ background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, F
 
       
         #page1 h3{text-align: center; padding-top: 100%;font-size: 1.8rem;}
-        #page1 h4{text-align: center; line-height: 1.6em;color: #0b0b0b; margin-top: 20%; padding-right: 4%;padding-left: 4%;box-sizing: border-box; font-weight: normal;}
+        #page1 h4{text-align: center; line-height: 1.6em;color: #0b0b0b; margin-top: 20%; padding-right: 4%;padding-left: 4%;box-sizing: border-box; font-weight: normal;color: #fff;}
               
 /*        page4*/
     #page2{ width: 100%; background: #B993D6;  /* fallback for old browsers */
@@ -290,15 +291,15 @@ background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, F
         .circle_box{width: 96%; height: 30%; margin: 0 auto;}
         .circle_box li{float: left;margin-right: 4%;width: 20%; height: 100%;}
         .circle_item1{margin-left:3.9%;}
-        .circle_box li span{display: block; width: 120px; height: 120px; border:1.4px solid rgba(255, 255, 255, 0.7);border-radius: 61px;margin: 0 auto;}
+        .circle_box li span{display: block; width: 120px; height: 120px; border:1.4px solid rgba(255, 255, 255, 0.7);border-radius: 61px;margin: 0 auto;box-shadow: 1px 1px 13px rgba(77, 16, 191, 0.42);}
         .circle_box li span.on{box-shadow: 1px 1px 13px rgba(77, 16, 191, 0.42);animation-name: light; animation-duration: 1.4s; animation-fill-mode: both; }
         @keyframes light{
             0% {box-shadow: none;}
             100%{box-shadow: 1px 1px 13px rgba(77, 16, 191, 0.42); }
         }
-        .num{text-align: center; padding-top: 40%; color: #fff;}
-        .num_tit{text-align: center;color: #fff; padding-top: 16%; padding-bottom: 10%;box-sizing: border-box;}
-        .num_des{text-align: center;padding-left: 3%; padding-right: 3%;box-sizing: border-box;font-weight: 400;}
+        .num{text-align: center; padding-top: 40%; color: rgba(10, 0, 44, 0.8);;}
+        .num_tit{text-align: center;color:#fff; padding-top: 16%; padding-bottom: 10%;box-sizing: border-box;}
+        .num_des{text-align: center;padding-left: 3%; padding-right: 3%;box-sizing: border-box;font-weight: 400;color: #fff;}
    .avility_typo{position: absolute; bottom: 0;}
    .typo{ animation-name: typo; animation-duration: 8s; animation-iteration-count: infinite; stroke-dasharray: 2500; width: 800px; height: 400px;}
         
@@ -361,7 +362,7 @@ background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, F
                     var obj = $(this).offset();
                     var tp = parseInt(obj.top);                   
                 });
-                if(s_top>=900){//휠이 한 번 갈 때300정도랬나??물어보기 원래 900 s_top<1000
+                if(s_top>=900 && s_top<1000){
                     $(".chat_item1, .chat_item2, .chat_item3, .chat_item4, .chat_item5").addClass("on");
                 } else {
                     $(".chat_item1, .chat_item2, .chat_item3, .chat_item4, .chat_item5").removeClass("on");
@@ -401,8 +402,8 @@ background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, F
         
         <ul class="about_box">
             <li class="about_item1"><a href="about.html">ABOUT ME</a></li>
-            <li class="about_item2"><a href="ability.html">ABILITY</a></li>
-            <li class="about_item3"><a href="gallery.html">GALLERY</a></li>
+            <li class="about_item2"><a href="ability99.html">ABILITY</a></li>
+            <li class="about_item3"><a href="gallery18.html">GALLERY</a></li>
             <li class="about_item4"><a href="contact.html">CONTACT</a></li>
         </ul>
 </nav>
