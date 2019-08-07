@@ -25,7 +25,7 @@
     @charset "UTF-8";
 
     *{margin: 0; padding: 0;}
-    body,html{width: 100%;height: 100%; margin: 0 auto;font-family: 'Noto Sans KR', sans-serif;font-family: 'Questrial', sans-serif;
+    body,html{width: 100%; margin: 0 auto;font-family: 'Noto Sans KR', sans-serif;font-family: 'Questrial', sans-serif;
     -ms-overflow-style: none;}
     ::-webkit-scrollbar{display: none;}
     a{text-decoration: none;}
@@ -262,7 +262,14 @@ background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, F
         #page1 .ps, #page1 .ai{left: 38%;}
         .chat_box1{width: 100%; height: 100%;}
         .chat_box1 ul{white-space: 100%; height: 100%;}
-        .chat_box1 li{float: left;width: 19.9%;height: 100%;position: relative; animation-name: ro1; animation-duration: 1.5s; animation-fill-mode: both; transform: rotateY(360deg);}
+        .chat_box1 li{float: left;width: 19.9%;height: 100%;position: relative; }
+        #page1.on .chat_box1 li { animation-name: ro1; animation-duration: 1.5s; animation-fill-mode: both; transform: rotateY(360deg);}
+        #page1.on .chat_box1 .chat_item1 { animation-delay:0s; }
+        #page1.on .chat_box1 .chat_item2 {animation-delay: 0.5s;}   
+        #page1.on .chat_box1 .chat_item3 {animation-delay: 0.9s;}     
+        #page1.on .chat_box1 .chat_item4 {animation-delay: 1.3s;}      
+        #page1.on .chat_box1 .chat_item5 {animation-delay: 1.7s;}
+        
         @keyframes ro1{
             0%{ transform: rotateY(0deg);}
             100%{ transform: rotateY(360deg);}
@@ -270,11 +277,6 @@ background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, F
         .chat_box1 li:nth-child(1),li:nth-child(2),li:nth-child(3),li:nth-child(4),li:nth-child(5){border-right: 0.2px solid rgba(255, 255, 255, 0.27);border-left: 0.2px solid rgba(255, 255, 255, 0.27);}       
         
          
-        .chat_item1.on{animation-name: ro1; animation-duration: 1.5s; animation-fill-mode: both; transform: rotateY(360deg);}
-        .chat_item2.on{animation-delay: 0.5s;animation-name: ro1; animation-duration: 1.5s; animation-fill-mode: both; transform: rotateY(360deg);}   
-        .chat_item3.on{animation-delay: 0.9s;animation-name: ro1; animation-duration: 1.5s; animation-fill-mode: both; transform: rotateY(360deg);}     
-        .chat_item4.on{animation-delay: 1.3s;animation-name: ro1; animation-duration: 1.5s; animation-fill-mode: both; transform: rotateY(360deg);}      
-        .chat_item5.on{animation-delay: 1.7s;animation-name: ro1; animation-duration: 1.5s; animation-fill-mode: both; transform: rotateY(360deg);}
         .chat_tit1{color: #fff;}
         .chat_tit2{color: #fff;}
 
@@ -291,11 +293,11 @@ background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, F
         .circle_box{width: 96%; height: 30%; margin: 0 auto;}
         .circle_box li{float: left;margin-right: 4%;width: 20%; height: 100%;}
         .circle_item1{margin-left:3.9%;}
-        .circle_box li span{display: block; width: 120px; height: 120px; border:1.4px solid rgba(255, 255, 255, 0.7);border-radius: 61px;margin: 0 auto;box-shadow: 1px 1px 13px rgba(77, 16, 191, 0.42);}
-        .circle_box li span.on{box-shadow: 1px 1px 13px rgba(77, 16, 191, 0.42);animation-name: light; animation-duration: 1.4s; animation-fill-mode: both; }
+        .circle_box li span{display: block; width: 120px; height: 120px; border:1.4px solid rgba(255, 255, 255, 0.7);border-radius: 70px;margin: 0 auto;box-shadow: 1px 1px 13px rgba(77, 16, 191, 0.42); position:relative; }
+    #page2.on .circle_box li span {box-shadow: 1px 1px 13px rgba(77, 16, 191, 0.42);animation-name: light; animation-duration: 1.4s; animation-fill-mode: both; }
         @keyframes light{
-            0% {box-shadow: none;}
-            100%{box-shadow: 1px 1px 13px rgba(77, 16, 191, 0.42); }
+            0% {box-shadow: none; border-width:1.4px; }
+            100%{box-shadow: 1px 1px 13px rgba(77, 16, 191, 0.42); border-width:6px; }
         }
         .num{text-align: center; padding-top: 40%; color: rgba(10, 0, 44, 0.8);;}
         .num_tit{text-align: center;color:#fff; padding-top: 16%; padding-bottom: 10%;box-sizing: border-box;}
@@ -358,15 +360,14 @@ background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, F
             //역량 박스 해당 페이지에서 클래스 적용시키기-1.
             $(window).scroll(function(){
                 var s_top = $(window).scrollTop();
-                $("#page1").each(function(index){
+                $(".page").each(function(index){
                     var obj = $(this).offset();
-                    var tp = parseInt(obj.top);                   
+                    var tp = parseInt(obj.top);
+                    if(s_top>=tp){
+                        $(this).addClass("on");
+                        $(this).siblings().removeClass("on");
+                    }
                 });
-                if(s_top>=900 && s_top<1000){
-                    $(".chat_item1, .chat_item2, .chat_item3, .chat_item4, .chat_item5").addClass("on");
-                } else {
-                    $(".chat_item1, .chat_item2, .chat_item3, .chat_item4, .chat_item5").removeClass("on");
-                }
             });
             //work process
 //            $(window).scroll(function(){
