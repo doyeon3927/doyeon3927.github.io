@@ -353,6 +353,7 @@ background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, F
 //            $('.t_btn3').click(function(){
 //                $("#page1").slideDown('slow');
 //            });
+
             //역량 박스 해당 페이지에서 클래스 적용시키기-1.
             $(window).scroll(function(){
                 var s_top = $(window).scrollTop();
@@ -360,7 +361,7 @@ background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, F
                     var obj = $(this).offset();
                     var tp = parseInt(obj.top);                   
                 });
-                if(s_top>=600){//휠이 한 번 갈 때300정도랬나??물어보기 원래 900 s_top<1000
+                if(s_top>=900){//휠이 한 번 갈 때300정도랬나??물어보기 원래 900 s_top<1000
                     $(".chat_item1, .chat_item2, .chat_item3, .chat_item4, .chat_item5").addClass("on");
                 } else {
                     $(".chat_item1, .chat_item2, .chat_item3, .chat_item4, .chat_item5").removeClass("on");
