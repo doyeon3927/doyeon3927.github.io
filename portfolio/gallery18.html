@@ -192,12 +192,15 @@ z-index: 9999;
 .story_tit1{font-size: 1.6em;padding-top: 5%; box-sizing: border-box;}
         .story_tit2{font-size: 1.7em;padding-top: 2%;}
         .story_tit3{font-size: 1.4em;}
-        .story_cap{padding-top: 1%;}
+        .story_cap{padding-top: 1%; padding-left: 2%; padding-right: 2%;padding-bottom: 2%;}
         .main_color{width: 14%; height: 100px;position: absolute;bottom: 31%;left: 72.3%;}
         .color{width: 45px; height: 45px; display: block; background: #fff; float: left;margin-left: 5%;}
         .c1{background: #040834;}
         .c2{background: #000;}
         .c3{background: #fff;}
+        .c21{background: rgb(152, 5, 5);}
+        .c22{background: #000;}
+        .c23{background: #fff;}
         .link_box{width: 25.1%; height: 21%;position: absolute;bottom: 12%;left: 66.29%;}
         .link_box li{width: 160px;height: 45px; float: left;text-align: center; margin: 4%;border: 1px solid #000;}
         .link_box a{  display: block; color: #000;padding-top: 8%; box-sizing: border-box;}
@@ -323,7 +326,6 @@ z-index: 9999;
     </style>
     <script>
         $(document).ready(function(){
-	    var cur;
             $(".gall_tit").addClass("on");
             $(".effect_wrap").addClass("on");
             //토글
@@ -334,43 +336,51 @@ z-index: 9999;
 //슬라이드
             var wd = $(".vs1").width();
             var len = $("#img_box1 .slider").length;
-            var ml;
+            var ml, cur;
             $("#btn_frame li").click(function(){ //동그라미 버튼 슬라이드
                 var idx = $(this).index();
                 $("#img_box1").not(":animated").animate({"margin-left":idx*wd*-1+"px"}, 500);
                 $(this).addClass("on");
                 $(this).siblings().removeClass("on");
-	    });	    
-                // 왼쪽, 오른쪽 슬라이드
-                $("#btn_box2 li.left button").click(function(){ //이전 이미지
-                    ml = parseInt($("#img_box1").css("margin-left"));
-                    if(ml<0){
-                        $("#img_box1").not(":animated").animate({"margin-left":"+="+wd+"px"}, 600);
-                    } else {
-                        $("#img_box1").not(":animated").animate({"margin-left":wd*(len-1)*-1+"px"}, 600);
-                    }
-                });
-                $("#btn_box2 li.right button").click(function(){ //다음 이미지
-                    ml = parseInt($("#img_box1").css("margin-left"));
-                    if(ml>(wd*(len-1)*-1)){
-                        $("#img_box1").not(":animated").animate({"margin-left":"-="+wd+"px"}, 600);
-                    } else {
-                        $("#img_box1").not(":animated").animate({"margin-left":"0px"}, 600);
-                    }    
-                });
-                var intv1 = $(function(){
-                    nextSlideAni();
-                },3000);
-                $("#btn_box1 li").click(function(){
-                    clearInterval(intv1);
-              
-                });
+            });
+            // 왼쪽, 오른쪽 슬라이드
+            $("#btn_box2 li.left button").click(function(){ //이전 이미지
+                ml = parseInt($("#img_box1").css("margin-left"));
+                cur = (parseInt(ml / wd)) * -1 - 1;
+//                console.log(cur);                
+                if(ml<0){
+                    $("#img_box1").not(":animated").animate({"margin-left":"+="+wd+"px"}, 600);
+                    $("#btn_frame li").eq(cur).addClass("on");
+                    $("#btn_frame li").eq(cur).siblings().removeClass("on");
+                } else {
+                    $("#img_box1").not(":animated").animate({"margin-left":wd*(len-1)*-1+"px"}, 600);
+                    $("#btn_frame li").eq(len-1).addClass("on");
+                    $("#btn_frame li").eq(len-1).siblings().removeClass("on");
+                }
+            });
+            $("#btn_box2 li.right button").click(function(){ //다음 이미지
+                ml = parseInt($("#img_box1").css("margin-left"));
+                cur = (parseInt(ml / wd)) * -1 + 1;
+                console.log(cur);
+                if(ml>(wd*(len-1)*-1)){
+                    $("#img_box1").not(":animated").animate({"margin-left":"-="+wd+"px"}, 600);
+                    $("#btn_frame li").eq(cur).addClass("on");
+                    $("#btn_frame li").eq(cur).siblings().removeClass("on");
+                } else {
+                    $("#img_box1").not(":animated").animate({"margin-left":"0px"}, 600);
+                    $("#btn_frame li").eq(0).addClass("on");
+                    $("#btn_frame li").eq(0).siblings().removeClass("on");
+                }    
+            });
+            var intv1 = $(function(){
+                nextSlideAni();
+            },3000);
+            $("#btn_box1 li").click(function(){
+                clearInterval(intv1);
+
+            });
        
     });
-    
-           
- 
-        });
     </script>
 </head>
 <body>
@@ -430,23 +440,23 @@ z-index: 9999;
             </li>
             <li id="sl2" class="slider">
                 <div class="pic_box">
-                <img src="./img/swrob.jpg" alt="" class="pic1">
+                <img src="/img/museum.jpg" alt="" class="pic1">
                 </div>
                 <div class="story">
                    <h4 class="story_tit1">#2</h4>
-                    <h2 class="story_tit2">SWAROBSKI</h2>
+                    <h2 class="story_tit2">경주국립박물관</h2>
                     <h4 class="story_tit3">RESPONSIVE WEBSITE</h4>
                     <p class="story_cap">
                         디자인: 100%<br>
                         퍼블리싱: 100%<br>
                         Main Page, Sub Page1, Sub Page2<br>
-                        1) 디자인:main color의 추가로 확실한 인상과, Full Page로 디자인적인 부분을 보완 하였습니다.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) 퍼블리싱: 버튼을 이용한 슬라이드로 원하는 이미지를 볼 수 있게하고,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;페럴렉스 스크롤링으로 시각적인 부분에 집중할 수 있게 하였습니다.
+                        1) 디자인: 기존의 딱딱한 디자인에 색감으로 부드러움을 주고, 사람들이 자주 찾는 부분을 메인 페이지 배열하였습니다.<br>2) 퍼블리싱: 현재 위치한 곳을 알려주는 기능을 포함하였습니다.
                     </p>
                 </div>
                 <div class="main_color">
-                    <span class="color c1"></span>
-                    <span class="color c2"></span>
-                    <span class="color c3"></span>
+                    <span class="color c21"></span>
+                    <span class="color c22"></span>
+                    <span class="color c23"></span>
                 </div>
                 <ul class="link_box">
                     <li class="link_item1"><a href="">VIEW WEBSITE</a></li>
@@ -683,7 +693,7 @@ z-index: 9999;
                         <div class="go_box"><a href="" class="go"></a></div>
                 </figure>
                 <figure class="effect1">
-                        <img src="https://placehold.it/400x300/ccc" alt="">
+                        <img src="/img/museum.jpg" alt="">
                         <figcaption>
                             <h3>Mouse Hover></h3>
                         </figcaption>

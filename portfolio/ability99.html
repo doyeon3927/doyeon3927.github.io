@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="title" content="이도연, Lee Do Yeon, 웹디자인, 퍼블리셔, 프론트엔드 개발">
+    <meta name="keywords" content="이도연, Lee Do Yeon, 웹디자인, 퍼블리셔, 프론트엔드 개발, ">
+    <meta name="auther" content="LEE DO YEON">
+    <meta name="description" content="">
+    
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./img/favicon.png"> 
+
+   <script src="prefixfree.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <title>이도연의 portfolio</title>
+    <style>
+/*        메인과 about me*/
+    @charset "UTF-8";
+
+    *{margin: 0; padding: 0;}
+    body,html{width: 100%;height: 100%; margin: 0 auto;font-family: 'Noto Sans KR', sans-serif;font-family: 'Questrial', sans-serif;
+    -ms-overflow-style: none;}
+    ::-webkit-scrollbar{display: none;}
+    a{text-decoration: none;}
+    ul{list-style: none;}
+    label, button, input{background-image: none; background-color: transparent; border: 0; outline: 0;}
+/*        토글*/
+        
+/*toggle*/
+        
+.toggle {
+  position: fixed;
+  display: block;
+  cursor: pointer;
+  top: 5%;
+  right: 0.7%;
+  transform: translate(-50%, -50%);
+z-index: 9999;
+}
+        
+.toggle:hover span{color: #f00;}
+        
+.toggle span {
+  display: block;
+  background: #FFF;
+  width: 42px;
+  height: 4px;
+  border-radius: 3px;
+  transition: 0.25s margin 0.25s, 0.25s transform;
+}
+.toggle span:nth-child(1) {
+    margin-bottom: 8px;
+}
+.toggle span:nth-child(3) {
+    margin-top: 8px;
+}
+.toggle.active span {
+    transition: 0.25s margin, 0.25s transform 0.25s;
+}
+.toggle.active span:nth-child(1) {
+  margin-top: 8px;
+  margin-bottom: -4px;
+    transform: rotate(45deg);
+}
+.toggle.active span:nth-child(2) {
+    transform: rotate(45deg);
+}
+.toggle.active span:nth-child(3) {
+  margin-top: -4px;
+    transform: rotate(135deg);
+}
+       
+
+        
+/*호버 효과, 메뉴*/
+        .dyEffects{width: 20%; height: 100%; background: /*rgba(255, 255, 255, 0.38);*/rgba(6, 2, 28, 0.85); position: fixed; right: -100%; transition: 0.7s;z-index: 999;}
+        .dyEffects.on{right: 0;}
+        .border1{display: block; width: 64%; height: 2px; background: #fff;position: absolute; top: 5%;left: 8%;}
+       
+        .border2{display: block; width: 2px; height: 86.6%; background: #fff; position: absolute;top: 8.2%; right: 8%;}
+        .border3{display: block; width: 84%; height: 2px;background: #fff;position: absolute; bottom: 5%;left: 8%;}
+        .border4{display: block; width: 2px;background: #fff; position: absolute;height: 90%; top: 5%;left: 8%; }
+        
+ .dyEffects ul{
+     width: 50%;
+     height: 27%;
+	margin:0 auto;
+    margin-top: 70%;
+	text-align:center;
+
+     
+    
+}
+.dyEffects li{
+	width: 100%;
+    height: 42px;
+	margin-bottom: 30%;
+    
+}
+.dyEffects li a{
+	font-weight: 400;
+	font-size: 1.6em;
+	position: relative;
+	display: inline-block;
+	outline: none;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+    z-index: 9999;
+    
+}
+.dyEffects a:hover,
+.dyEffects a:focus {
+	outline: none;
+}
+
+.dyHoverEffect a:hover {
+	
+  -ms-animation: opacity forwards 1s;
+  -moz-animation: opacity forwards 1s;
+  -webkit-animation: opacity forwards 1s;
+  animation: opacity forwards 1s;
+}
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.dyHoverEffect a:before, 
+.dyHoverEffect a:after {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: "◯";
+  display: block;
+  width: 100%;
+  font-size: 0px;
+  color: #de205b;
+  text-align: center;
+  z-index: -100;
+}
+.dyHoverEffect a:hover::before {
+   animation: drop 1s;
+  -ms-animation: drop 1s;
+  -moz-animation: drop 1s;
+  -webkit-animation: drop 1s;
+}
+.dyHoverEffect a:hover::after {
+   animation: drop 1s 0.5s;	
+  -ms-animation: drop 1s 0.5s;
+  -moz-animation: drop 1s 0.5s;
+  -webkit-animation: drop 1s 0.5s;
+}
+@keyframes drop {
+  0% {
+    opacity: 1;
+    font-size: 0;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    font-size: 80px;
+    top: -50px;
+  }
+} 
+/*    intro 대 메인*/
+    .page{width: 100%; height: 100vh; background: #B993D6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+    .main_tit{color: #fff; font-size: 1.9rem; letter-spacing: 0.3rem; float: left;padding-top: 1.2%; padding-left: 1.4%; font-family: 'Great Vibes', cursive; font-weight: normal;position: fixed;z-index: 9999;}
+
+    .page{position: relative;}
+    .avil_tit{color: #fff; font-size: 2.6rem;text-align: center; box-sizing: border-box;padding-top: 7%; padding-right: 3%;letter-spacing: 0.05em;}
+    .avil_box{width: 87%; height: 320px;margin: 0 auto;margin-top: 7%;margin-left: 9.6%;}
+    .item{position: relative; width: 330px; height: 320px;float: left; }
+    #circle1, #circle2, #circle3, #circle4, #circle5{stroke-dasharray: 629; animation-fill-mode: both; animation-duration:5s; fill: rgba(44, 41, 78, 0.31);}
+    #circle1{animation-name: mov1;}
+    #circle2{animation-name: mov2;}
+    #circle3{animation-name: mov3;}
+    #circle4{animation-name: mov4;}
+    #circle5{animation-name: mov5;}
+    @keyframes mov1{
+        0%{stroke-dashoffset: 629;}
+        100%{stroke-dashoffset: 63;}
+
+    }
+    @keyframes mov2{
+        0%{stroke-dashoffset: 629; }
+        100%{stroke-dashoffset: 127;}
+
+    }
+    @keyframes mov3{
+        0%{stroke-dashoffset: 629; }
+        100%{stroke-dashoffset: 127;}
+
+    }
+    @keyframes mov4{
+        0%{stroke-dashoffset: 629; }
+        100%{stroke-dashoffset: 127;}
+
+    }
+    @keyframes mov5{
+        0%{stroke-dashoffset: 629; }
+        100%{stroke-dashoffset: 127;}
+
+    }
+    
+    .cat_tit{position: absolute; left: 2%; bottom: 22px; text-align: center; color: #fff;width: 210px; font-weight: normal;font-size: 29px;}
+    .tw{bottom: 3%;font-size: 1.6em;}
+    .cat_img{display: block; position: absolute; }
+    .com1{top: 15%; left: 24%; width: 65px;height: auto;}
+    .jq{top: 41%;left: 19%; width: 90px; height: auto;}
+    .com2{top: 15%;left: 24%; width: 65px; height: auto;}
+    .txt:after{content: attr(data-val); display: block; width: 210px; height: 40px; left: 4%; bottom: 120px;font-size: 20px; text-align: center; color: #ffffff; position: absolute;}
+
+    .b_btn{display: block; width: 22; height: 45px;position: absolute; left: calc(50% - 11px);bottom: 3%;}
+    .b_btn i{color: #fff; font-size: 2rem;  animation: ar_b; animation-duration: 2.8s; animation-iteration-count: infinite;}
+    @keyframes  ar_b{
+        0%{transform: scale(0.3);}
+        100%{transform: scale(1.2);}
+    }    
+/*
+        .gnb_box a:hover{ color: #de205b;}        
+        */ .page{position: relative;}
+    #page1{width: 100%;position: relative;background: #B993D6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+        .t_btn{display: block; width: 22px; height: 45px;position: absolute; left: calc(50% - 11px);top: 3%; z-index: 9999;}
+        .t_btn i{color: #fff; font-size: 2rem;  animation: ar_t; animation-duration: 2.8s; animation-iteration-count: infinite;z-index: 9999;}
+
+        @keyframes ar_t{
+            0%{transform: scale(0.3);}
+            100%{transform: scale(1.2);}
+        }
+        .b_btn2{display: block; width: 22px; height: 45px;position: absolute; left: calc(50% - 11px);bottom: 3%; z-index: 9999;}
+        .b_btn2 i{color: #fff; font-size: 2rem;  animation: ar_t; animation-duration: 2.8s; animation-iteration-count: infinite;z-index: 9999;}
+          @keyframes ar_t{
+            0%{transform: scale(0.3);}
+            100%{transform: scale(1.2);}
+        }
+               
+        #page1 img{display: block;position: absolute; top: 22%;left: 39%;}
+        #page1 .chat_pic1{display: block; position: absolute;top: 22%;left: 22%;}
+        #page1 .chat_pic2{display: block; position: absolute;top: 25%;left: 50%;}
+        #page1 .ps, #page1 .ai{left: 38%;}
+        .chat_box1{width: 100%; height: 100%;}
+        .chat_box1 ul{white-space: 100%; height: 100%;}
+        .chat_box1 li{float: left;width: 19.9%;height: 100%;position: relative; animation-name: ro1; animation-duration: 1.5s; animation-fill-mode: both; transform: rotateY(360deg);}
+        @keyframes ro1{
+            0%{ transform: rotateY(0deg);}
+            100%{ transform: rotateY(360deg);}
+        }
+        .chat_box1 li:nth-child(1),li:nth-child(2),li:nth-child(3),li:nth-child(4),li:nth-child(5){border-right: 0.2px solid rgba(255, 255, 255, 0.27);border-left: 0.2px solid rgba(255, 255, 255, 0.27);}       
+        
+         
+        .chat_item1.on{animation-name: ro1; animation-duration: 1.5s; animation-fill-mode: both; transform: rotateY(360deg);}
+        .chat_item2.on{animation-delay: 0.5s;animation-name: ro1; animation-duration: 1.5s; animation-fill-mode: both; transform: rotateY(360deg);}   
+        .chat_item3.on{animation-delay: 0.9s;animation-name: ro1; animation-duration: 1.5s; animation-fill-mode: both; transform: rotateY(360deg);}     
+        .chat_item4.on{animation-delay: 1.3s;animation-name: ro1; animation-duration: 1.5s; animation-fill-mode: both; transform: rotateY(360deg);}      
+        .chat_item5.on{animation-delay: 1.7s;animation-name: ro1; animation-duration: 1.5s; animation-fill-mode: both; transform: rotateY(360deg);}
+        .chat_tit1{color: #fff;}
+        .chat_tit2{color: #fff;}
+
+      
+        #page1 h3{text-align: center; padding-top: 100%;font-size: 1.8rem;}
+        #page1 h4{text-align: center; line-height: 1.6em;color: #0b0b0b; margin-top: 20%; padding-right: 4%;padding-left: 4%;box-sizing: border-box; font-weight: normal;}
+              
+/*        page4*/
+    #page2{ width: 100%; background: #B993D6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #8CA6DB, #B993D6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+    .page2_tit{line-height: 17rem;text-align: center;letter-spacing: 0.05em;color: #fff;font-size: 1.9rem;}
+        .circle_box{width: 96%; height: 30%; margin: 0 auto;}
+        .circle_box li{float: left;margin-right: 4%;width: 20%; height: 100%;}
+        .circle_item1{margin-left:3.9%;}
+        .circle_box li span{display: block; width: 120px; height: 120px; border:1.4px solid rgba(255, 255, 255, 0.7);border-radius: 61px;margin: 0 auto;}
+        .circle_box li span.on{box-shadow: 1px 1px 13px rgba(77, 16, 191, 0.42);animation-name: light; animation-duration: 1.4s; animation-fill-mode: both; }
+        @keyframes light{
+            0% {box-shadow: none;}
+            100%{box-shadow: 1px 1px 13px rgba(77, 16, 191, 0.42); }
+        }
+        .num{text-align: center; padding-top: 40%; color: #fff;}
+        .num_tit{text-align: center;color: #fff; padding-top: 16%; padding-bottom: 10%;box-sizing: border-box;}
+        .num_des{text-align: center;padding-left: 3%; padding-right: 3%;box-sizing: border-box;font-weight: 400;}
+   .avility_typo{position: absolute; bottom: 0;}
+   .typo{ animation-name: typo; animation-duration: 8s; animation-iteration-count: infinite; stroke-dasharray: 2500; width: 800px; height: 400px;}
+        
+        @keyframes typo{
+        0%{stroke-dashoffset: 2500;}
+        100%{stroke-dashoffset: 0;}
+        }
+        .t_btn3{display: block; width: 22px; height: 45px;position: absolute; left: calc(50% - 11px);top: 3%; z-index: 9999;}
+        .t_btn3 i{color: #fff; font-size: 2rem;  animation: ar_t3; animation-duration: 2.8s; animation-iteration-count: infinite;z-index: 9999;}
+
+        @keyframes ar_t3{
+            0%{transform: scale(0.3);}
+            100%{transform: scale(1.2);}
+        }
+
+        
+        
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            //페럴렉스 스크롤링
+             var wh = $(window).height();
+            $(".page").each(function(index){
+                $(this).attr("data-val", index*wh);
+            });
+            $(".page").on("mousewheel DOMMouseScroll", function(e){
+                var secPos = parseInt($(this).attr("data-val"));
+                if(e.originalEvent.wheelDelta >= 0){
+                    $("html, body").stop().animate({scrollTop:secPos - wh});
+                    return false;
+                } else if(e.originalEvent.wheelDelta < 0){
+                    $("html, body").stop().animate({scrollTop:secPos + wh});
+                    return false;
+                }
+            });
+            //토글
+            $(".toggle").click(function(){
+                $(this).toggleClass('active');
+                $(".dyEffects").toggleClass("on");
+            });
+//            //버튼
+//            $(".b_btn").click(function(){
+//                $(".main").slideUp('slow');
+//            });
+//            $(".t_btn").click(function(){
+//                $(".main").slideDown('slow'); 
+//            });
+//            $(".b_btn2").click(function(){
+//                $('#page1').slideUp('slow');
+//            });
+//            $('.t_btn3').click(function(){
+//                $("#page1").slideDown('slow');
+//            });
+            //역량 박스 해당 페이지에서 클래스 적용시키기-1.
+            $(window).scroll(function(){
+                var s_top = $(window).scrollTop();
+                $("#page1").each(function(index){
+                    var obj = $(this).offset();
+                    var tp = parseInt(obj.top);                   
+                });
+                if(s_top>=600){//휠이 한 번 갈 때300정도랬나??물어보기 원래 900 s_top<1000
+                    $(".chat_item1, .chat_item2, .chat_item3, .chat_item4, .chat_item5").addClass("on");
+                } else {
+                    $(".chat_item1, .chat_item2, .chat_item3, .chat_item4, .chat_item5").removeClass("on");
+                }
+            });
+            //work process
+//            $(window).scroll(function(){
+//                var s_top2 = $(window).scrollTop();
+//                $("#page2").each(function(index){
+//                    var obj2 = $(this).offset();
+//                    var tp2 = parseInt(obj.top);                   
+//                });
+//                if(s_top2>=1200 && s_top2<1300){
+//                    $(".circle_box li span").addClass("on");
+//                } else {
+//                    $(".circle_box li span").removeClass("on");
+//                }
+//            });
+        });
+    </script>
+
+</head>
+<body>
+ 
+ <nav class="dyEffects dyHoverEffect about">
+       <span class="border1"></span>
+       <span class="border1_1"></span>
+       <span class="border2"></span>
+       <span class="border3"></span>
+       <span class="border4"></span>
+   
+   <div class="toggle close">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+        
+        <ul class="about_box">
+            <li class="about_item1"><a href="about.html">ABOUT ME</a></li>
+            <li class="about_item2"><a href="ability.html">ABILITY</a></li>
+            <li class="about_item3"><a href="gallery.html">GALLERY</a></li>
+            <li class="about_item4"><a href="contact.html">CONTACT</a></li>
+        </ul>
+</nav>
+  
+<section class="page" id="main1"><!--메뉴의 각각 첫 페이지 goal-oriented-->
+    <!-- 이름 -->
+     <a href="index.html#page1"> <h1 class="main_tit">Dear.dy</h1></a>
+     <h1 class="avil_tit"># ABILITY</h1>
+     
+    <div class="avil_box">
+        <div class="item cat1">
+            <svg width="240" height="240" class="db">
+                <circle cx="110" cy="110" r="100" stroke="#860707" stroke-width="10" stroke-style="dashed" id="circle1" />
+                현재 브라우저는 SVG를 지원하지 않습니다.
+            </svg>
+            <h class="cat_tit db">HTML5</h>
+            <div class="txt" data-val="90%"></div>
+            <img src="./img/html_logo.png" alt="" class="cat_img com1">
+            <!-- 원의 둘레=r*2*3.14      100*2*3.14=629
+            629*09=566  => 629-566=63
+
+        -->
+        </div>
+        <div class="item cat2">
+            <svg width="240" height="240">
+                <circle cx="110" cy="110" r="100" stroke="rgb(5, 33, 70)" stroke-width="10" stroke-style="dashed" id="circle2" />
+            </svg>
+            <h class="cat_tit">CSS3</h>
+            <div class="txt" data-val="80%"></div>
+            <img src="./img/css_logo.png" alt="" class="cat_img com1">
+            <!-- 629-502=127 -->
+        </div>
+
+
+        <div class="item cat3">
+            <svg width="240" height="240">
+                <circle cx="110" cy="110" r="100" stroke="#e5c84c" stroke-width="10" stroke-style="dashed" id="circle3" />
+            </svg>
+            <h class="cat_tit tw">Java script<br>& jQuery</h>
+            <div class="txt" data-val="80%"></div>
+            <img src="./img/jq_logo.png" alt="" class="cat_img jq">
+            <img src="./img/javascript_logo.png" alt="" class="cat_img js com1">
+
+        </div>
+        <div class="item cat4">
+            <svg width="240" height="240">
+                <circle cx="110" cy="110" r="100" stroke="#1a67c4" stroke-width="10" stroke-style="dashed" id="circle5" />
+             </svg>
+            <h class="cat_tit">Ps</h>
+            <div class="txt" data-val="80%"></div>
+            <img src="./img/ps_logo.jpg" alt="" class="cat_img com2">
+        </div>
+        <div class="item cat5">
+            <svg width="240" height="240">
+                <circle cx="110" cy="110" r="100" stroke="#5c220c" stroke-width="10" stroke-style="dashed" id="circle4" />
+            </svg>
+            <h class="cat_tit">Ai</h>
+            <div class="txt" data-val="80%"></div>
+            <img src="./img/ai_logo.jpg" alt="" class="cat_img com2">
+        </div>
+    </div>
+    
+    <span class="b_btn"><i class="fas fa-angle-double-down"></i></span>
+
+</section>
+ 
+ 
+ 
+ <section class="page" id="page1">
+     
+      <span class="t_btn"><i class="fas fa-angle-double-up"></i></span>
+      <span class="b_btn"><i class="fas fa-angle-double-down"></i></span>
+      
+      
+      <div class="chat_box1">
+            <ul class="chat_lst">
+                <li class="chat_item1">
+                    <img src="./img/html_logo.png" alt="" class="chat_pic">
+                    <h3 class="chat_tit1">HTML5</h3>
+                    <h4 class="chat_tit2">웹 표준을 준수하여 규칙에 따른 HTML5 구조 기획,각 종 페이지 설계, 내비게이션 설계, 화면 설계, 위젯 설계 등</h4>
+                    
+                </li>
+                <li class="chat_item2">
+                    <img src="./img/css_logo.png" alt="" class="chat_pic">
+                    <h3 class="chat_tit1">CSS3</h3>
+                    <h4 class="chat_tit2">모바일 레이아웃, 태블릿 레이아웃, 데스크탑 레이아웃, 반응형 레이아웃, 기업형 레이아웃, 브랜드 레이아웃,<br>및 위젯 구현</h4>
+                    <h4 class="ghat_tit3"></h4>
+                </li>
+                <li class="chat_item3">
+                    <img src="./img/javascript_logo.png" alt="" class="chat_pic chat_pic1">
+                    <img src="./img/jq_logo.png" alt="" class="chat_pic2">
+                    <h3 class="chat_tit1">Java script & jQuery</h3>
+                    <h4 class="chat_tit2">Java scrip :변수, 함수, 출력제어, 조건문, 반복문, 제어문, 객체, BOM*DOM 객체 제어, 이벤트*미디어 제어 등<br><br>
+                    jQuery :메인메뉴, 사이드 메뉴, 로컬 메뉴, 상*하단 메뉴, 탭, 아코디언, 컬랩시블, 슬라이더, 레이어 팝업 등</h4>
+                    <h4 class="ghat_tit3"></h4>
+                </li>
+                <li class="chat_item4">
+                    <img src="./img/ps_logo.jpg" alt="" class="chat_pic ps">
+                    <h3 class="chat_tit1">Ps</h3>
+                    <h4 class="chat_tit2">이미지 편집, 시안 제작, 패턴 제작, 배너 제작, 사진 리터칭, 프로토타입 제작 등</h4>
+                </li>
+                <li class="chat_item5">
+                    <img src="./img/ai_logo.jpg" alt="" class="chat_pic ai">
+                    <h3 class="chat_tit1">Ai</h3>
+                    <h4 class="chat_tit2">뉴스페이퍼, 매거진, 포스터, 사인, 전단지, 로고, 심볼, 패턴, 앰블럼, 아이콘, 타이포 등</h4>
+                </li>
+            </ul>
+        </div>    
+      
+      
+ </section>
+ 
+   <section class="page" id="page2">
+       <h2 class="page2_tit"># Work Process</h2>
+       <ul class="circle_box">
+           <li class="circle_item1">
+               <span class="circle">
+                   <h3 class="num">1</h3>
+               </span>
+               <h3 class="num_tit">Concept</h3>
+               <h3 class="num_des">제작할 페이지의 컨셉을 명확히 잡아<br> 이에 맞는 디자인을 기획합니다.</h3>        
+           </li>
+           <li class="circle_item2">
+              <span class="circle">
+                   <h3 class="num">2</h3>
+              </span>
+              <h3 class="num_tit">Design</h3>
+              <h3 class="num_des">컨셉에 맞는 디자인과, 색감, 표현하고자 하는 부분을 고려하여 설계작업을 진행합니다.</h3>
+           </li>
+           <li class="circle_item3">
+               <span class="circle">
+                   <h3 class="num">3</h3>
+              </span>
+              <h3 class="num_tit">Development</h3>
+              <h3 class="num_des">컨셉과 디자인에 맞게 적절한 움직임을 고려하고,웹접근성에 맞추어 웹페이지 개발 작업을 진행합니다.</h3>
+           </li>
+           <li class="circle_item4">
+               <span class="circle">
+                   <h3 class="num">4</h3>
+              </span>
+              <h3 class="num_tit">Quality Check</h3>
+              <h3 class="num_des">여러 테스트를 거쳐 수정, 보완 후 서버와 연동합니다.</h3>
+           </li>
+       </ul>
+   
+    
+     <span class="t_btn3"><i class="fas fa-angle-double-up"></i></span>
+      <div class="avility_typo">
+           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="652px" height="170px" viewBox="0 0 652 170" enable-background="new 0 0 652 170" xml:space="preserve">
+            <path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M128.114,163.4h-16.245L98.263,119.6H50.338
+                L36.935,163.4H20.689L65.975,23.2h16.854L128.114,163.4z M94.201,105.8L74.503,41.2l-19.9,64.6H94.201z" class="typo"/>
+            <path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M230.868,123.6c0,10.669-2.675,19.101-8.021,25.301
+                c-5.35,6.199-11.949,10.434-19.8,12.699c-2.573,0.669-5.654,1.135-9.239,1.4c-3.589,0.269-6.397,0.4-8.428,0.4h-38.99V23.2h36.959
+                c12.997,0,23.284,3.135,30.867,9.4C221.796,38.869,225.588,48,225.588,60c0,7.334-2.233,13.635-6.701,18.9
+                c-4.468,5.269-10.153,8.699-17.059,10.3c6.499,0.935,12.962,4.134,19.394,9.6C227.65,104.269,230.868,112.534,230.868,123.6z
+                 M210.154,60c0-7.2-2.03-12.665-6.092-16.399c-4.062-3.731-9.411-5.932-16.043-6.601c-1.354-0.131-2.944-0.231-4.772-0.3
+                c-1.827-0.065-3.42-0.1-4.771-0.1H161.62v46.6h16.855c1.218,0,2.772,0,4.67,0c1.895,0,3.52-0.065,4.874-0.2
+                c6.632-0.8,11.981-3.2,16.043-7.2S210.154,66.534,210.154,60z M161.62,150h20.917c1.894,0,4.397-0.1,7.514-0.3
+                c3.112-0.2,5.482-0.565,7.107-1.101c6.226-2,10.829-5.23,13.809-9.699c2.977-4.466,4.468-9.566,4.468-15.301
+                c0-6-1.491-11.165-4.468-15.5c-2.979-4.331-7.583-7.5-13.809-9.5c-1.625-0.531-3.827-1-6.601-1.399
+                c-2.776-0.4-5.451-0.601-8.021-0.601H161.62V150z"  class="typo"/>
+            <path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M270.059,163.4h-15.434V23.2h15.434V163.4z"  class="typo"/>
+            <path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M372.607,163.4h-73.715V23.2h15.433V149.6h58.282
+                V163.4z"  class="typo"/>
+            <path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M406.521,163.4h-15.434V23.2h15.434V163.4z"/>
+            <path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M523.486,37h-40.614v126.4h-15.434V37h-40.614V23.2
+                h96.662V37z"  class="typo"/>
+            <path fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" d="M583.597,84.6L616.494,23.2h16.854l-41.833,76.2v64
+                h-15.433v-64L534.25,23.2h16.651L583.597,84.6z"  class="typo"/>
+        </svg>
+
+    </div>
+       
+   </section>
+   
+    
+</body>
+</html>
