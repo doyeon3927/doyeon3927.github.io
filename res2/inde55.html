@@ -49,21 +49,21 @@
     .lang .cur:hover .lang_sel{ height: 120px;}
     
     
-    .hd i{position: absolute; left: 1em; bottom: 9px;display: block; color: #ffffff;}
-    .hd .open{position: absolute; bottom: 8px; left: 3em; color: #ffffff;}
+    .hd i{position: absolute; left: 0.6em; bottom: 8px;display: block; color: #ffffff;}
+    .hd .open{position: absolute; bottom: 8px; left: 3em;font-size: 0.7em; color: #ffffff;}
 
     
-    #search_btn{width: 40px; height: 40px; background: rgba(255, 255, 255, 0.137);
+    #search_btn{width: 40px; height: 40px; background: rgb(162, 129, 23);
     border-radius: 20px;position: absolute; top: 8px; right: 4em;}
     #search_btn button{display: block; width: 20px; height: 20px;position: absolute; top: 1.3em;right: 2.6em;}
-    #search_btn i{color: #ffffff;font-size: 20px;padding-left: 25%;}
-    #lst_btn{width: 40px; height: 40px; background: rgba(255, 255, 255, 0.137);
+    #search_btn i{color: #ffffff;font-size: 20px;}
+    #lst_btn{width: 40px; height: 40px; background: rgb(118, 45, 45);
         border-radius: 20px;position: absolute; top: 8px; right: 0.6em;}
     #lst_btn button{display: block; width: 20px; height: 20px;position: absolute; top: 1.3em;right: 2.6em;}
-    #lst_btn i{color: #ffffff; font-size: 20px;padding-left: 25%;}
+    #lst_btn i{color: #ffffff; font-size: 20px;}
     
     /* gnb영역 */
-    #gnb{clear: both; position: absolute; float: right;  right: calc(50% - 370px);width: 740px; height: 40px; top: 50%;}
+    #gnb{clear: both; position: absolute; float: right;  right: calc(50% - 370px);width: 740px; height: 40px; top: 50%;z-index: 999;}
     #gnb .gnb_box{width: 740px; height: 30px;}
     #gnb .dp1{float: left;display: block; position:relative; height: 57px;}
     #gnb .dp1 a.dept{width: 120px;line-height: 60px;display: block;color: #ffffff;font-size: 1.1em;
@@ -116,7 +116,7 @@
     .nbtn button span{display: block; width: 10px; height: 10px;  border-radius: 11px; background: #ffffff;}
 
     /* 오른쪽 사이드 슬라이드 버튼 */
-    .bar{width: 6%; height: 24%; position: fixed; right: 0;top: 35%;z-index: 999;}
+    .bar{width: 6%; height: 20%; position: fixed; right: 0;top: 5%;z-index: 99;}
     .bar_box{width: 100%;height: 100%;}
     .bar_box li{border-bottom: 5px solid #fff; line-height: 4rem; }
     .bar_box li a{font-size: 1.1em;color: #ffffff;}
@@ -160,40 +160,57 @@
    #main2{width: 100%; height: 100vh;}
    #main2 h2{color: #ffffff; font-size: 4em;font-weight: normal;}
    #main2 .csq{display: block; background: rgb(152, 5, 5);width: 50px; height: 5px;}
-   .as_box{width: 80%;height: 90%; position: relative; }
-        .always{color: #fff;padding-top: 2%;padding-left: 2%; padding-bottom: 2%;font-size: 1.5em;display: block; width: 90px; height: 20px;}
-        .always_box{width: 100%; height: 29.5%;}
-        .always_box li{float: left;margin-left: 3.5%;width: 312px; height: 288px;}
-        .always_box a{display: block; width: 312px; height: 188px;}
-        .always_go{width: 98%; height: 4%;margin: 0 auto;}
-        .always_go li{float: left; width: 312px; height: 24px;margin-top: 1%; margin-left: 3%;text-align: center;}
-        .always_go a{display: block; width: 312px; height: 24px; font-size: 1.3em; color: #fff;}
-        .always_go .goitem3{margin-left: 3.8%;}
-        .always_go .goitem4{margin-left: 3.5%;}
-        
-        .special_box{width: 80%; height: 34%; background: #f00;}
-        .sitem{float: left;width: 40%; height: 100%;}
-        .sitem a{display: block; position: relative;width: 400px; height: 300px;}
-        .sitem img{display: block; width: 500px;position: absolute; bottom: 0;}
-        
-        
-        
-
-
-  
-    
-   
-    
-
-   
-
-
+   .as_box{width: 80%; position: relative; background: #000000;}
 
 
     #main2{background-image: url("./img/view_right_img.jpg");}
     #main3{background-image: url("./img/bg4.jpg");}
    
     .ft{width: 100%; height: 120px; background: #dddddd;}
+
+    @media screen and (max-width:767px) {
+        /* 모바일 사이즈 */
+    .hd{width: 100%; height: 100px; position: fixed; top: 0; left: 0; z-index: 10; border-bottom: none;}
+    .hd.on{background: rgba(167, 3, 3);}
+    .logo{margin-top: 15px; margin-left: 10px;}
+    #tnb{ width: 110px; height: 53px; border-bottom: none; }
+    #tnb .loc{width: 380px; height: 50px;}
+    #tnb .loc li{float: left;padding-right: 2em;padding-top: 1.2em; box-sizing: border-box;}
+    #tnb .loc .log{padding-left: 2.6em;box-sizing: border-box;}
+    #tnb .loc li a{color: #ffffff;}
+    /* 언어 숨김- 풀어주세요 */
+    .lang{display: block; float: right;position: absolute;top: 0;left: 50%;padding-top: 1.2em;}
+
+    #search_btn{width: 40px; height: 40px; background: rgb(162, 129, 23);
+    border-radius: 20px;position: absolute; top: 8px; right: 4em;}
+    #search_btn i{color: #ffffff;font-size: 20px;padding-top: 10px; padding-left: 10px;}
+    #lst_btn{width: 40px; height: 40px; background: rgb(189, 102, 9);
+        border-radius: 20px;position: absolute; top: 8px; right: 0.6em;}
+    #lst_btn i{color: #ffffff; font-size: 20px; padding-top: 10px; padding-left: 10px;}
+/* gnb숨김 풀어주고 라이트를 옆으로 밀어주세요 */
+    #gnb{display: block; position: fixed; margin-right: 0; top: 95px; right: 0; z-index: 99999; 
+    width: 85%; height: 100vh; background: rgb(167, 3, 3);}
+    #gnb .gnb_box{width: 100%; height: 100%;}
+    #gnb .gnb_box .dp1{width: 100%; height: 5%; border-bottom:1px solid rgb(177, 177, 177);
+     padding-top: 1rem;padding-left: 2em;position: relative;}
+    #gnb .gnb_box .dp1 a{display: block; width: 94%; color: #ffffff; margin-right: 0;}
+    
+    #gnb .dp1 a.tri:after{content:"+";  position: absolute;  font-size: 28px; right: 10px; bottom: 9px; padding-right: 1em; }
+    #gnb .dp1 a.tri.on:after{content: "-";}
+    /* #gnb.on{right: 0;} */
+    
+        
+    }
+    @media screen and (min-width:768px) and (max-width:1280px){
+        /* 저해상도 데스크탑 및 태블릿 */
+        
+       
+    }    
+    @media screen and (min-width:1281px){
+        /* 고해상도 데스크탑 */
+       
+     
+    }    
     
     
   
@@ -454,12 +471,6 @@
                     <li class="aitem2"><a href=""><img src="./img/image2.png" alt="신라미술관"></a></li>
                     <li class="aitem3"><a href=""><img src="./img/image3.png" alt="월지관"></a></li>
                     <li class="aitem4"><a href=""><img src="./img/image4.png" alt="옥외전시"></a></li>
-                </ul>
-                <ul class="always_go">
-                    <li class="goitem1"><a href="">신라역사관</a></li>
-                    <li class="goitem2"><a href="">신라미술관</a></li>
-                    <li class="goitem3"><a href="">월지관</a></li>
-                    <li class="goitem4"><a href="">옥외전시</a></li>
                 </ul>
 
                 <span class="special">특별</span>

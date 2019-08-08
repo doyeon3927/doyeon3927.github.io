@@ -1,19 +1,12 @@
 
-    @charset "UTF*8";
-
-    *{margin: 0; padding: 0;}
-    body,html{width: 100%; margin: 0 auto; -ms-overflow-style: none;}
-    ::-webkit-scrollbar{display: none;}
-    a{text-decoration: none;}
-    ul{list-style: none;}
-    label, button, input{background-image: none; background-color: transparent; border: 0; outline: 0;}
 
     .hd{width: 100vw; height: 55px; position: relative;background: rgb(167, 3, 3);}
+    .hd_wrap{width: 100vw;height: 57px;}
     .logo{display: block; width: 122px; height: 27px; position: absolute; 
-    background-image: url("./img/mlogo2.png"); margin-top: 16px; margin-left: 6px;}
+     margin-top: 16px; margin-left: 3px;}
     /* bgi로 넣어 로고는 */
     
-    
+    #tnb{width: 10px; height: 55px;position: relative; float: right; margin-top: 1%;}
     #tnb .loc.desk{display: none;}
     #tnb .cur.desk{display: none;}
     #tnb .lang_sel{width: 85%;height: 40px; background: #e2e2e2;
@@ -22,6 +15,8 @@
     #tnb .lang_sel #sq{border-right: 1px solid #464646; border-left: 1px solid #464646;}
     #tnb .lang_sel li a{display: block; height: 40px; width: 100%;
     text-align: center; padding-top: 0.5rem; color: #5c0000;}
+    /* 언어 숨김- 풀어주세요 */
+    .lang{display: none; float: right;position: absolute;top: 0;left: 50%;padding-top: 1.2em;}
 
     #search_btn{width: 40px; height: 40px; background: rgb(162, 129, 23);
     border-radius: 20px;position: absolute; top: 8px; right: 4em;}
@@ -29,8 +24,8 @@
     #lst_btn{width: 40px; height: 40px; background: rgb(189, 102, 9);
         border-radius: 20px;position: absolute; top: 8px; right: 0.6em;}
     #lst_btn i{color: #ffffff; font-size: 20px; padding-top: 10px; padding-left: 10px;}
-
-    #gnb{position: fixed; margin-right: 0; top: 95px; right: 0; z-index: 99; 
+/* gnb숨김 풀어주고 라이트를 옆으로 밀어주세요 */
+    #gnb{display: none; position: fixed; margin-right: 0; top: 95px; right: 0; z-index: 99; 
     width: 85%; height: 100vh; background: rgb(167, 3, 3);}
     #gnb .gnb_box{width: 100%; height: 100%;}
     #gnb .gnb_box .dp1{width: 100%; height: 5%; border-bottom:1px solid rgb(177, 177, 177);

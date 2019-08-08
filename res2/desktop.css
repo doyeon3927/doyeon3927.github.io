@@ -92,14 +92,14 @@
     .nbtn button span{display: block; width: 10px; height: 10px;  border-radius: 11px; background: #ffffff;}
 
     /* 오른쪽 사이드 슬라이드 버튼 */
-    .bar{width: 6%; height: 20%; position: fixed; right: 0;margin-top: 1%;z-index: 999;}
+    .bar{width: 6%; height: 20%; position: fixed; right: 0;top: 5%;z-index: 999;}
     .bar_box{width: 100%;height: 100%;}
     .bar_box li{border-bottom: 5px solid #fff; line-height: 4rem; }
     .bar_box li a{font-size: 1.1em;color: #ffffff;}
 
    hr{color:#ffffff;position: absolute; bottom: 10rem;width: 100%; opacity: 0.3;}
    /* bottom right부분 */
-    .rbottom{width: 58%; position: relative;margin-top: 23.8%; margin-left: 2em; display: inline-block;}
+    .rbottom{width: 58%; position: absolute;bottom: 128px; left: 2em; display: inline-block;}
     
     /* .rbottom:after{width: 100%;height: 1px; background: #ffffff; content: "";opacity: 0.2;
         position: absolute; bottom: 10rem;left: 0;} */
@@ -120,12 +120,12 @@
    .plus{ width: 60px; height: 60px; position: absolute;right: 55em; bottom: 8.7em;}
    .plus i{text-align: center; color: #ffffff; font-size:2em;opacity: 0.4;}
    /* sns박스 */
-   .sns_box{width: 42%; position: absolute;bottom: 9rem;left: 68em;}
+   .sns_box{width: 42%; position: absolute;bottom: 8.9rem;left: 68em;}
    .sns_box ul{width: 100%; }
    .sns_box li{float: left; width: 14%; height: 40px; margin-left: 2.6em;}
    .sns_box a{display: block; width: 100%; height: 100%;}
    .sns_box .facebook.c, .instagram.c, .blogger.c, .youtube.c{width: 40px; height: 40px; display: block; border-radius: 21px; color: #ffffff; 
-     text-align: center;line-height: 2.4em;font-size: 20px;}
+     text-align: center;line-height: 2.2em;font-size: 20px;}
    .sns_box .facebook{background: rgb(24, 66, 155);}
    .sns_box .instagram{background: rgb(155, 24, 114);}
    .sns_box .blogger{background: rgb(203, 76, 8);}
